@@ -2,7 +2,7 @@
 import { HttpClient, HttpParams, HttpHeaders  } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import decode from 'jwt-decode';
+import { JwtHelperService } from "@auth0/angular-jwt";
 import { environment } from 'environments/environment';
 import { TOKEN_AUTH_PASSWORD, TOKEN_AUTH_USERNAME, TOKEN_NAME } from './auth.constant';
 
@@ -54,6 +54,8 @@ export class AuthenticationService {
     }
 
     decode() {
-        return decode(localStorage.getItem(TOKEN_NAME));
+        const helper = new JwtHelperService();
+       
+        return helper.decodeToken(localStorage.getItem(TOKEN_NAME));
     }
 }
