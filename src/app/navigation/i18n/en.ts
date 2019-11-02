@@ -3,9 +3,10 @@ export const locale = {
     data: {
         'NAV': {
             'APPLICATIONS': 'Applications',
+            'CADASTROS': 'Cadastros',
             'DASHBOARDS'  : 'Dashboards',
             'CALENDAR'    : 'Calendar',
-            'ECOMMERCE'   : 'E-Commerce',
+            'EMPRESA'   : 'Empresa',
             'ACADEMY'     : 'Academy',
             'MAIL'        : {
                 'TITLE': 'Mail',

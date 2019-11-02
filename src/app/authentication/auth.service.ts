@@ -7,7 +7,7 @@ import { environment } from 'environments/environment';
 import { TOKEN_AUTH_PASSWORD, TOKEN_AUTH_USERNAME, TOKEN_NAME } from './auth.constant';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationService {
+export class AuthService {
 
     static AUTH_TOKEN = environment.apiUrlAuth + '/oauth/token';
 
@@ -41,9 +41,10 @@ export class AuthenticationService {
             withCredentials: true
         };
 
-        return this.http.post<any>(AuthenticationService.AUTH_TOKEN, null, options)
+        return this.http.post<any>(AuthService.AUTH_TOKEN, null, options)
             .pipe(map(user => {
-                localStorage.setItem(TOKEN_NAME, JSON.stringify(user));
+                localStorage.setItem(TOKEN_NAME, user.access_token);
+                localStorage.setItem('TOKEN', JSON.stringify(user));
                 return user;
             }));
     }
@@ -58,4 +59,9 @@ export class AuthenticationService {
        
         return helper.decodeToken(localStorage.getItem(TOKEN_NAME));
     }
+
+    getUserName():string{
+      return this.decode().user_name;    
+    }
+
 }

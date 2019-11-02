@@ -2,33 +2,30 @@ import { FuseNavigation } from '@fuse/types';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'applications',
-        title    : 'Applications',
-        translate: 'NAV.APPLICATIONS',
+        id       : 'cadastros',
+        title    : 'Cadastros',
+        translate: 'NAV.CADASTROS',
         type     : 'group',
         icon     : 'apps',
         children : [
             {
-                id       : 'dashboards',
-                title    : 'Dashboards',
-                translate: 'NAV.DASHBOARDS',
+                id       : 'empresa',
+                title    : 'Empresa',
+                translate: 'NAV.EMPRESA',
                 type     : 'collapsable',
                 icon     : 'dashboard',
                 children : [
                     {
-                        id   : 'analytics',
-                        title: 'Analytics',
-                        type : 'item',
-                        url  : '/apps/dashboards/analytics'
-                    },
-                    {
-                        id   : 'project',
-                        title: 'Project',
-                        type : 'item',
-                        url  : '/apps/dashboards/project'
+                        id        : 'info',
+                        title     : 'Bio',
+                        type      : 'item',
+                        url       : '/empresa/empresa/1',
+                        exactMatch: true
                     }
                 ]
             }
         ]
     }
+
+
 ];

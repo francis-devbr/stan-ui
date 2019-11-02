@@ -81,7 +81,6 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
-@import "src/app/main/apps/dashboards/project/project.theme";
 
 @import "src/app/authentication/login/login.theme";
 
@@ -104,9 +103,6 @@ $typography: mat-typography-config(
     // Layout components
     @include chat-panel-theme($theme);
     @include toolbar-theme($theme);
-
-    // Apps
-    @include dashboards-project-theme($theme);
 
     // Pages
     @include login-theme($theme);

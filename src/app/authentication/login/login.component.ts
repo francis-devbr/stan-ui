@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
-import { AuthenticationService } from 'app/authentication/authentication.service';
+import { AuthService } from 'app/authentication/auth.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit
         private _formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthService
     )
     {
         // Configure the layout
@@ -47,13 +47,6 @@ export class LoginComponent implements OnInit
         };
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void
     {
         this.loginForm = this._formBuilder.group({

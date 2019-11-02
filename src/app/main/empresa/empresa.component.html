@@ -1,0 +1,120 @@
+<div id="empresa" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <!-- APP TITLE -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/apps/e-commerce/empresas'">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+
+                <div class="empresa-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    <img *ngIf="empresa.pessoa.foto" [src]="'assets/images/ecommerce/product-image-placeholder.png'">
+                    <img *ngIf="!empresa.pessoa.foto" [src]="'assets/images/ecommerce/product-image-placeholder.png'">
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="start start"
+                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    <div class="h2" *ngIf="pageType ==='edit'">
+                        {{empresa.pessoa.nome}}
+                    </div>
+                    <div class="h2" *ngIf="pageType ==='new'">
+                        Nova Empresa
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span>Empresa Detalhe</span>
+                    </div>
+                </div>
+            </div>
+            <!-- / APP TITLE -->
+
+            <button mat-raised-button
+                    class="save-empresa-button"
+                    [disabled]="empresaForm.invalid"
+                    *ngIf="pageType ==='new'" (click)="addEmpresa()">
+                <span>ADD</span>
+            </button>
+
+            <button mat-raised-button
+                    class="save-empresa-button"
+                    [disabled]="empresaForm.invalid || empresaForm.pristine"
+                    *ngIf="pageType ==='edit'" (click)="saveEmpresa()">
+                <span>SALVAR</span>
+            </button>
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <form name="empresaForm" [formGroup]="empresaForm" class="empresa w-100-p" fxLayout="column" fxFlex>
+
+                    <mat-tab-group>
+
+                        <mat-tab label="Basic Info">
+
+                            <div class="tab-content p-24" fusePerfectScrollbar>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Nome da Empresa</mat-label>
+                                    <input matInput placeholder="Nome da Empresa"
+                                           name="nome"
+                                           formControlName="nome"
+                                           required>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Cnpj</mat-label>
+                                    <input matInput placeholder="Cnpj da Empresa"
+                                           name="cnpj"
+                                           formControlName="cnpj"
+                                           required>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>I.E</mat-label>
+                                    <input matInput placeholder="Inscrição Estadual da Empresa"
+                                           name="ie"
+                                           formControlName="ie"
+                                           required>
+                                </mat-form-field>
+
+
+                            </div>
+
+                        </mat-tab>
+
+                        <mat-tab label="Endereço">
+
+                            
+
+                        </mat-tab>
+
+                        
+
+                    </mat-tab-group>
+
+                </form>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

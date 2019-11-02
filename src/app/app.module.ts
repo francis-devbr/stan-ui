@@ -1,31 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TranslateModule } from '@ngx-translate/core';
 import 'hammerjs';
 
+import { FakeDbService } from 'app/fake-db/fake-db.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FuseModule } from '@fuse/fuse.module';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseProgressBarModule, FuseSidebarModule, FuseThemeOptionsModule } from '@fuse/components';
 
 import { fuseConfig } from 'app/fuse-config';
 
-import { FakeDbService } from 'app/fake-db/fake-db.service';
 import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
-
+import {AuthModule} from 'app/authentication/auth.module' ;
 const appRoutes: Routes = [
-    {
-        path        : 'apps',
-        loadChildren: './main/apps/apps.module#AppsModule'
+       {
+        path        : 'empresa',
+        loadChildren: './main/empresa/empresa.module#EmpresaModule'
     },
+
     {
         path        : 'authentications',
         loadChildren: './authentication/auth.module#AuthModule'
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
 
     {
         path      : '**',
-        redirectTo: 'apps/dashboards/analytics'
+        redirectTo: 'empresa/empresa/1'
     }
 ];
 
@@ -59,13 +60,12 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
-
-        TranslateModule.forRoot(),
         InMemoryWebApiModule.forRoot(FakeDbService, {
             delay             : 0,
             passThruUnknownUrl: true
         }),
-
+        TranslateModule.forRoot(),
+     
         // Material moment date module
         MatMomentDateModule,
 
@@ -82,7 +82,8 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        AppStoreModule
+        AppStoreModule,
+        AuthModule
     ],
     bootstrap   : [
         AppComponent

@@ -9,6 +9,8 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 import { navigation } from 'app/navigation/navigation';
 
+import { AuthService } from 'app/authentication/auth.service';
+
 @Component({
     selector     : 'toolbar',
     templateUrl  : './toolbar.component.html',
@@ -24,6 +26,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
     languages: any;
     navigation: any;
     selectedLanguage: any;
+    username:string;
     userStatusOptions: any[];
 
     // Private
@@ -39,7 +42,8 @@ export class ToolbarComponent implements OnInit, OnDestroy
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
-        private _translateService: TranslateService
+        private _translateService: TranslateService,
+        private authenticationService: AuthService
     )
     {
         // Set the defaults
@@ -90,13 +94,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
     ngOnInit(): void
     {
         // Subscribe to the config changes
@@ -110,6 +108,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
         // Set the selected language from default languages
         this.selectedLanguage = _.find(this.languages, {id: this._translateService.currentLang});
+        this.username=this.authenticationService.getUserName();
     }
 
     /**
@@ -147,11 +146,10 @@ export class ToolbarComponent implements OnInit, OnDestroy
         console.log(value);
     }
 
-    /**
-     * Set the language
-     *
-     * @param lang
-     */
+    logout():void{
+        this.authenticationService.logout();
+    }
+
     setLanguage(lang): void
     {
         // Set the selected language for the toolbar

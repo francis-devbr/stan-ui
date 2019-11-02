@@ -5,7 +5,7 @@ export const locale = {
             'APPLICATIONS': 'Programlar',
             'DASHBOARDS'  : 'Kontrol Paneli',
             'CALENDAR'    : 'Takvim',
-            'ECOMMERCE'   : 'E-Ticaret',
+            'Empresa'   : 'Empresa',
             'ACADEMY'     : 'Akademi',
             'MAIL'        : {
                 'TITLE': 'Posta',
