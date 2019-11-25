@@ -65,39 +65,79 @@
 
                         <mat-tab label="Basic Info">
 
-                            <div class="tab-content p-24" fusePerfectScrollbar>
+                            <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
+                                        <mat-label>Cnpj</mat-label>
+                                        <input matInput placeholder="Cnpj da Empresa"
+                                            name="cnpj"
+                                            formControlName="cnpj"
+                                            required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
+                                        <mat-label>I.E</mat-label>
+                                        <input matInput placeholder="Inscrição Estadual da Empresa"
+                                            name="ie"
+                                            formControlName="ie">
+                                    </mat-form-field>
+                                </div>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Nome da Empresa</mat-label>
                                     <input matInput placeholder="Nome da Empresa"
-                                           name="nome"
-                                           formControlName="nome"
-                                           required>
+                                        name="nome"
+                                        formControlName="nome"
+                                        required>
                                 </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Cnpj</mat-label>
-                                    <input matInput placeholder="Cnpj da Empresa"
-                                           name="cnpj"
-                                           formControlName="cnpj"
-                                           required>
-                                </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>I.E</mat-label>
-                                    <input matInput placeholder="Inscrição Estadual da Empresa"
-                                           name="ie"
-                                           formControlName="ie"
-                                           required>
-                                </mat-form-field>
+                                <div class="section pb-48" *ngFor="let contato of empresa.pessoa.contatos">
+
+                                    <div class="pb-16" fxLayout="row" fxLayoutAlign="start center">
+                                        <mat-icon class="m-0 mr-16 secondary-text">access_time</mat-icon>
+                                        <div class="h2 secondary-text">{{contato.tipo}}</div>
+                                    </div>
+                                  
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="Email da Empresa"
+                                            name="email"
+                                            formControlName="email"
+                                            required
+                                            value={{contato.email}}>
+                                    </mat-form-field>
+
+                                    <div class="section pb-48" *ngFor="let telefone of contato.telefones">
+
+                                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                            <mat-label>Telefone {{telefone.tipo}} </mat-label>
+                                            <input matInput placeholder="Telefone {{telefone.tipo}}"
+                                                name="telefone{{telefone.tipo}}"
+                                                formControlName="telefone{{telefone.tipo}}"
+                                                required
+                                                value={{telefone.ddd}}-{{telefone.numero}}>
+                                        </mat-form-field>
+
+                                    </div>
+                                    
+                                
+                                </div>
 
 
                             </div>
 
+                
+
                         </mat-tab>
 
                         <mat-tab label="Endereço">
+                            <div fxLayout="row" fxLayoutAlign="space-between">
+                                
 
+                            </div>
                             
 
                         </mat-tab>

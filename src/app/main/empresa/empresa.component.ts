@@ -101,9 +101,11 @@ export class EmpresaEmpresaComponent implements OnInit, OnDestroy
     {
         return this._formBuilder.group({
             id              : [this.empresa.id],
+            contatos        : [this.empresa.pessoa.contatos],
+            enderecos       : [this.empresa.pessoa.enderecos],
             nome            : [this.empresa.pessoa.nome],
             cnpj            : [this.empresa.pessoa.cpfOuCnpj],
-            ie            : [this.empresa.inscricaoEstadual]
+            ie              : [this.empresa.inscricaoEstadual]
         });
     }
 
