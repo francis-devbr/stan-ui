@@ -37,7 +37,7 @@
             <button mat-raised-button
                     [routerLink]="'/frota/veiculos/new'"
                     class="add-veiculo-button fuse-white mt-24 mt-md-0">
-                <span>ADD NEW PRODUCT</span>
+                <span>Cadastrar Veículo</span>
             </button>
             <!-- / ADD BUTTON -->
 
@@ -75,7 +75,7 @@
 
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Veículo</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo">
                         <p class="text-truncate">{{veiculo.name}}</p>
                     </mat-cell>

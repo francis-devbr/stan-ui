@@ -15,11 +15,10 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "bundle-report": "webpack-bundle-analyzer dist/stats.json",
-		"postinstall": "ng build --aot --prod"
-		
+        "postinstall": "ng build --aot --prod"
     },
     "private": true,
-   "dependencies": {
+    "dependencies": {
         "@agm/core": "1.0.0-beta.7",
         "@angular/animations": "8.1.2",
         "@angular/cdk": "8.1.1",
@@ -89,9 +88,8 @@
         "typescript": "3.4.5",
         "webpack-bundle-analyzer": "3.3.2"
     },
-	"engines": {
-   "node": "10.13.0",
-   "npm": "6.4.1"
- }
-	
+    "engines": {
+        "node": "10.13.0",
+        "npm": "6.4.1"
+    }
 }

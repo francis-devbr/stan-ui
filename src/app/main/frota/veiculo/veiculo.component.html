@@ -28,10 +28,10 @@
                         {{veiculo.name}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
-                        New Product
+                        Cadastrar Veículo 
                     </div>
                     <div class="subtitle secondary-text">
-                        <span>Product Detail</span>
+                        <span>Dados do Veículo</span>
                     </div>
                 </div>
             </div>
@@ -41,14 +41,14 @@
                     class="save-veiculo-button"
                     [disabled]="veiculoForm.invalid"
                     *ngIf="pageType ==='new'" (click)="addProduct()">
-                <span>ADD</span>
+                <span>Adicionar</span>
             </button>
 
             <button mat-raised-button
                     class="save-veiculo-button"
                     [disabled]="veiculoForm.invalid || veiculoForm.pristine"
                     *ngIf="pageType ==='edit'" (click)="saveProduct()">
-                <span>SAVE</span>
+                <span>Salvar</span>
             </button>
         </div>
         <!-- / HEADER -->
@@ -68,7 +68,7 @@
                             <div class="tab-content p-24" fusePerfectScrollbar>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Product Name</mat-label>
+                                    <mat-label>Nome do Veículo</mat-label>
                                     <input matInput placeholder="Product Name"
                                            name="name"
                                            formControlName="name"
@@ -76,7 +76,7 @@
                                 </mat-form-field>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Product Description</mat-label>
+                                    <mat-label>Descrição do Veículo</mat-label>
                                     <textarea matInput placeholder="Product Description"
                                               name="description"
                                               formControlName="description"
@@ -93,7 +93,7 @@
                                         <mat-chip *ngFor="let category of veiculo.categories"
                                                   [removable]="true" (removed)="veiculo.removeCategory(category)">
                                             {{category}}
-                                            <mat-icon matChipRemove>cancel</mat-icon>
+                                            <mat-icon matChipRemove>Cancelar</mat-icon>
                                         </mat-chip>
 
                                         <input [matChipInputFor]="categoryList"
@@ -113,7 +113,7 @@
                                         <mat-chip *ngFor="let tag of veiculo.tags"
                                                   [removable]="true" (removed)="veiculo.removeTag(tag)">
                                             {{tag}}
-                                            <mat-icon matChipRemove>cancel</mat-icon>
+                                            <mat-icon matChipRemove>Cancelar</mat-icon>
                                         </mat-chip>
 
                                         <input [matChipInputFor]="tagList"
