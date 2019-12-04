@@ -83,7 +83,7 @@
 
                 <!-- Category Column -->
                 <ng-container matColumnDef="category">
-                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Category</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Categoria</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-md>
                         <p class="category text-truncate">
                             {{veiculo.categories[0]}}
@@ -93,7 +93,7 @@
 
                 <!-- Price Column -->
                 <ng-container matColumnDef="price">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Price</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-xs>
                         <p class="price text-truncate">
                             {{veiculo.priceTaxIncl | currency:'USD':'symbol'}}
@@ -103,7 +103,7 @@
 
                 <!-- Quantity Column -->
                 <ng-container matColumnDef="quantity">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>Quantity</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>Placa</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-sm>
 
                         <span class="quantity-indicator text-truncate"
