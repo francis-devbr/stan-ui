@@ -63,18 +63,41 @@
 
                     <mat-tab-group>
 
-                        <mat-tab label="Basic Info">
+                        <mat-tab label="Informações do Veículo">
 
                             <div class="tab-content p-24" fusePerfectScrollbar>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Nome do Veículo</mat-label>
-                                    <input matInput placeholder="Product Name"
+                                    <mat-label>Número do Chassi</mat-label>
+                                    <input matInput placeholder="Informe o número do Chassi"
                                            name="name"
                                            formControlName="name"
                                            required>
                                 </mat-form-field>
 
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Número da placa</mat-label>
+                                    <input matInput placeholder="Informe a placa do veículo"
+                                           name="name"
+                                           formControlName="name"
+                                           required>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Ano de fabricação</mat-label>
+                                        <input matInput placeholder="Informe o ano dde fabricação"
+                                        [(ngModel)]="ano-fab" type="date" class="form-control" id="ano-fab" aria-describedby="id">
+                                    </mat-form-field>
+
+                                    <!--<mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                            <mat-label>Número da placa</mat-label>
+                                            <input matInput placeholder="Informe a placa do veículo"
+                                                   name="name"
+                                                   formControlName="name"
+                                                   required>
+                                        </mat-form-field>-->
+
+                                
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Descrição do Veículo</mat-label>
                                     <textarea matInput placeholder="Product Description"
