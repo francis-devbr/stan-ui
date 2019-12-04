@@ -1,0 +1,20 @@
+.contato{
+  // background-color: var(--corum);
+  background: url(../../../assets/img/carros-banner2.jpg);
+  background-attachment: fixed;
+  padding: 4% 0px;
+}
+form{
+  padding: 3%;
+  background-color: var(--cordois);
+}
+form h3{
+  color: var(--cortres);
+  margin-bottom: 6%;
+}
+.btn-finalizar{
+  background-color: #fff;
+  border: 2px solid #00BFFF;
+  border-radius: 0px;
+}
+
