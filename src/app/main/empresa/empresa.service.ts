@@ -10,8 +10,10 @@ export class EmpresaEmpresaService implements Resolve<any>
     routeParams: any;
     empresa: any;
     onEmpresaChanged: BehaviorSubject<any>;
-    static CONTEXT = environment.apiUrlRest + '/api/empresas';
-    /**
+   // static CONTEXT = environment.apiUrlRest + '/api/empresas';
+   static CONTEXT = '/api/empresa-empresas'; 
+   
+   /**
      * Constructor
      *
      * @param {HttpClient} _httpClient

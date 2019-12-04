@@ -11,6 +11,8 @@ export class AuthService {
 
     static AUTH_TOKEN = environment.apiUrlAuth + '/oauth/token';
 
+    //static AUTH_TOKEN = 'api/authentication-token';
+
     constructor(private http: HttpClient, private _router: Router) {}
   
     clear(): void {

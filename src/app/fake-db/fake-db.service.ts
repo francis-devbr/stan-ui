@@ -4,9 +4,9 @@ import { ProjectDashboardDb } from 'app/fake-db/dashboard-project';
 import { AnalyticsDashboardDb } from 'app/fake-db/dashboard-analytics';
 import { CalendarFakeDb } from 'app/fake-db/calendar';
 import { FrotaFakeDb } from 'app/fake-db/frota';
-import { AcademyFakeDb } from 'app/fake-db/academy';
+import { AuthenticationFakeDb } from 'app/fake-db/authentication';
 import { MailFakeDb } from 'app/fake-db/mail';
-import { ChatFakeDb } from 'app/fake-db/chat';
+import { EmpresaFakeDb } from 'app/fake-db/empresa';
 import { FileManagerFakeDb } from 'app/fake-db/file-manager';
 import { ContactsFakeDb } from 'app/fake-db/contacts';
 import { TodoFakeDb } from 'app/fake-db/todo';
@@ -38,9 +38,8 @@ export class FakeDbService implements InMemoryDbService
             
 
             // Academy
-            'academy-categories': AcademyFakeDb.categories,
-            'academy-courses'   : AcademyFakeDb.courses,
-            'academy-course'    : AcademyFakeDb.course,
+            'authentication-token': AuthenticationFakeDb.token,
+           
 
             // Mail
             'mail-mails'  : MailFakeDb.mails,
@@ -49,9 +48,7 @@ export class FakeDbService implements InMemoryDbService
             'mail-labels' : MailFakeDb.labels,
 
             // Chat
-            'chat-contacts': ChatFakeDb.contacts,
-            'chat-chats'   : ChatFakeDb.chats,
-            'chat-user'    : ChatFakeDb.user,
+            'empresa-empresas': EmpresaFakeDb.empresas,
 
             // File Manager
             'file-manager': FileManagerFakeDb.files,
