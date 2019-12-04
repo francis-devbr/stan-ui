@@ -78,7 +78,6 @@ $typography: mat-typography-config(
 // -----------------------------------------------------------------------------------------------------
 
 // Import app and page component themes here to enable theming for them
-@import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
 
@@ -93,16 +92,17 @@ $typography: mat-typography-config(
 @import "src/app/main/pages/maintenance/maintenance.theme";
 
 @import "src/app/main/pages/profile/tabs/about/about.theme";
-@import "src/app/main/pages/profile/tabs/photos-videos/photos-videos.theme";
-@import "src/app/main/pages/profile/tabs/timeline/timeline.theme";
+
+@import "src/app/main/frota/veiculos/veiculos.theme";
 
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {
 
     // Layout components
-    @include chat-panel-theme($theme);
     @include toolbar-theme($theme);
+
+    @include frota-veiculos-theme($theme);
 
     // Pages
     @include login-theme($theme);
@@ -118,9 +118,6 @@ $typography: mat-typography-config(
     @include maintenance-theme($theme);
 
     @include profile-about-theme($theme);
-    @include profile-photos-videos-theme($theme);
-    @include profile-timeline-theme($theme);
-
 
 }
 

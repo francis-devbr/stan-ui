@@ -1,6 +1,6 @@
-export class ECommerceFakeDb
+export class FrotaFakeDb
 {
-    public static products = [
+    public static veiculos = [
         {
             'id'              : '1',
             'name'            : 'A Walk Amongst Friends - Canvas Print',
@@ -18,52 +18,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -97,52 +97,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -176,52 +176,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -255,52 +255,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -334,52 +334,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -413,52 +413,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -492,52 +492,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -571,52 +571,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -650,52 +650,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -729,52 +729,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -808,52 +808,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -887,52 +887,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -966,52 +966,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1045,52 +1045,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1124,52 +1124,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1203,52 +1203,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1282,52 +1282,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1361,52 +1361,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1440,52 +1440,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1519,52 +1519,52 @@ export class ECommerceFakeDb
             'images'          : [
                 {
                     'id'  : 0,
-                    'url' : 'assets/images/ecommerce/a-walk-amongst-friends.jpg',
+                    'url' : 'assets/images/frota/a-walk-amongst-friends.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 1,
-                    'url' : 'assets/images/ecommerce/braies-lake.jpg',
+                    'url' : 'assets/images/frota/braies-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 2,
-                    'url' : 'assets/images/ecommerce/fall-glow.jpg',
+                    'url' : 'assets/images/frota/fall-glow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 3,
-                    'url' : 'assets/images/ecommerce/first-snow.jpg',
+                    'url' : 'assets/images/frota/first-snow.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 4,
-                    'url' : 'assets/images/ecommerce/lago-di-braies.jpg',
+                    'url' : 'assets/images/frota/lago-di-braies.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 5,
-                    'url' : 'assets/images/ecommerce/lago-di-sorapis.jpg',
+                    'url' : 'assets/images/frota/lago-di-sorapis.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 6,
-                    'url' : 'assets/images/ecommerce/never-stop-changing.jpg',
+                    'url' : 'assets/images/frota/never-stop-changing.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 7,
-                    'url' : 'assets/images/ecommerce/reaching.jpg',
+                    'url' : 'assets/images/frota/reaching.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 8,
-                    'url' : 'assets/images/ecommerce/morain-lake.jpg',
+                    'url' : 'assets/images/frota/morain-lake.jpg',
                     'type': 'image'
                 },
                 {
                     'id'  : 9,
-                    'url' : 'assets/images/ecommerce/yosemite.jpg',
+                    'url' : 'assets/images/frota/yosemite.jpg',
                     'type': 'image'
                 }
             ],
@@ -1612,14 +1612,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -1627,7 +1627,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -1635,7 +1635,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -1696,14 +1696,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -1711,7 +1711,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -1719,7 +1719,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -1780,14 +1780,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -1795,7 +1795,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -1803,7 +1803,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -1864,14 +1864,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -1879,7 +1879,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -1887,7 +1887,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -1948,14 +1948,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -1963,7 +1963,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -1971,7 +1971,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2032,14 +2032,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2047,7 +2047,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2055,7 +2055,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2116,14 +2116,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2131,7 +2131,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2139,7 +2139,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2200,14 +2200,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2215,7 +2215,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2223,7 +2223,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2284,14 +2284,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2299,7 +2299,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2307,7 +2307,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2368,14 +2368,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2383,7 +2383,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2391,7 +2391,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2452,14 +2452,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2467,7 +2467,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2475,7 +2475,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2536,14 +2536,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2551,7 +2551,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2559,7 +2559,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2620,14 +2620,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2635,7 +2635,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2643,7 +2643,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2704,14 +2704,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2719,7 +2719,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2727,7 +2727,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2788,14 +2788,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2803,7 +2803,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2811,7 +2811,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2872,14 +2872,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2887,7 +2887,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2895,7 +2895,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -2956,14 +2956,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -2971,7 +2971,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -2979,7 +2979,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -3040,14 +3040,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -3055,7 +3055,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -3063,7 +3063,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -3124,14 +3124,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -3139,7 +3139,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -3147,7 +3147,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [
@@ -3208,14 +3208,14 @@ export class ECommerceFakeDb
                     'lng'    : -95.8420876
                 }
             },
-            'products'       : [
+            'veiculos'       : [
                 {
                     'id'      : 1,
                     'name'    : 'A Walk Amongst Friends - Canvas Print',
                     'price'   : '10.24',
                     'quantity': 1,
                     'total'   : '10.24',
-                    'image'   : 'assets/images/ecommerce/a-walk-amongst-friends.jpg'
+                    'image'   : 'assets/images/frota/a-walk-amongst-friends.jpg'
                 },
                 {
                     'id'      : 2,
@@ -3223,7 +3223,7 @@ export class ECommerceFakeDb
                     'price'   : '24.62',
                     'quantity': 1,
                     'total'   : '24.62',
-                    'image'   : 'assets/images/ecommerce/lago-di-braies.jpg'
+                    'image'   : 'assets/images/frota/lago-di-braies.jpg'
                 },
                 {
                     'id'      : 3,
@@ -3231,7 +3231,7 @@ export class ECommerceFakeDb
                     'price'   : '49.29',
                     'quantity': 1,
                     'total'   : '49.29',
-                    'image'   : 'assets/images/ecommerce/never-stop-changing.jpg'
+                    'image'   : 'assets/images/frota/never-stop-changing.jpg'
                 }
             ],
             'status'         : [

@@ -20,33 +20,38 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
-import {AuthModule} from 'app/authentication/auth.module' ;
+import { AuthModule } from 'app/authentication/auth.module';
 const appRoutes: Routes = [
-       {
-        path        : 'empresa',
+    {
+        path: 'empresa',
         loadChildren: './main/empresa/empresa.module#EmpresaModule'
     },
 
     {
-        path        : 'authentications',
+        path: 'frota',
+        loadChildren: './main/frota/frota.module#FrotaModule'
+    },
+
+    {
+        path: 'authentications',
         loadChildren: './authentication/auth.module#AuthModule'
     },
     {
-        path        : 'pages',
+        path: 'pages',
         loadChildren: './main/pages/pages.module#PagesModule'
     },
     {
-        path      : 'login',
+        path: 'login',
         redirectTo: 'authentications/auth/login'
     },
 
     {
-        path      : '404',
+        path: '404',
         redirectTo: 'pages/errors/error-404'
     },
 
     {
-        path      : '**',
+        path: '**',
         redirectTo: 'empresa/empresa/1'
     }
 ];
@@ -55,17 +60,17 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent
     ],
-    imports     : [
+    imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
         InMemoryWebApiModule.forRoot(FakeDbService, {
-            delay             : 0,
+            delay: 0,
             passThruUnknownUrl: true
         }),
         TranslateModule.forRoot(),
-     
+
         // Material moment date module
         MatMomentDateModule,
 
@@ -85,10 +90,9 @@ const appRoutes: Routes = [
         AppStoreModule,
         AuthModule
     ],
-    bootstrap   : [
+    bootstrap: [
         AppComponent
     ]
 })
-export class AppModule
-{
+export class AppModule {
 }

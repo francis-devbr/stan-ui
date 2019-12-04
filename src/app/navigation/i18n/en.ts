@@ -7,7 +7,8 @@ export const locale = {
             'DASHBOARDS'  : 'Dashboards',
             'CALENDAR'    : 'Calendar',
             'EMPRESA'   : 'Empresa',
-            'ACADEMY'     : 'Academy',
+            'FROTAS'     : 'Frotas',
+            'MOTORISTA'     : 'Motorista',
             'MAIL'        : {
                 'TITLE': 'Mail',
                 'BADGE': '25'

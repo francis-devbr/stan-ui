@@ -50,10 +50,6 @@
 
             <div class="toolbar-separator"></div>
 
-            <fuse-search-bar (input)="search($event)"></fuse-search-bar>
-
-            <div class="toolbar-separator"></div>
-
             <button mat-button fxHide fxShow.gt-xs
                     class="language-button"
                     [matMenuTriggerFor]="languageMenu">
@@ -71,25 +67,7 @@
                     </span>
                 </button>
             </mat-menu>
-
-            <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
-
-            <button mat-icon-button fxHide.gt-md
-                    class="chat-panel-toggle-button"
-                    (click)="toggleSidebarOpen('chatPanel')"
-                    aria-label="Toggle chat panel">
-                <mat-icon class="secondary-text">chat</mat-icon>
-            </button>
-
-            <div class="toolbar-separator" fxHide.gt-md></div>
-
-            <button mat-icon-button
-                    class="quick-panel-toggle-button"
-                    (click)="toggleSidebarOpen('quickPanel')"
-                    aria-label="Toggle quick panel">
-                <mat-icon class="secondary-text">format_list_bulleted</mat-icon>
-            </button>
-
+                   
             <div class="toolbar-separator" *ngIf="!hiddenNavbar && rightNavbar" fxHide fxShow.gt-xs></div>
 
             <button mat-icon-button class="navbar-toggle-button"

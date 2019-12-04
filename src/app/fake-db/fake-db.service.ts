@@ -3,7 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { ProjectDashboardDb } from 'app/fake-db/dashboard-project';
 import { AnalyticsDashboardDb } from 'app/fake-db/dashboard-analytics';
 import { CalendarFakeDb } from 'app/fake-db/calendar';
-import { ECommerceFakeDb } from 'app/fake-db/e-commerce';
+import { FrotaFakeDb } from 'app/fake-db/frota';
 import { AcademyFakeDb } from 'app/fake-db/academy';
 import { MailFakeDb } from 'app/fake-db/mail';
 import { ChatFakeDb } from 'app/fake-db/chat';
@@ -34,8 +34,8 @@ export class FakeDbService implements InMemoryDbService
             'calendar': CalendarFakeDb.data,
 
             // E-Commerce
-            'e-commerce-products' : ECommerceFakeDb.products,
-            'e-commerce-orders'   : ECommerceFakeDb.orders,
+            'frota-veiculos' : FrotaFakeDb.veiculos,
+            
 
             // Academy
             'academy-categories': AcademyFakeDb.categories,
