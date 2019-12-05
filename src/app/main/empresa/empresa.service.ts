@@ -12,12 +12,7 @@ export class EmpresaEmpresaService implements Resolve<any>
     onEmpresaChanged: BehaviorSubject<any>;
    // static CONTEXT = environment.apiUrlRest + '/api/empresas';
    static CONTEXT = '/api/empresa-empresas'; 
-   
-   /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
+
     constructor(
         private _httpClient: HttpClient
     )
