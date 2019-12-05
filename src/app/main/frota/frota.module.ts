@@ -24,6 +24,9 @@ import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
 import { FrotaVeiculoComponent } from 'app/main/frota/veiculo/veiculo.component';
 import { FrotaVeiculoService } from 'app/main/frota/veiculo/veiculo.service';
 
+
+
+
 const routes: Routes = [
     {
         path     : 'veiculos',

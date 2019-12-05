@@ -55,7 +55,8 @@ export const navigation: FuseNavigation[] = [
                 title: 'Manutenção',
                 type: 'item',
                 icon: 'crop_portrait',
-                url: '/frota/veiculos/manutencao'
+                url: '/frota/manutencoes',
+                exactMatch: true
             },
             {
                 id: 'abastecimento',
@@ -73,6 +74,4 @@ export const navigation: FuseNavigation[] = [
             }
         ]
     }
-
-
 ];

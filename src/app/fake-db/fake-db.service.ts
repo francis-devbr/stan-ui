@@ -33,8 +33,11 @@ export class FakeDbService implements InMemoryDbService
             // Calendar
             'calendar': CalendarFakeDb.data,
 
-            // E-Commerce
+            // Veículos
             'frota-veiculos' : FrotaFakeDb.veiculos,
+
+            // Manutenções
+            'frota-manutencoes' : FrotaFakeDb.manutencoes,
             
 
             // Academy
