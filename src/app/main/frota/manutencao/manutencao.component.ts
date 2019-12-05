@@ -8,8 +8,8 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { manutencao } from 'app/main/frota/manutencao/manutencao.model';
-import { FrotamanutencaoService } from 'app/main/frota/manutencao/manutencao.service';
+import { Manutencao } from 'app/main/frota/manutencao/manutencao.model';
+import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
 
 @Component({
     selector     : 'frota-manutencao',
