@@ -2,6 +2,8 @@ import { MatChipInputEvent } from '@angular/material/chips';
 
 import { FuseUtils } from '@fuse/utils';
 
+import { manutencao } from 'app/main/frota/manutencao/manutencao.model';
+
 export class Manutencao
 {
     id: string;
