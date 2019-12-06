@@ -45,7 +45,7 @@ export class FrotaManutencoesService implements Resolve<any>
     }
 
     /**
-     * Get manutenções
+     * Get manutencoes
      *
      * @returns {Promise<any>}
      */

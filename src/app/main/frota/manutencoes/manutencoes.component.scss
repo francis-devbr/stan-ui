@@ -64,7 +64,7 @@ frota-manutencoes {
             min-height: 64px;
         }
 
-        .veiculo {
+        .manutencao {
             position: relative;
             cursor: pointer;
             height: 84px;
@@ -83,7 +83,7 @@ frota-manutencoes {
         .mat-column-image {
             flex: 0 1 84px;
 
-            .veiculo-image {
+            .manutencao-image {
                 width: 52px;
                 height: 52px;
                 border: 1px solid rgba(0, 0, 0, .12);

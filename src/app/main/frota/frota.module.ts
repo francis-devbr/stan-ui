@@ -24,6 +24,10 @@ import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
 import { FrotaVeiculoComponent } from 'app/main/frota/veiculo/veiculo.component';
 import { FrotaVeiculoService } from 'app/main/frota/veiculo/veiculo.service';
 
+import { FrotaManutencoesComponent } from 'app/main/frota/manutencoes/manutencoes.component';
+import { FrotaManutencoesService } from 'app/main/frota/manutencoes/manutencoes.service';
+import { FrotaManutencaoComponent } from 'app/main/frota/manutencao/manutencao.component';
+import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
 
 
 
@@ -48,13 +52,37 @@ const routes: Routes = [
         resolve  : {
             data: FrotaVeiculoService
         }
+    },
+
+    {
+        path     : 'manutencoes',
+        component: FrotaManutencoesComponent,
+        resolve  : {
+            data: FrotaManutencoesService
+        }
+    },
+    {
+        path     : 'manutencoes/:id',
+        component: FrotaManutencaoComponent,
+        resolve  : {
+            data: FrotaManutencaoService
+        }
+    },
+    {
+        path     : 'manutencoes/:id/:handle',
+        component: FrotaManutencaoComponent,
+        resolve  : {
+            data: FrotaManutencaoService
+        }
     }
 ];
 
 @NgModule({
     declarations: [
         FrotaVeiculosComponent,
-        FrotaVeiculoComponent
+        FrotaVeiculoComponent,
+        FrotaManutencoesComponent,
+        FrotaManutencaoComponent
     ],
     imports     : [
         RouterModule.forChild(routes),
@@ -83,7 +111,9 @@ const routes: Routes = [
     ],
     providers   : [
         FrotaVeiculosService,
-        FrotaVeiculoService
+        FrotaVeiculoService,
+        FrotaManutencoesService,
+        FrotaManutencaoService
     ]
 })
 export class FrotaModule
