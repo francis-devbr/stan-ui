@@ -8,8 +8,8 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { abastecimento } from 'app/main/frota/abastecimento/abastecimento.model';
-import { FrotaabastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
+import { Abastecimento } from 'app/main/frota/abastecimento/abastecimento.model';
+import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
 
 @Component({
     selector     : 'frota-abastecimento',
@@ -20,7 +20,7 @@ import { FrotaabastecimentoService } from 'app/main/frota/abastecimento/abasteci
 })
 export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
 {
-    abastecimento: abastecimento;
+    abastecimento: Abastecimento;
     pageType: string;
     abastecimentoForm: FormGroup;
 
@@ -43,7 +43,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
     )
     {
         // Set the default
-        this.abastecimento = new abastecimento();
+        this.abastecimento = new Abastecimento();
 
         // Set the private defaults
         this._unsubscribeAll = new Subject();
@@ -134,7 +134,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
             .then(() => {
 
                 // Trigger the subscription with new data
-                this._frotaAbastecimentoService.onabAstecimentoChanged.next(data);
+                this._frotaAbastecimentoService.onAbastecimentoChanged.next(data);
 
                 // Show the success message
                 this._matSnackBar.open('Abastecimento saved', 'OK', {
@@ -152,11 +152,11 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
-        this._frotaAbastecimentoService.addabastecimento(data)
+        this._frotaAbastecimentoService.addAbastecimento(data)
             .then(() => {
 
                 // Trigger the subscription with new data
-                this._frotaAbastecimentoService.onabastecimentoChanged.next(data);
+                this._frotaAbastecimentoService.onAbastecimentoChanged.next(data);
 
                 // Show the success message
                 this._matSnackBar.open('abastecimento added', 'OK', {

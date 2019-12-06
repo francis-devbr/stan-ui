@@ -8,7 +8,7 @@ export class FrotaAbastecimentoService implements Resolve<any>
 {
     routeParams: any;
     abastecimento: any;
-    onabastecimentoChanged: BehaviorSubject<any>;
+    onAbastecimentoChanged: BehaviorSubject<any>;
 
     /**
      * Constructor
