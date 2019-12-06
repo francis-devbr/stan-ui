@@ -36,7 +36,7 @@ export class FrotaAbastecimentosComponent implements OnInit
     private _unsubscribeAll: Subject<any>;
 
     constructor(
-        private _frotaabastecimentosService: FrotaAbastecimentosService
+        private _frotaAbastecimentosService: FrotaAbastecimentosService
     )
     {
         // Set the private defaults
@@ -52,7 +52,7 @@ export class FrotaAbastecimentosComponent implements OnInit
      */
     ngOnInit(): void
     {
-        this.dataSource = new FilesDataSource(this._frotaabastecimentosService, this.paginator, this.sort);
+        this.dataSource = new FilesDataSource(this._frotaAbastecimentosService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
             .pipe(
@@ -79,12 +79,12 @@ export class FilesDataSource extends DataSource<any>
     /**
      * Constructor
      *
-     * @param {FrotaAbastecimentosService} _frotaabastecimentosService
+     * @param {FrotaAbastecimentosService} _frotaAbastecimentosService
      * @param {MatPaginator} _matPaginator
      * @param {MatSort} _matSort
      */
     constructor(
-        private _frotaabastecimentosService: FrotaAbastecimentosService,
+        private _frotaAbastecimentosService: FrotaAbastecimentosService,
         private _matPaginator: MatPaginator,
         private _matSort: MatSort
     )

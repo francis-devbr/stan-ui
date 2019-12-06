@@ -38,6 +38,9 @@ export class FakeDbService implements InMemoryDbService
 
             // Manutenções
             'frota-manutencoes' : FrotaFakeDb.manutencoes,
+
+            // Abastecimentos
+            //'frota-abastecimentos' : FrotaFakeDb.abastecimentos,
             
 
             // Academy
