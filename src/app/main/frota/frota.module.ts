@@ -31,7 +31,7 @@ import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.ser
 
 import { FrotaAbastecimentosComponent } from 'app/main/frota/abastecimentos/abastecimentos.component';
 import { FrotaAbastecimentosService } from 'app/main/frota/abastecimentos/abastecimentos.service';
-import { FrotaManutencaoComponent } from 'app/main/frota/abastecimento/abastecimento.component';
+import { FrotaAbastecimentoComponent } from 'app/main/frota/abastecimento/abastecimento.component';
 import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
 
 
@@ -112,7 +112,9 @@ const routes: Routes = [
         FrotaVeiculosComponent,
         FrotaVeiculoComponent,
         FrotaManutencoesComponent,
-        FrotaManutencaoComponent
+        FrotaManutencaoComponent,
+        FrotaAbastecimentosComponent,
+        FrotaAbastecimentoComponent
     ],
     imports     : [
         RouterModule.forChild(routes),
@@ -143,7 +145,9 @@ const routes: Routes = [
         FrotaVeiculosService,
         FrotaVeiculoService,
         FrotaManutencoesService,
-        FrotaManutencaoService
+        FrotaManutencaoService,
+        FrotaAbastecimentosService,
+        FrotaAbastecimentoService
     ]
 })
 export class FrotaModule
