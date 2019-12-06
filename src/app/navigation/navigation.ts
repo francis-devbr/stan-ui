@@ -63,7 +63,8 @@ export const navigation: FuseNavigation[] = [
                 title: 'Abastecimento',
                 type: 'item',
                 icon: 'crop_portrait',
-                url: '/frota/veiculos/abastecimento'
+                url: '/frota/abastecimento',
+                exactMatch: true
             },
             {
                 id: 'viagem',

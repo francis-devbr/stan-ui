@@ -29,6 +29,11 @@ import { FrotaManutencoesService } from 'app/main/frota/manutencoes/manutencoes.
 import { FrotaManutencaoComponent } from 'app/main/frota/manutencao/manutencao.component';
 import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
 
+import { FrotaAbastecimentosComponent } from 'app/main/frota/abastecimentos/abastecimentos.component';
+import { FrotaAbastecimentosService } from 'app/main/frota/abastecimentos/abastecimentos.service';
+import { FrotaManutencaoComponent } from 'app/main/frota/abastecimento/abastecimento.component';
+import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
+
 
 
 const routes: Routes = [
@@ -75,6 +80,31 @@ const routes: Routes = [
             data: FrotaManutencaoService
         }
     }
+
+    {
+        path     : 'abastecimentos',
+        component: FrotaAbastecimentosComponent,
+        resolve  : {
+            data: FrotaAbastecimentosService
+        }
+    },
+    {
+        path     : 'abastecimentos/:id',
+        component: FrotaAbastecimentoComponent,
+        resolve  : {
+            data: FrotaAbastecimentoService
+        }
+    },
+    {
+        path     : 'abastecimentos/:id/:handle',
+        component: FrotaAbastecimentoComponent,
+        resolve  : {
+            data: FrotaAbastecimentoService
+        }
+    }
+
+
+
 ];
 
 @NgModule({

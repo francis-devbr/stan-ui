@@ -1,0 +1,139 @@
+<div id="abastecimentos" class="page-layout carded fullwidth inner-scroll">
+
+        <!-- TOP BACKGROUND -->
+        <div class="top-bg accent"></div>
+        <!-- / TOP BACKGROUND -->
+    
+        <!-- CENTER -->
+        <div class="center">
+    
+            <!-- HEADER -->
+            <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+                fxLayoutAlign.gt-sm="space-between center">
+    
+                <!-- APP TITLE -->
+                <div class="logo mb-24 mb-md-0" fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon class="logo-icon s-32 mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                        shopping_basket
+                    </mat-icon>
+                    <span class="logo-text h1" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                        Abastecimento
+                    </span>
+                </div>
+                <!-- / APP TITLE -->
+    
+                <!-- SEARCH -->
+                <div class="search-wrapper mx-32 mx-md-0">
+                    <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                        <mat-icon>Pesquisar</mat-icon>
+                        <input #filter placeholder="Pesquisar veículo">
+                    </div>
+                </div>
+                <!-- / SEARCH -->
+    
+                <!-- ADD BUTTON -->
+                <button mat-raised-button [routerLink]="'/frota/abastecimentos/new'"
+                    class="add-abastecimento-button fuse-white mt-24 mt-md-0">
+                    <span>Cadastrar Manutenção</span>
+                </button>
+                <!-- / ADD BUTTON -->
+    
+            </div>
+            <!-- / HEADER -->
+    
+            <!-- CONTENT CARD -->
+            <div class="content-card">
+    
+                <mat-table class="abastecimentos-table" #table [dataSource]="dataSource" matSort
+                    [@animateStagger]="{value:'50'}" fusePerfectScrollbar>
+    
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento">
+                            <p class="text-truncate">{{abastecimento.id}}</p>
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Image Column -->
+                    <ng-container matColumnDef="image">
+                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento">
+                            <img class="abastecimento-image" *ngIf="abastecimento.featuredImageId" [alt]="abastecimento.name"
+                                [src]="abastecimento.images[abastecimento.featuredImageId].url" />
+                            <img *ngIf="!abastecimento.featuredImageId"
+                                [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Veículos em Manutenção</mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento">
+                            <p class="text-truncate">{{abastecimento.name}}</p>
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Category Column -->
+                    <ng-container matColumnDef="category">
+                        <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
+                            <p class="category text-truncate">
+                                {{abastecimento.categories[0]}}
+                            </p>
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Price Column -->
+                    <ng-container matColumnDef="price">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
+                            <p class="price text-truncate">
+                                {{abastecimento.priceTaxIncl | currency:'USD':'symbol'}}
+                            </p>
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Quantity Column -->
+                    <ng-container matColumnDef="quantity">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Manutenção
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-sm>
+    
+                            <span class="quantity-indicator text-truncate"
+                                [ngClass]="{'red-500':abastecimento.quantity <= 5, 'amber-500':abastecimento.quantity > 5 && abastecimento.quantity <= 25,'green-600':abastecimento.quantity > 25}">
+                            </span>
+                            <span>
+                                {{abastecimento.quantity}}
+                            </span>
+    
+                        </mat-cell>
+                    </ng-container>
+    
+                    <!-- Active Column -->
+                    <ng-container matColumnDef="active">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Status</mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
+                            <mat-icon *ngIf="abastecimento.active" class="active-icon green-600 s-16">Resolvido</mat-icon>
+                            <mat-icon *ngIf="!abastecimento.active" class="active-icon red-500 s-16">Aberto</mat-icon>
+                        </mat-cell>
+                    </ng-container>
+    
+                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+    
+                    <mat-row *matRowDef="let abastecimento; columns: displayedColumns;" class="abastecimento" matRipple
+                        [routerLink]="'/frota/abastecimentos/'+abastecimento.id+'/'+abastecimento.handle">
+                    </mat-row>
+    
+                </mat-table>
+    
+                <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+    
+            </div>
+            <!-- / CONTENT CARD -->
+        </div>
+        <!-- / CENTER -->
+    </div>

@@ -1,0 +1,166 @@
+<div id="abastecimento" class="page-layout carded fullwidth inner-scroll">
+
+        <!-- TOP BACKGROUND -->
+        <div class="top-bg accent"></div>
+        <!-- / TOP BACKGROUND -->
+    
+        <!-- CENTER -->
+        <div class="center">
+    
+            <!-- HEADER -->
+            <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+    
+                <!-- APP TITLE -->
+                <div fxLayout="row" fxLayoutAlign="start center">
+    
+                    <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/frota/abastecimentos'">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+    
+                    <div class="abastecimento-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                        <img *ngIf="abastecimento.images[0]" [src]="abastecimento.images[0].url">
+                        <img *ngIf="!abastecimento.images[0]" [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
+                    </div>
+    
+                    <div fxLayout="column" fxLayoutAlign="start start"
+                        [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                        <div class="h2" *ngIf="pageType ==='edit'">
+                            {{abastecimento.name}}
+                        </div>
+                        <div class="h2" *ngIf="pageType ==='new'">
+                            Cadastrar Abastencimento
+                        </div>
+                        <div class="subtitle secondary-text">
+                            <span>Dados do Abastencimento</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- / APP TITLE -->
+    
+                <button mat-raised-button class="save-abastecimento-button" [disabled]="abastecimentoForm.invalid"
+                    *ngIf="pageType ==='new'" (click)="addAbastecimento()">
+                    <span>Adicionar</span>
+                </button>
+    
+                <button mat-raised-button class="save-abastencimento-button"
+                    [disabled]="abastencimentoForm.invalid || abastencimentoForm.pristine" *ngIf="pageType ==='edit'"
+                    (click)="saveAbastencimento()">
+                    <span>Salvar</span>
+                </button>
+            </div>
+            <!-- / HEADER -->
+    
+            <!-- CONTENT CARD -->
+            <div class="content-card">
+    
+                <!-- CONTENT -->
+                <div class="content">
+    
+                    <form name="abastecimentoForm" [formGroup]="abastecimentoForm" class="abastecimento w-100-p" fxLayout="column"
+                        fxFlex>
+    
+                        <mat-tab-group>
+    
+                            <mat-tab label="Informações do Abastencimento">
+    
+                                <div class="tab-content p-24" fusePerfectScrollbar>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Código</mat-label>
+                                        <input matInput placeholder="" name="name" formControlName="name">
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Plano de Manutenção</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Selecione o plano de manutenção">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Plano Periodico</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Selecione o plano periodico">
+                                            <mat-option [value]="">tese2</mat-option>
+                                            <mat-option [value]="">testte1</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Resnposável</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Informe o responsável">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Veículo</mat-label>
+                                        <input matInput placeholder="" name="name" formControlName="name">
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Data Inicial</mat-label>
+                                        <input matInput placeholder="Informe a data de inicio" [(ngModel)]="ano-fab"
+                                            type="date" class="form-control" id="date-inicial" aria-describedby="id">
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Data Final</mat-label>
+                                        <input matInput placeholder="Informe a data de final" [(ngModel)]="ano-fab"
+                                            type="date" class="form-control" id="date-final" aria-describedby="id">
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Peça a ser trocada</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Informe o responsável">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Tipo de Manutenção</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Informe o responsável">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+    
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Motorista</mat-label>
+                                        <mat-select [(ngModel)]="modelName" placeholder="Informe o responsável">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+    
+                                </div>
+                            </mat-tab>
+    
+                            <mat-tab label="Informações do Veículo">
+    
+                            </mat-tab>
+    
+                        </mat-tab-group>
+    
+                    </form>
+    
+                </div>
+                <!-- / CONTENT -->
+    
+            </div>
+            <!-- / CONTENT CARD -->
+    
+        </div>
+        <!-- / CENTER -->
+    
+    </div>
