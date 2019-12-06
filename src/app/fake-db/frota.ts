@@ -57,52 +57,52 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/a-walk-amongst-friends.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/braies-lake.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 2,
-                    'url': 'assets/images/frota/fall-glow.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 3,
-                    'url': 'assets/images/frota/first-snow.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 4,
-                    'url': 'assets/images/frota/lago-di-braies.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 5,
-                    'url': 'assets/images/frota/lago-di-sorapis.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 6,
-                    'url': 'assets/images/frota/never-stop-changing.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 7,
-                    'url': 'assets/images/frota/reaching.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 8,
-                    'url': 'assets/images/frota/morain-lake.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 },
                 {
                     'id': 9,
-                    'url': 'assets/images/frota/yosemite.jpg',
+                    'url': 'assets/images/frota/carros.jpg',
                     'type': 'image'
                 }
             ],

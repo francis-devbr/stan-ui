@@ -37,7 +37,7 @@ export const navigation: FuseNavigation[] = [
     },
     {
         id: 'frota',
-        title: 'Frota',
+        title: 'Gerenciando a Frota',
         translate: 'NAV.FROTAS',
         type: 'group',
         icon: 'apps',
