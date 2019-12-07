@@ -79,7 +79,7 @@ const routes: Routes = [
         resolve  : {
             data: FrotaManutencaoService
         }
-    }
+    },
 
     {
         path     : 'abastecimentos',

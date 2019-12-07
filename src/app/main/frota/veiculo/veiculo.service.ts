@@ -2,19 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Veiculo } from 'app/main/model/veiculo/veiculo.model';
 
 @Injectable()
 export class FrotaVeiculoService implements Resolve<any>
 {
     routeParams: any;
-    veiculo: any;
+    veiculo: Veiculo;
     onVeiculoChanged: BehaviorSubject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
     constructor(
         private _httpClient: HttpClient
     )
@@ -23,13 +19,6 @@ export class FrotaVeiculoService implements Resolve<any>
         this.onVeiculoChanged = new BehaviorSubject({});
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @param {RouterStateSnapshot} state
-     * @returns {Observable<any> | Promise<any> | any}
-     */
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
         this.routeParams = route.params;
@@ -47,11 +36,7 @@ export class FrotaVeiculoService implements Resolve<any>
         });
     }
 
-    /**
-     * Get veiculo
-     *
-     * @returns {Promise<any>}
-     */
+
     getVeiculo(): Promise<any>
     {
         return new Promise((resolve, reject) => {
@@ -72,12 +57,6 @@ export class FrotaVeiculoService implements Resolve<any>
         });
     }
 
-    /**
-     * Save veiculo
-     *
-     * @param veiculo
-     * @returns {Promise<any>}
-     */
     saveVeiculo(veiculo): Promise<any>
     {
         return new Promise((resolve, reject) => {
@@ -88,12 +67,6 @@ export class FrotaVeiculoService implements Resolve<any>
         });
     }
 
-    /**
-     * Add veiculo
-     *
-     * @param veiculo
-     * @returns {Promise<any>}
-     */
     addVeiculo(veiculo): Promise<any>
     {
         return new Promise((resolve, reject) => {

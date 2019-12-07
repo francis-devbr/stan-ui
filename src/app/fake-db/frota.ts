@@ -1,8 +1,9 @@
 export class FrotaFakeDb {
-    public static veiculoss = [
+    public static veiculos = [
         {
             "id": 1,
             "placa": "XPT4122",
+            "handle": "fsgafsgasfg",
             "chassi": "fsgafsgasfg",
             "renavam": "sasasasasasas",
             "marca": {
@@ -36,6 +37,51 @@ export class FrotaFakeDb {
             "pneuTrocadoEm": null,
             "mesIpva": 1,
             "enable": true
+        },
+        {
+            "id": 2,
+            "placa": "DPT4123",
+            "handle": "dsgafsgasfg",
+            "chassi": "dsgafsgasfg",
+            "renavam": "dasasasasasas",
+            "marca": {
+                "id": 1,
+                "nome": "Fiat",
+                "modelos": [
+                    {
+                        "id": 2,
+                        "nome": "Palio",
+                        "enable": true
+                    }
+                ],
+                "enable": true
+            },
+            "anoFabricacao": 2017,
+            "anoModelo": 2018,
+            "cor": "branco",
+            "tipoCombustivel": {
+                "id": 1,
+                "nome": "Gasolina",
+                "enable": true
+            },
+            "categoria": {
+                "id": 1,
+                "nome": "Passeio",
+                "enable": true
+            },
+            "valorPago": 30000.00,
+            "kmInicial": 0.00,
+            "kmAtual": 10.00,
+            "pneuTrocadoEm": null,
+            "mesIpva": 1,
+            "enable": true,
+            'images': [
+                {
+                    'id': 1,
+                    'url': 'assets/images/frota/carros.jpg',
+                    'type': 'image'
+                },
+            ]
         }
     ];
     
@@ -1622,7 +1668,7 @@ export class FrotaFakeDb {
         }
     ];
 
-    public static veiculos = [
+    public static veiculoss = [
         {
             'id': '1',
             'name': 'A Walk Amongst Friends - Canvas Print',

@@ -16,10 +16,10 @@
             <div class="logo mb-24 mb-md-0"
                  fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon class="logo-icon s-32 mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    shopping_basket
+                    directions_car
                 </mat-icon>
                 <span class="logo-text h1" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
-                    Veiculos
+                    Veículos
                 </span>
             </div>
             <!-- / APP TITLE -->
@@ -73,55 +73,47 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Veículo</mat-header-cell>
+                
+                <ng-container matColumnDef="marca">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Marca</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo">
-                        <p class="text-truncate">{{veiculo.name}}</p>
+                        <p class="text-truncate">{{veiculo.marca.nome}}</p>
                     </mat-cell>
                 </ng-container>
 
-                <!-- Category Column -->
-                <ng-container matColumnDef="category">
-                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Categoria</mat-header-cell>
+                
+                <ng-container matColumnDef="modelo">
+                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Modelo</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-md>
-                        <p class="category text-truncate">
-                            {{veiculo.categories[0]}}
+                        <p class="text-truncate">
+                            {{veiculo.marca.modelos[0].nome}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                <!-- Price Column -->
-                <ng-container matColumnDef="price">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
+                <ng-container matColumnDef="categoria">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</mat-header-cell>
+                    <mat-cell *matCellDef="let veiculo">
+                        <p class="text-truncate">{{veiculo.categoria.nome}}</p>
+                    </mat-cell>
+                </ng-container>
+               
+                <ng-container matColumnDef="placa">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Placa</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-xs>
-                        <p class="price text-truncate">
-                            {{veiculo.priceTaxIncl | currency:'USD':'symbol'}}
+                        <p class="text-truncate">
+                            {{veiculo.placa}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                <!-- Quantity Column -->
-                <ng-container matColumnDef="quantity">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>Placa</mat-header-cell>
-                    <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-sm>
-
-                        <span class="quantity-indicator text-truncate"
-                              [ngClass]="{'red-500':veiculo.quantity <= 5, 'amber-500':veiculo.quantity > 5 && veiculo.quantity <= 25,'green-600':veiculo.quantity > 25}">
-                        </span>
-                        <span>
-                            {{veiculo.quantity}}
-                        </span>
-
-                    </mat-cell>
-                </ng-container>
-
+                
                 <!-- Active Column -->
                 <ng-container matColumnDef="active">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Active</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Enable</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-xs>
-                        <mat-icon *ngIf="veiculo.active" class="active-icon green-600 s-16">check</mat-icon>
-                        <mat-icon *ngIf="!veiculo.active" class="active-icon red-500 s-16">close</mat-icon>
+                        <mat-icon *ngIf="veiculo.enable" class="active-icon green-600 s-16">check</mat-icon>
+                        <mat-icon *ngIf="!veiculo.enable" class="active-icon red-500 s-16">close</mat-icon>
                     </mat-cell>
                 </ng-container>
 

@@ -25,7 +25,7 @@
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{veiculo.name}}
+                        {{veiculo.marca.nome}}{{veiculo.marca.modelos[0].nome}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Veículo
@@ -66,65 +66,32 @@
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Número do Chassi</mat-label>
-                                    <input matInput placeholder="Informe o número do Chassi" name="name"
-                                        formControlName="name" required>
+                                    <input matInput placeholder="Informe o número do Chassi" name="chassi"
+                                        formControlName="chassi" required>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Número da placa</mat-label>
-                                    <input matInput placeholder="Informe a placa do veículo" name="name"
-                                        formControlName="name" required>
+                                    <input matInput placeholder="Informe a placa do veículo" name="placa"
+                                        formControlName="placa" required>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Ano de fabricação</mat-label>
-                                    <input matInput placeholder="Informe o ano dde fabricação" [(ngModel)]="ano-fab"
-                                        type="date" class="form-control" id="ano-fab" aria-describedby="id">
+                                    <mat-label>Ano de Fabricação</mat-label>
+                                    <input matInput placeholder="Informe o ano de fabricação do veículo"
+                                        name="anoFabricacao" formControlName="anoFabricacao" required>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Descrição do Veículo</mat-label>
-                                    <textarea matInput placeholder="Product Description" name="description"
-                                        formControlName="description" rows="5">
-                                    </textarea>
+                                    <mat-label>Ano do Modelo</mat-label>
+                                    <input matInput placeholder="Informe o ano do modelo do veículo" name="anoModelo"
+                                        formControlName="anoModelo" required>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-
-                                    <mat-label>Categories</mat-label>
-
-                                    <mat-chip-list #categoryList name="categories" formControlName="categories">
-
-                                        <mat-chip *ngFor="let category of veiculo.categories" [removable]="true"
-                                            (removed)="veiculo.removeCategory(category)">
-                                            {{category}}
-                                            <mat-icon matChipRemove>Cancelar</mat-icon>
-                                        </mat-chip>
-
-                                        <input [matChipInputFor]="categoryList" [matChipInputAddOnBlur]="true"
-                                            (matChipInputTokenEnd)="veiculo.addCategory($event)" />
-
-                                    </mat-chip-list>
-
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-
-                                    <mat-label>Tags</mat-label>
-
-                                    <mat-chip-list #tagList name="tags" formControlName="tags">
-
-                                        <mat-chip *ngFor="let tag of veiculo.tags" [removable]="true"
-                                            (removed)="veiculo.removeTag(tag)">
-                                            {{tag}}
-                                            <mat-icon matChipRemove>Cancelar</mat-icon>
-                                        </mat-chip>
-
-                                        <input [matChipInputFor]="tagList" [matChipInputAddOnBlur]="true"
-                                            (matChipInputTokenEnd)="veiculo.addTag($event)" />
-
-                                    </mat-chip-list>
-
+                                    <mat-label>Cor</mat-label>
+                                    <input matInput placeholder="Informe a cor do veículo" name="cor"
+                                        formControlName="cor" required>
                                 </mat-form-field>
 
                             </div>
@@ -133,121 +100,23 @@
 
                         <mat-tab label="Product Images">
 
-                            <!--<div class="tab-content p-24" fusePerfectScrollbar>
-                                <div fxLayout="row wrap" fxLayoutAlign="start start">
 
-                                    <div *ngIf="veiculo.images.length === 0" class="veiculo-image" fxlayout="row"
-                                        fxLayoutAlign="center center">
-                                        <img class="media" [src]="'assets/images/frota/veiculo-image-placeholder.png'">
-                                    </div>
-
-                                    <div *ngFor="let image of veiculo.images">
-                                        <div *ngIf="veiculo.images.length > 0" class="veiculo-image" fxlayout="row"
-                                            fxLayoutAlign="center center">
-                                            <img class="media" [src]="image.url">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
 
                         </mat-tab>
 
                         <mat-tab label="Pricing">
 
-                            <!--<div class="tab-content p-24" fusePerfectScrollbar>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Tax Excluded Price</mat-label>
-                                    <input matInput placeholder="Tax Excluded Price" name="priceTaxExcl"
-                                        formControlName="priceTaxExcl" type="number">
-                                    <span matPrefix>$&nbsp;</span>
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Tax Included Price</mat-label>
-                                    <input matInput placeholder="Tax Included Price" name="priceTaxIncl"
-                                        formControlName="priceTaxIncl" type="number">
-                                    <span matPrefix>$&nbsp;</span>
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Tax Rate</mat-label>
-                                    <input matInput placeholder="Tax Rate" name="taxRate" formControlName="taxRate"
-                                        type="number">
-                                    <span matPrefix>&#37;&nbsp;</span>
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Compared Price</mat-label>
-                                    <input matInput placeholder="Compared Price" name="comparedPrice"
-                                        formControlName="comparedPrice" type="number">
-                                    <span matPrefix>$&nbsp;</span>
-                                    <mat-hint align="start">Add a compare price to show next to the real price
-                                    </mat-hint>
-                                </mat-form-field>
-
-                            </div>-->
-                        </mat-tab>
-
-                        <mat-tab label="">
-
-                            <!--<div class="tab-content p-24" fusePerfectScrollbar>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>SKU</mat-label>
-                                    <input matInput placeholder="SKU" name="sku" formControlName="sku">
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Quantity</mat-label>
-                                    <input matInput placeholder="Quantity" name="quantity" formControlName="quantity"
-                                        type="number">
-                                </mat-form-field>
-
-                            </div> -->
 
                         </mat-tab>
 
                         <mat-tab label="">
 
-                            <!--<div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
 
-                                <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Width</mat-label>
-                                        <input matInput placeholder="Width" name="Width" formControlName="width">
-                                        <span matSuffix>cm</span>
-                                    </mat-form-field>
+                        </mat-tab>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Height</mat-label>
-                                        <input matInput placeholder="Height" name="Height" formControlName="height">
-                                        <span matSuffix>cm</span>
-                                    </mat-form-field>
+                        <mat-tab label="">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Depth</mat-label>
-                                        <input matInput placeholder="Depth" name="Depth" formControlName="depth">
-                                        <span matSuffix>cm</span>
-                                    </mat-form-field>
-
-                                </div>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Weight</mat-label>
-                                    <input matInput placeholder="Weight" name="Weight" formControlName="weight">
-                                    <span matSuffix>kg</span>
-                                </mat-form-field>
-
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Extra Shipping Fee</mat-label>
-                                    <input matInput placeholder="Extra Shipping Fee" name="extraShippingFee"
-                                        formControlName="extraShippingFee" type="number">
-                                    <span matPrefix>$&nbsp;</span>
-                                </mat-form-field>
-
-                            </div> -->
 
                         </mat-tab>
 

@@ -2,35 +2,19 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Veiculo } from 'app/main/model/veiculo/veiculo.model';
 
 @Injectable()
-export class FrotaVeiculosService implements Resolve<any>
+export class FrotaVeiculosService implements Resolve<Veiculo[]>
 {
-    veiculos: any[];
-    onVeiculosChanged: BehaviorSubject<any>;
+    veiculos: Veiculo[];
+    onVeiculosChanged: BehaviorSubject<Veiculo[]>;
 
-    /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
-    constructor(
-        private _httpClient: HttpClient
-    )
-    {
-        // Set the defaults
-        this.onVeiculosChanged = new BehaviorSubject({});
+    constructor(private _httpClient: HttpClient) {
+        this.onVeiculosChanged = new BehaviorSubject<Veiculo[]>([]);
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @param {RouterStateSnapshot} state
-     * @returns {Observable<any> | Promise<any> | any}
-     */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Veiculo[]> | Promise<Veiculo[]> | Veiculo[] {
         return new Promise((resolve, reject) => {
 
             Promise.all([
@@ -44,16 +28,10 @@ export class FrotaVeiculosService implements Resolve<any>
         });
     }
 
-    /**
-     * Get veiculos
-     *
-     * @returns {Promise<any>}
-     */
-    getVeiculos(): Promise<any>
-    {
+    getVeiculos(): Promise<Veiculo[]> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/frota-veiculos')
-                .subscribe((response: any) => {
+                .subscribe((response: Veiculo[]) => {
                     this.veiculos = response;
                     this.onVeiculosChanged.next(this.veiculos);
                     resolve(response);

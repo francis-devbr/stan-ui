@@ -10,48 +10,37 @@ import { FuseUtils } from '@fuse/utils';
 
 import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
 import { takeUntil } from 'rxjs/internal/operators';
+import { Veiculo } from 'app/main/model/veiculo/veiculo.model';
 
 @Component({
-    selector     : 'frota-veiculos',
-    templateUrl  : './veiculos.component.html',
-    styleUrls    : ['./veiculos.component.scss'],
-    animations   : fuseAnimations,
+    selector: 'frota-veiculos',
+    templateUrl: './veiculos.component.html',
+    styleUrls: ['./veiculos.component.scss'],
+    animations: fuseAnimations,
     encapsulation: ViewEncapsulation.None
 })
-export class FrotaVeiculosComponent implements OnInit
-{
+export class FrotaVeiculosComponent implements OnInit {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'name', 'category', 'price', 'quantity', 'active'];
+    displayedColumns = ['id', 'image','marca', 'modelo', 'categoria', 'placa', 'active'];
 
-    @ViewChild(MatPaginator, {static: true})
+    @ViewChild(MatPaginator, { static: true })
     paginator: MatPaginator;
 
-    @ViewChild(MatSort, {static: true})
+    @ViewChild(MatSort, { static: true })
     sort: MatSort;
 
-    @ViewChild('filter', {static: true})
+    @ViewChild('filter', { static: true })
     filter: ElementRef;
 
-    // Private
     private _unsubscribeAll: Subject<any>;
 
     constructor(
         private _frotaVeiculosService: FrotaVeiculosService
-    )
-    {
-        // Set the private defaults
+    ) {
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.dataSource = new FilesDataSource(this._frotaVeiculosService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
@@ -61,8 +50,7 @@ export class FrotaVeiculosComponent implements OnInit
                 distinctUntilChanged()
             )
             .subscribe(() => {
-                if ( !this.dataSource )
-                {
+                if (!this.dataSource) {
                     return;
                 }
 
@@ -76,31 +64,17 @@ export class FilesDataSource extends DataSource<any>
     private _filterChange = new BehaviorSubject('');
     private _filteredDataChange = new BehaviorSubject('');
 
-    /**
-     * Constructor
-     *
-     * @param {FrotaVeiculosService} _frotaVeiculosService
-     * @param {MatPaginator} _matPaginator
-     * @param {MatSort} _matSort
-     */
     constructor(
         private _frotaVeiculosService: FrotaVeiculosService,
         private _matPaginator: MatPaginator,
         private _matSort: MatSort
-    )
-    {
+    ) {
         super();
 
         this.filteredData = this._frotaVeiculosService.veiculos;
     }
 
-    /**
-     * Connect function called by the table to retrieve one stream containing the data to render.
-     *
-     * @returns {Observable<any[]>}
-     */
-    connect(): Observable<any[]>
-    {
+    connect(): Observable<any[]> {
         const displayDataChanges = [
             this._frotaVeiculosService.onVeiculosChanged,
             this._matPaginator.page,
@@ -111,76 +85,48 @@ export class FilesDataSource extends DataSource<any>
         return merge(...displayDataChanges)
             .pipe(
                 map(() => {
-                        let data = this._frotaVeiculosService.veiculos.slice();
+                    let data = this._frotaVeiculosService.veiculos.slice();
 
-                        data = this.filterData(data);
+                    data = this.filterData(data);
 
-                        this.filteredData = [...data];
+                    this.filteredData = [...data];
 
-                        data = this.sortData(data);
+                    data = this.sortData(data);
 
-                        // Grab the page's slice of data.
-                        const startIndex = this._matPaginator.pageIndex * this._matPaginator.pageSize;
-                        return data.splice(startIndex, this._matPaginator.pageSize);
-                    }
+                    // Grab the page's slice of data.
+                    const startIndex = this._matPaginator.pageIndex * this._matPaginator.pageSize;
+                    return data.splice(startIndex, this._matPaginator.pageSize);
+                }
                 ));
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Accessors
-    // -----------------------------------------------------------------------------------------------------
 
-    // Filtered data
-    get filteredData(): any
-    {
+    get filteredData(): any {
         return this._filteredDataChange.value;
     }
 
-    set filteredData(value: any)
-    {
+    set filteredData(value: any) {
         this._filteredDataChange.next(value);
     }
 
     // Filter
-    get filter(): string
-    {
+    get filter(): string {
         return this._filterChange.value;
     }
 
-    set filter(filter: string)
-    {
+    set filter(filter: string) {
         this._filterChange.next(filter);
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Filter data
-     *
-     * @param data
-     * @returns {any}
-     */
-    filterData(data): any
-    {
-        if ( !this.filter )
-        {
+    filterData(data): Veiculo[] {
+        if (!this.filter) {
             return data;
         }
         return FuseUtils.filterArrayByString(data, this.filter);
     }
 
-    /**
-     * Sort data
-     *
-     * @param data
-     * @returns {any[]}
-     */
-    sortData(data): any[]
-    {
-        if ( !this._matSort.active || this._matSort.direction === '' )
-        {
+    sortData(data): any[] {
+        if (!this._matSort.active || this._matSort.direction === '') {
             return data;
         }
 
@@ -188,25 +134,25 @@ export class FilesDataSource extends DataSource<any>
             let propertyA: number | string = '';
             let propertyB: number | string = '';
 
-            switch ( this._matSort.active )
-            {
+            switch (this._matSort.active) {
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
-                case 'name':
-                    [propertyA, propertyB] = [a.name, b.name];
+                case 'marca':
+                    [propertyA, propertyB] = [a.marca, b.marca];
                     break;
-                case 'categories':
-                    [propertyA, propertyB] = [a.categories[0], b.categories[0]];
+                case 'modelo':
+                    [propertyA, propertyB] = [a.modelo, b.modelo];
                     break;
-                case 'price':
-                    [propertyA, propertyB] = [a.priceTaxIncl, b.priceTaxIncl];
+
+                case 'categoria':
+                    [propertyA, propertyB] = [a.categoria, b.categoria];
                     break;
-                case 'quantity':
-                    [propertyA, propertyB] = [a.quantity, b.quantity];
+                case 'placa':
+                    [propertyA, propertyB] = [a.placa, b.placa];
                     break;
-                case 'active':
-                    [propertyA, propertyB] = [a.active, b.active];
+                case 'ativo':
+                    [propertyA, propertyB] = [a.enable, b.enable];
                     break;
             }
 
@@ -217,10 +163,7 @@ export class FilesDataSource extends DataSource<any>
         });
     }
 
-    /**
-     * Disconnect
-     */
-    disconnect(): void
-    {
+
+    disconnect(): void {
     }
 }
