@@ -17,12 +17,7 @@
                     <mat-icon>arrow_back</mat-icon>
                 </button>
 
-                <div class="manutencao-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="manutencao.images[0]" [src]="manutencao.images[0].url">
-                    <img *ngIf="!manutencao.images[0]" [src]="'assets/images/frota/manutencao-image-placeholder.png'">
-                </div>
-
-                <div fxLayout="column" fxLayoutAlign="start start"
+                  <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
                         {{manutencao.name}}
