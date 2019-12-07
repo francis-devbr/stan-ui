@@ -38,67 +38,67 @@ import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abasteci
 
 const routes: Routes = [
     {
-        path     : 'veiculos',
+        path: 'veiculos',
         component: FrotaVeiculosComponent,
-        resolve  : {
+        resolve: {
             data: FrotaVeiculosService
         }
     },
     {
-        path     : 'veiculos/:id',
+        path: 'veiculos/:id',
         component: FrotaVeiculoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaVeiculoService
         }
     },
     {
-        path     : 'veiculos/:id/:handle',
+        path: 'veiculos/:id/:handle',
         component: FrotaVeiculoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaVeiculoService
         }
     },
 
     {
-        path     : 'manutencoes',
+        path: 'manutencoes',
         component: FrotaManutencoesComponent,
-        resolve  : {
+        resolve: {
             data: FrotaManutencoesService
         }
     },
     {
-        path     : 'manutencoes/:id',
+        path: 'manutencoes/:id',
         component: FrotaManutencaoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaManutencaoService
         }
     },
     {
-        path     : 'manutencoes/:id/:handle',
+        path: 'manutencoes/:id/:handle',
         component: FrotaManutencaoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaManutencaoService
         }
     },
 
     {
-        path     : 'abastecimentos',
+        path: 'abastecimentos',
         component: FrotaAbastecimentosComponent,
-        resolve  : {
+        resolve: {
             data: FrotaAbastecimentosService
         }
     },
     {
-        path     : 'abastecimentos/:id',
+        path: 'abastecimentos/:id',
         component: FrotaAbastecimentoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaAbastecimentoService
         }
     },
     {
-        path     : 'abastecimentos/:id/:handle',
+        path: 'abastecimentos/:id/:handle',
         component: FrotaAbastecimentoComponent,
-        resolve  : {
+        resolve: {
             data: FrotaAbastecimentoService
         }
     }
@@ -116,7 +116,7 @@ const routes: Routes = [
         FrotaAbastecimentosComponent,
         FrotaAbastecimentoComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -141,7 +141,7 @@ const routes: Routes = [
         FuseSharedModule,
         FuseWidgetModule
     ],
-    providers   : [
+    providers: [
         FrotaVeiculosService,
         FrotaVeiculoService,
         FrotaManutencoesService,
@@ -150,6 +150,5 @@ const routes: Routes = [
         FrotaAbastecimentoService
     ]
 })
-export class FrotaModule
-{
+export class FrotaModule {
 }

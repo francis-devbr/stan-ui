@@ -13,7 +13,7 @@ export const navigation: FuseNavigation[] = [
                 title: 'Empresa',
                 translate: 'NAV.EMPRESA',
                 type: 'collapsable',
-                icon: 'dashboard',
+                icon: 'business',
                 children: [
                     {
                         id: 'info',
@@ -30,7 +30,7 @@ export const navigation: FuseNavigation[] = [
                 title: 'Motorista',
                 translate: 'NAV.MOTORISTA',
                 type: 'item',
-                icon: 'web_asset',
+                icon: 'airline_seat_recline_normal',
                 url: '/motoristas/1',
             }
         ]
@@ -46,7 +46,7 @@ export const navigation: FuseNavigation[] = [
                 id: 'veiculo',
                 title: 'Veículo',
                 type: 'item',
-                icon: 'crop_portrait',
+                icon: 'directions_car',
                 url: '/frota/veiculos',
                 exactMatch: true
             },
@@ -54,7 +54,7 @@ export const navigation: FuseNavigation[] = [
                 id: 'manutencao',
                 title: 'Manutenção',
                 type: 'item',
-                icon: 'crop_portrait',
+                icon: 'build',
                 url: '/frota/manutencoes',
                 exactMatch: true
             },
@@ -62,15 +62,15 @@ export const navigation: FuseNavigation[] = [
                 id: 'abastecimento',
                 title: 'Abastecimento',
                 type: 'item',
-                icon: 'crop_portrait',
-                url: '/frota/abastecimento',
+                icon: 'ev_station',
+                url: '/frota/abastecimentos',
                 exactMatch: true
             },
             {
                 id: 'viagem',
                 title: 'Viagem',
                 type: 'item',
-                icon: 'crop_portrait',
+                icon: 'import_export',
                 url: '/frota/veiculos/viagem'
             }
         ]
