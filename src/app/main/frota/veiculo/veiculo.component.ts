@@ -90,7 +90,7 @@ export class FrotaVeiculoComponent implements OnInit, OnDestroy {
 
     saveVeiculo(): void {
         const data = this.veiculoForm.getRawValue();
-        data.handle = FuseUtils.handleize(data.name);
+        data.handle = FuseUtils.handleize(data.placa);
 
         this._frotaVeiculoService.saveVeiculo(data)
             .then(() => {
