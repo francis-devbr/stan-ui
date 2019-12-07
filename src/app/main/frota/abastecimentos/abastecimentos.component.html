@@ -67,46 +67,43 @@
                     </mat-cell>
                 </ng-container>
 
-                
-                <ng-container matColumnDef="name">
+                <ng-container matColumnDef="qtdLitros">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento">
-                        <p class="text-truncate">{{abastecimento.name}}</p>
+                        <p class="text-truncate">{{abastecimento.qtdLitros}}</p>
                     </mat-cell>
                 </ng-container>
 
-                
-                <ng-container matColumnDef="category">
+                <ng-container matColumnDef="placa">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
                     </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
-                        <p class="category text-truncate">
-                            {{abastecimento.categories[0]}}
+                        <p class="placa text-truncate">
+                            {{abastecimento.placa[0]}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                
-                <ng-container matColumnDef="price">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)</mat-header-cell>
+                <ng-container matColumnDef="valorLitro">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)
+                    </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
                         <p class="price text-truncate">
-                            {{abastecimento.priceTaxIncl | currency:'USD':'symbol'}}
+                            {{abastecimento.valorLitro | currency:'USD':'symbol'}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-               
-                <ng-container matColumnDef="quantity">
+                <ng-container matColumnDef="tipoCombustivel">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Combustível
                     </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-sm>
 
-                        <span class="quantity-indicator text-truncate"
-                            [ngClass]="{'red-500':abastecimento.quantity <= 5, 'amber-500':abastecimento.quantity > 5 && abastecimento.quantity <= 25,'green-600':abastecimento.quantity > 25}">
+                        <span class="tipoCombustivel-indicator text-truncate"
+                            [ngClass]="{'red-500':abastecimento.tipoCombustivel <= 5, 'amber-500':abastecimento.tipoCombustivel > 5 && abastecimento.tipoCombustivel <= 25,'green-600':abastecimento.tipoCombustivel > 25}">
                         </span>
                         <span>
-                            {{abastecimento.quantity}}
+                            {{abastecimento.tipoCombustivel}}
                         </span>
 
                     </mat-cell>

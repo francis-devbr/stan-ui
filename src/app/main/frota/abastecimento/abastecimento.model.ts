@@ -16,17 +16,14 @@ export class Abastecimento
         url: string,
         type: string
     }[];
-    priceTaxExcl: number;
-    priceTaxIncl: number;
-    taxRate: number;
-    comparedPrice: number;
-    quantity: number;
-    sku: string;
-    width: string;
-    height: string;
-    depth: string;
-    weight: string;
-    extraShippingFee: number;
+    tipoCombustivel: string;
+    qtdLitros: number;
+    valorLitro: number;
+    valorTotal: number;
+    numCupomFiscal: string;
+    data: Date;
+    kmInicial: string;
+    kmFinal: string;
     active: boolean;
 
     /**
@@ -44,17 +41,13 @@ export class Abastecimento
         this.categories = abastecimento.categories || [];
         this.tags = abastecimento.tags || [];
         this.images = abastecimento.images || [];
-        this.priceTaxExcl = abastecimento.priceTaxExcl || 0;
-        this.priceTaxIncl = abastecimento.priceTaxIncl || 0;
-        this.taxRate = abastecimento.taxRate || 0;
-        this.comparedPrice = abastecimento.comparedPrice || 0;
-        this.quantity = abastecimento.quantity || 0;
-        this.sku = abastecimento.sku || 0;
-        this.width = abastecimento.width || 0;
-        this.height = abastecimento.height || 0;
-        this.depth = abastecimento.depth || 0;
-        this.weight = abastecimento.weight || 0;
-        this.extraShippingFee = abastecimento.extraShippingFee || 0;
+        this.tipoCombustivel = abastecimento.tipoCombustivel || 0;
+        this.qtdLitros = abastecimento.qtdLitros || 0;
+        this.valorLitro = abastecimento.valorLitro || 0;
+        this.numCupomFiscal = abastecimento.numCupomFiscal || 0;
+        this.data = abastecimento.data || 0;
+        this.kmInicial = abastecimento.kmInicial || 0;
+        this.kmFinal = abastecimento.kmFinal || 0;
         this.active = abastecimento.active || true;
     }
 

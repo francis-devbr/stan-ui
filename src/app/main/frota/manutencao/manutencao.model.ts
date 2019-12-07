@@ -16,17 +16,15 @@ export class Manutencao
         url: string,
         type: string
     }[];
-    priceTaxExcl: number;
-    priceTaxIncl: number;
-    taxRate: number;
-    comparedPrice: number;
-    quantity: number;
-    sku: string;
-    width: string;
-    height: string;
-    depth: string;
-    weight: string;
-    extraShippingFee: number;
+    planoManutencao: string;
+    planoPeriodico: string;
+    responsavel: string;
+    veiculo: string;
+    dataInicial: string;
+    dataFinal: string;
+    peca: string;
+    tipoManutencao: string;
+    motorista: string;
     active: boolean;
 
     /**
@@ -44,17 +42,14 @@ export class Manutencao
         this.categories = manutencao.categories || [];
         this.tags = manutencao.tags || [];
         this.images = manutencao.images || [];
-        this.priceTaxExcl = manutencao.priceTaxExcl || 0;
-        this.priceTaxIncl = manutencao.priceTaxIncl || 0;
-        this.taxRate = manutencao.taxRate || 0;
-        this.comparedPrice = manutencao.comparedPrice || 0;
-        this.quantity = manutencao.quantity || 0;
-        this.sku = manutencao.sku || 0;
-        this.width = manutencao.width || 0;
-        this.height = manutencao.height || 0;
-        this.depth = manutencao.depth || 0;
-        this.weight = manutencao.weight || 0;
-        this.extraShippingFee = manutencao.extraShippingFee || 0;
+        this.planoManutencao = manutencao.planoManutencao || 0;
+        this.planoPeriodico = manutencao.planoPeriodico || 0;
+        this.responsavel = manutencao.responsavel || 0;
+        this.dataInicial = manutencao.dataInicial || 0;
+        this.dataFinal = manutencao.dataFinal || 0;
+        this.peca = manutencao.peca || 0;
+        this.tipoManutencao = manutencao.tipoManutencao || 0;
+        this.motorista = manutencao.motorista || 0;
         this.active = manutencao.active || true;
     }
 

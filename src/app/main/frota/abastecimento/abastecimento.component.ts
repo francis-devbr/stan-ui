@@ -12,14 +12,13 @@ import { Abastecimento } from 'app/main/frota/abastecimento/abastecimento.model'
 import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
 
 @Component({
-    selector     : 'frota-abastecimento',
-    templateUrl  : './abastecimento.component.html',
-    styleUrls    : ['./abastecimento.component.scss'],
+    selector: 'frota-abastecimento',
+    templateUrl: './abastecimento.component.html',
+    styleUrls: ['./abastecimento.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
-{
+export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
     abastecimento: Abastecimento;
     pageType: string;
     abastecimentoForm: FormGroup;
@@ -40,8 +39,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
         private _formBuilder: FormBuilder,
         private _location: Location,
         private _matSnackBar: MatSnackBar
-    )
-    {
+    ) {
         // Set the default
         this.abastecimento = new Abastecimento();
 
@@ -56,20 +54,17 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to update abastecimento on changes
         this._frotaAbastecimentoService.onAbastecimentoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(abastecimento => {
 
-                if ( abastecimento )
-                {
+                if (abastecimento) {
                     this.abastecimento = new Abastecimento(abastecimento);
                     this.pageType = 'edit';
                 }
-                else
-                {
+                else {
                     this.pageType = 'new';
                     this.abastecimento = new Abastecimento();
                 }
@@ -79,10 +74,9 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
     }
 
     /**
-     * On destroy
-     */
-    ngOnDestroy(): void
-    {
+    * On destroy
+    */
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -93,40 +87,32 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Create Abastecimento form
-     *
-     * @returns {FormGroup}
-     */
-    createAbastecimentoForm(): FormGroup
-    {
+    * Create Abastecimento form
+    *
+    * @returns {FormGroup}
+    */
+    createAbastecimentoForm(): FormGroup {
         return this._formBuilder.group({
-            id              : [this.abastecimento.id],
-            name            : [this.abastecimento.name],
-            handle          : [this.abastecimento.handle],
-            description     : [this.abastecimento.description],
-            categories      : [this.abastecimento.categories],
-            tags            : [this.abastecimento.tags],
-            images          : [this.abastecimento.images],
-            priceTaxExcl    : [this.abastecimento.priceTaxExcl],
-            priceTaxIncl    : [this.abastecimento.priceTaxIncl],
-            taxRate         : [this.abastecimento.taxRate],
-            comparedPrice   : [this.abastecimento.comparedPrice],
-            quantity        : [this.abastecimento.quantity],
-            sku             : [this.abastecimento.sku],
-            width           : [this.abastecimento.width],
-            height          : [this.abastecimento.height],
-            depth           : [this.abastecimento.depth],
-            weight          : [this.abastecimento.weight],
-            extraShippingFee: [this.abastecimento.extraShippingFee],
-            active          : [this.abastecimento.active]
+            id: [this.abastecimento.id],
+            name: [this.abastecimento.name],
+            handle: [this.abastecimento.handle],
+            tipoCombustivel: [this.abastecimento.tipoCombustivel],
+            qtdLitros: [this.abastecimento.qtdLitros],
+            valorLitro: [this.abastecimento.valorLitro],
+            images: [this.abastecimento.images],
+            valorTotal: [this.abastecimento.valorTotal],
+            numCupomFiscal: [this.abastecimento.numCupomFiscal],
+            data: [this.abastecimento.data],
+            kmInicial: [this.abastecimento.kmInicial],
+            kmFinal: [this.abastecimento.kmFinal],
+            active: [this.abastecimento.active]
         });
     }
 
-    /**
-     * Save abastecimento
-     */
-    saveAbastecimento(): void
-    {
+    
+     //Save abastecimento
+    
+    saveAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
@@ -139,16 +125,15 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
                 // Show the success message
                 this._matSnackBar.open('Abastecimento saved', 'OK', {
                     verticalPosition: 'top',
-                    duration        : 2000
+                    duration: 2000
                 });
             });
     }
 
     /**
-     * Add abastecimento
-     */
-    addAbastecimento(): void
-    {
+    * Add abastecimento
+    */
+    addAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
@@ -161,7 +146,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy
                 // Show the success message
                 this._matSnackBar.open('abastecimento added', 'OK', {
                     verticalPosition: 'top',
-                    duration        : 2000
+                    duration: 2000
                 });
 
                 // Change the location with new one
