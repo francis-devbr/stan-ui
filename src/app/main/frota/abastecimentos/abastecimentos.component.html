@@ -34,7 +34,7 @@
             <!-- ADD BUTTON -->
             <button mat-raised-button [routerLink]="'/frota/abastecimentos/new'"
                 class="add-abastecimento-button fuse-white mt-24 mt-md-0">
-                <span>Cadastrar Manutenção</span>
+                <span>Cadastrar Abastecimento</span>
             </button>
             <!-- / ADD BUTTON -->
 
@@ -67,15 +67,15 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Name Column -->
+                
                 <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Veículos em Manutenção</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento">
                         <p class="text-truncate">{{abastecimento.name}}</p>
                     </mat-cell>
                 </ng-container>
 
-                <!-- Category Column -->
+                
                 <ng-container matColumnDef="category">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
                     </mat-header-cell>
@@ -86,9 +86,9 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Price Column -->
+                
                 <ng-container matColumnDef="price">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
                         <p class="price text-truncate">
                             {{abastecimento.priceTaxIncl | currency:'USD':'symbol'}}
@@ -96,9 +96,9 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Quantity Column -->
+               
                 <ng-container matColumnDef="quantity">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Manutenção
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Combustível
                     </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-sm>
 

@@ -53,7 +53,6 @@ frota-manutencoes {
             }
         }
     }
-
     .manutencoes-table {
         flex: 1 1 auto;
         border-bottom: 1px solid rgba(0, 0, 0, .12);
@@ -64,7 +63,7 @@ frota-manutencoes {
             min-height: 64px;
         }
 
-        .manutencao {
+        .veiculo {
             position: relative;
             cursor: pointer;
             height: 84px;
@@ -83,7 +82,7 @@ frota-manutencoes {
         .mat-column-image {
             flex: 0 1 84px;
 
-            .manutencao-image {
+            .veiculo-image {
                 width: 52px;
                 height: 52px;
                 border: 1px solid rgba(0, 0, 0, .12);

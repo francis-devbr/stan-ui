@@ -55,6 +55,17 @@
                     </mat-cell>
                 </ng-container>
 
+                <!-- Image Column -->
+                <ng-container matColumnDef="image">
+                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                    <mat-cell *matCellDef="let veiculo">
+                        <img class="veiculo-image" *ngIf="veiculo.featuredImageId" [alt]="veiculo.name"
+                            [src]="veiculo.images[veiculo.featuredImageId].url" />
+                        <img *ngIf="!veiculo.featuredImageId"
+                            [src]="'assets/images/frota/veiculo-image-placeholder.png'">
+                    </mat-cell>
+                </ng-container>
+
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Veículos em Manutenção</mat-header-cell>
@@ -63,7 +74,7 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Category Column -->
+
                 <ng-container matColumnDef="category">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
                     </mat-header-cell>
@@ -74,7 +85,7 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Price Column -->
+
                 <ng-container matColumnDef="price">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
                     <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-xs>
@@ -84,7 +95,7 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Quantity Column -->
+
                 <ng-container matColumnDef="quantity">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Manutenção
                     </mat-header-cell>
