@@ -45,8 +45,8 @@
             </button>
 
             <button mat-raised-button class="save-abastencimento-button"
-                [disabled]="abastencimentoForm.invalid || abastencimentoForm.pristine" *ngIf="pageType ==='edit'"
-                (click)="saveAbastencimento()">
+                [disabled]="abastecimentoForm.invalid || abastecimentoForm.pristine" *ngIf="pageType ==='edit'"
+                (click)="saveAbastecimento()">
                 <span>Salvar</span>
             </button>
         </div>
@@ -71,62 +71,66 @@
                                     <mat-label>Id</mat-label>
                                     <input matInput placeholder="" name="name" formControlName="name">
                                 </mat-form-field>
+                                <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Tipo de Combustível</mat-label>
-                                    <mat-select [(ngModel)]="modelName" placeholder="Infome o tipo de combustível">
-                                        <mat-option [value]="">teste1</mat-option>
-                                        <mat-option [value]="">teste2</mat-option>
-                                        <mat-option [value]="">teste3</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Tipo de Combustível</mat-label>
+                                        <mat-select="tipoCombustivel" placeholder="Infome o tipo de combustível"
+                                            name="tipoCombustivel" formControlName="tipoCombustivel">
+                                            <mat-option [value]="">teste1</mat-option>
+                                            <mat-option [value]="">teste2</mat-option>
+                                            <mat-option [value]="">teste3</mat-option>
+                                            </mat-select>
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Quantidade em Litros</mat-label>
-                                    <input matInput type="number" placeholder="Quantidade em litros"
-                                        formControlName="fontSize" min="10">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Quantidade em Litros</mat-label>
+                                        <input matInput type="number" placeholder="Quantidade em litros"
+                                            name="qtdLitros" formControlName="qtdLitros" min="10">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Valor por Litro(R$)</mat-label>
-                                    <input matInput type="number" placeholder="Quantidade em litros"
-                                        formControlName="fontSize" min="10">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Valor por Litro(R$)</mat-label>
+                                        <input matInput type="number" placeholder="Quantidade em litros"
+                                            name="valorLitro" formControlName="valorLitro" min="10">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Valor Total(R$)</mat-label>
-                                    <input matInput type="number" placeholder="Quantidade em litros"
-                                        formControlName="fontSize" min="10">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Valor Total(R$)</mat-label>
+                                        <input matInput type="number" placeholder="Quantidade em litros"
+                                            name="valorTotal" formControlName="valorTotal" min="10">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Número do cupom físcal</mat-label>
-                                    <input matInput placeholder="" name="name" formControlName="name">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Número do cupom físcal</mat-label>
+                                        <input matInput placeholder="Informe o número do cupom fiscal"
+                                            name="numCupomFiscal" formControlName="numCupomFiscal">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Data</mat-label>
-                                    <input matInput placeholder="Informe a data do abastecimento" [(ngModel)]="ano-fab"
-                                        type="date" class="form-control" id="date" aria-describedby="id">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>Data</mat-label>
+                                        <input matInput placeholder="Informe a data do abastecimento" type="date"
+                                            class="form-control" id="date" aria-describedby="id" name="data"
+                                            formControlName="data">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>KM Inicial</mat-label>
-                                    <input matInput placeholder="Informe a data de final" [(ngModel)]="ano-fab"
-                                        type="number" class="form-control" id="date-final" aria-describedby="id">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>KM Inicial</mat-label>
+                                        <input matInput placeholder="Informe a data de final" type="number"
+                                            class="form-control" id="kmInicial" aria-describedby="id" name="kmInicial"
+                                            formControlName="kmInicial">
+                                    </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>KM Final</mat-label>
-                                    <input matInput placeholder="Informe a data de final" [(ngModel)]="ano-fab"
-                                        type="number" class="form-control" id="date-final" aria-describedby="id">
-                                </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                        <mat-label>KM Final</mat-label>
+                                        <input matInput placeholder="Informe a data de final" type="number"
+                                            class="form-control" id="kmFinal" aria-describedby="id" name="kmFinal"
+                                            formControlName="kmFinal">
+                                    </mat-form-field>
 
+                                </div>
 
                             </div>
-                        </mat-tab>
-
-                        <mat-tab label="Informações do Veículo">
 
                         </mat-tab>
 
@@ -142,5 +146,4 @@
 
     </div>
     <!-- / CENTER -->
-
 </div>
