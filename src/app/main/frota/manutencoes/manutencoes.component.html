@@ -75,41 +75,44 @@
                 </ng-container>
 
 
-                <ng-container matColumnDef="category">
+                <ng-container matColumnDef="veiculo">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
                     </mat-header-cell>
                     <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-md>
-                        <p class="category text-truncate">
-                            {{manutencao.categories[0]}}
+                        <p class="veiculo text-truncate">
+                            {{manutencao.veiculo[0]}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
 
-                <ng-container matColumnDef="price">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Modelo</mat-header-cell>
+                <ng-container matColumnDef="dataInicial">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Data Inicial</mat-header-cell>
                     <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-xs>
-                        <p class="price text-truncate">
-                            {{manutencao.priceTaxIncl | currency:'USD':'symbol'}}
+                        <p class="dataInicial text-truncate">
+                            {{manutencao.dataInicial}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
+                <ng-container matColumnDef="dataFinal">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Data Final</mat-header-cell>
+                        <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-xs>
+                            <p class="dataFinal text-truncate">
+                                {{manutencao.dataFinal}}
+                            </p>
+                        </mat-cell>
+                    </ng-container>
 
-                <ng-container matColumnDef="quantity">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Manutenção
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-sm>
 
-                        <span class="quantity-indicator text-truncate"
-                            [ngClass]="{'red-500':manutencao.quantity <= 5, 'amber-500':manutencao.quantity > 5 && manutencao.quantity <= 25,'green-600':manutencao.quantity > 25}">
-                        </span>
-                        <span>
-                            {{manutencao.quantity}}
-                        </span>
-
-                    </mat-cell>
-                </ng-container>
+                    <ng-container matColumnDef="tipoManutencao">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Tipo de Manutenção</mat-header-cell>
+                            <mat-cell *matCellDef="let manutencao" fxHide fxShow.gt-xs>
+                                <p class="tipoManutencao text-truncate">
+                                    {{manutencao.tipoManutencao}}
+                                </p>
+                            </mat-cell>
+                    </ng-container>
 
                 <!-- Active Column -->
                 <ng-container matColumnDef="active">

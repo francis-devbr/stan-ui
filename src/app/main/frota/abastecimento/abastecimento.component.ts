@@ -102,16 +102,16 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
             images: [this.abastecimento.images],
             valorTotal: [this.abastecimento.valorTotal],
             numCupomFiscal: [this.abastecimento.numCupomFiscal],
-            date: [this.abastecimento.date],
+            data: [this.abastecimento.data],
             kmInicial: [this.abastecimento.kmInicial],
             kmFinal: [this.abastecimento.kmFinal],
             active: [this.abastecimento.active]
         });
     }
 
-    /**
-    * Save abastecimento
-    */
+    
+     //Save abastecimento
+    
     saveAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);

@@ -12,14 +12,13 @@ import { Manutencao } from 'app/main/frota/manutencao/manutencao.model';
 import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
 
 @Component({
-    selector     : 'frota-manutencao',
-    templateUrl  : './manutencao.component.html',
-    styleUrls    : ['./manutencao.component.scss'],
+    selector: 'frota-manutencao',
+    templateUrl: './manutencao.component.html',
+    styleUrls: ['./manutencao.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations: fuseAnimations
 })
-export class FrotaManutencaoComponent implements OnInit, OnDestroy
-{
+export class FrotaManutencaoComponent implements OnInit, OnDestroy {
     manutencao: Manutencao;
     pageType: string;
     manutencaoForm: FormGroup;
@@ -40,8 +39,7 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
         private _formBuilder: FormBuilder,
         private _location: Location,
         private _matSnackBar: MatSnackBar
-    )
-    {
+    ) {
         // Set the default
         this.manutencao = new Manutencao();
 
@@ -54,22 +52,19 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * On init
-     */
-    ngOnInit(): void
-    {
+    * On init
+    */
+    ngOnInit(): void {
         // Subscribe to update manutencao on changes
         this._frotaManutencaoService.onManutencaoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(manutencao => {
 
-                if ( manutencao )
-                {
+                if (manutencao) {
                     this.manutencao = new Manutencao(manutencao);
                     this.pageType = 'edit';
                 }
-                else
-                {
+                else {
                     this.pageType = 'new';
                     this.manutencao = new Manutencao();
                 }
@@ -79,10 +74,9 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
     }
 
     /**
-     * On destroy
-     */
-    ngOnDestroy(): void
-    {
+    * On destroy
+    */
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -93,40 +87,36 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Create manutencao form
-     *
-     * @returns {FormGroup}
-     */
-    createManutencaoForm(): FormGroup
-    {
+    * Create manutencao form
+    *
+    * @returns {FormGroup}
+    */
+    createManutencaoForm(): FormGroup {
         return this._formBuilder.group({
-            id              : [this.manutencao.id],
-            name            : [this.manutencao.name],
-            handle          : [this.manutencao.handle],
-            description     : [this.manutencao.description],
-            categories      : [this.manutencao.categories],
-            tags            : [this.manutencao.tags],
-            images          : [this.manutencao.images],
-            priceTaxExcl    : [this.manutencao.priceTaxExcl],
-            priceTaxIncl    : [this.manutencao.priceTaxIncl],
-            taxRate         : [this.manutencao.taxRate],
-            comparedPrice   : [this.manutencao.comparedPrice],
-            quantity        : [this.manutencao.quantity],
-            sku             : [this.manutencao.sku],
-            width           : [this.manutencao.width],
-            height          : [this.manutencao.height],
-            depth           : [this.manutencao.depth],
-            weight          : [this.manutencao.weight],
-            extraShippingFee: [this.manutencao.extraShippingFee],
-            active          : [this.manutencao.active]
+            id: [this.manutencao.id],
+            name: [this.manutencao.name],
+            handle: [this.manutencao.handle],
+            description: [this.manutencao.description],
+            categories: [this.manutencao.categories],
+            tags: [this.manutencao.tags],
+            images: [this.manutencao.images],
+            planoManutencao: [this.manutencao.planoManutencao],
+            planoPeriodico: [this.manutencao.planoPeriodico],
+            responsavel: [this.manutencao.responsavel],
+            veiculo: [this.manutencao.veiculo],
+            dataInicial: [this.manutencao.dataInicial],
+            dataFinal: [this.manutencao.dataFinal],
+            peca: [this.manutencao.peca],
+            tipoManutencao: [this.manutencao.tipoManutencao],
+            motorista: [this.manutencao.motorista],
+            active: [this.manutencao.active]
         });
     }
 
     /**
-     * Save manutencao
-     */
-    saveManutencao(): void
-    {
+    * Save manutencao
+    */
+    saveManutencao(): void {
         const data = this.manutencaoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
@@ -139,16 +129,15 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
                 // Show the success message
                 this._matSnackBar.open('Manutencao saved', 'OK', {
                     verticalPosition: 'top',
-                    duration        : 2000
+                    duration: 2000
                 });
             });
     }
 
     /**
-     * Add manutencao
-     */
-    addManutencao(): void
-    {
+    * Add manutencao
+    */
+    addManutencao(): void {
         const data = this.manutencaoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
@@ -161,7 +150,7 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy
                 // Show the success message
                 this._matSnackBar.open('Manutencao added', 'OK', {
                     verticalPosition: 'top',
-                    duration        : 2000
+                    duration: 2000
                 });
 
                 // Change the location with new one
