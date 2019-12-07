@@ -21,7 +21,10 @@ import { PessoaMotoristaService } from 'app/main/pessoa/motorista/motorista.serv
 export class PessoaMotoristaComponent implements OnInit, OnDestroy {
     motorista: Motorista;
     pageType: string;
+    tipoPessoa: string;
     motoristaForm: FormGroup;
+    pessoaForm: FormGroup;
+    cnhForm: FormGroup;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -53,11 +56,13 @@ export class PessoaMotoristaComponent implements OnInit, OnDestroy {
                     this.pageType = 'new';
                     this.motorista = new Motorista();
                 }
+                this.tipoPessoa = this.motorista.pessoa.tipoPessoa;
 
                 this.motoristaForm = this.createMotoristaForm();
+                this.pessoaForm = this.createPessoaForm();
+                this.cnhForm = this.createCnhForm();
             });
     }
-
 
     ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
@@ -67,12 +72,26 @@ export class PessoaMotoristaComponent implements OnInit, OnDestroy {
 
     createMotoristaForm(): FormGroup {
         return this._formBuilder.group({
-            id              : [this.motorista.id],
-            contatos        : [this.motorista.pessoa.contatos],
-            enderecos       : [this.motorista.pessoa.enderecos],
-            nome            : [this.motorista.pessoa.nome],
-            cnpj            : [this.motorista.pessoa.cpfOuCnpj],
-            cnh              : [this.motorista.cnh.numero]
+            id: [this.motorista.id],
+            enable: [this.motorista.enable]
+        });
+    }
+
+    createPessoaForm(): FormGroup {
+        return this._formBuilder.group({
+            id: [this.motorista.pessoa.id],
+            nome: [this.motorista.pessoa.nome],
+            cpfOuCnpj: [this.motorista.pessoa.cpfOuCnpj],
+            foto: [this.motorista.pessoa.foto]
+        });
+    }
+
+    createCnhForm(): FormGroup {
+        return this._formBuilder.group({
+            id: [this.motorista.cnh.id],
+            numero: [this.motorista.cnh.numero],
+            categoria: [this.motorista.cnh.categoria],
+            renovaEm: [this.motorista.cnh.renovaEm]
         });
     }
 

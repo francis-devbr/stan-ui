@@ -23,7 +23,7 @@
                 </div>
 
                 <div fxLayout="column" fxLayoutAlign="start start"
-                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
                         {{motorista.pessoa.nome}}
                     </div>
@@ -37,17 +37,14 @@
             </div>
             <!-- / APP TITLE -->
 
-            <button mat-raised-button
-                    class="save-motorista-button"
-                    [disabled]="motoristaForm.invalid"
-                    *ngIf="pageType ==='new'" (click)="addMotorista()">
+            <button mat-raised-button class="save-motorista-button" [disabled]="motoristaForm.invalid"
+                *ngIf="pageType ==='new'" (click)="addMotorista()">
                 <span>ADD</span>
             </button>
 
-            <button mat-raised-button
-                    class="save-motorista-button"
-                    [disabled]="motoristaForm.invalid || motoristaForm.pristine"
-                    *ngIf="pageType ==='edit'" (click)="saveMotorista()">
+            <button mat-raised-button class="save-motorista-button"
+                [disabled]="motoristaForm.invalid || motoristaForm.pristine" *ngIf="pageType ==='edit'"
+                (click)="saveMotorista()">
                 <span>SALVAR</span>
             </button>
         </div>
@@ -59,90 +56,62 @@
             <!-- CONTENT -->
             <div class="content">
 
-                <form name="motoristaForm" [formGroup]="motoristaForm" class="motorista w-100-p" fxLayout="column" fxFlex>
+                <form name="motoristaForm" [formGroup]="motoristaForm" class="motorista w-100-p" fxLayout="column"
+                    fxFlex>
 
                     <mat-tab-group>
 
                         <mat-tab label="Basic Info">
-
-                            <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
-
-                                <div fxLayout="row" fxLayoutAlign="space-between">
-
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
-                                        <mat-label>Cnpj</mat-label>
-                                        <input matInput placeholder="Cnpj da Motorista"
-                                            name="cnpj"
-                                            formControlName="cnpj"
-                                            required>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
-                                        <mat-label>CNH</mat-label>
-                                        <input matInput placeholder="Inscrição Estadual da Motorista"
-                                            name="cnh"
-                                            formControlName="cnh">
-                                    </mat-form-field>
-                                </div>
+                            <div [formGroup]="pessoaForm" class="tab-content p-24" fusePerfectScrollbar
+                                fxLayout="column">
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Nome da Motorista</mat-label>
-                                    <input matInput placeholder="Nome da Motorista"
-                                        name="nome"
-                                        formControlName="nome"
+                                    <input matInput placeholder="Nome da Motorista" name="nome" formControlName="nome"
+                                        required>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label *ngIf="tipoPessoa ==='FISICA'">CPF</mat-label>
+                                    <mat-label *ngIf="tipoPessoa ==='JURIDICA'">CNPJ</mat-label>
+                                    <input matInput placeholder="Informe" name="cpfOuCnpj" formControlName="cpfOuCnpj"
                                         required>
                                 </mat-form-field>
 
 
-                                <div class="section pb-48" *ngFor="let contato of motorista.pessoa.contatos">
+
+                                <div [formGroup]="cnhForm" class="section pb-48">
 
                                     <div class="pb-16" fxLayout="row" fxLayoutAlign="start center">
                                         <mat-icon class="m-0 mr-16 secondary-text">access_time</mat-icon>
-                                        <div class="h2 secondary-text">{{contato.tipo}}</div>
+                                        <div class="h2 secondary-text">Carteira Nacional de Habilitação</div>
                                     </div>
-                                  
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                        <mat-label>Email</mat-label>
-                                        <input matInput placeholder="Email da Motorista"
-                                            name="email"
-                                            formControlName="email"
-                                            required
-                                            value={{contato.email}}>
-                                    </mat-form-field>
 
-                                    <div class="section pb-48" *ngFor="let telefone of contato.telefones">
-
-                                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                            <mat-label>Telefone {{telefone.tipo}} </mat-label>
-                                            <input matInput placeholder="Telefone {{telefone.tipo}}"
-                                                name="telefone{{telefone.tipo}}"
-                                                formControlName="telefone{{telefone.tipo}}"
-                                                required
-                                                value={{telefone.ddd}}-{{telefone.numero}}>
+                                    <div fxLayout="row" fxLayoutAlign="space-between">
+                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                            <mat-label>Número</mat-label>
+                                            <input matInput placeholder="Nome da Motorista" name="numero"
+                                                formControlName="numero" required>
                                         </mat-form-field>
 
+                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                            <mat-label>Categoria</mat-label>
+                                            <input matInput placeholder="Nome da Motorista" name="categoria"
+                                                formControlName="categoria" required>
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                            <mat-label>Validade</mat-label>
+                                            <input matInput placeholder="Nome da Motorista" name="renovaEm"
+                                                formControlName="renovaEm" required>
+                                        </mat-form-field>
                                     </div>
-                                    
-                                
                                 </div>
-
-
                             </div>
-
-                
-
                         </mat-tab>
 
-                        <mat-tab label="Endereço">
-                            <div fxLayout="row" fxLayoutAlign="space-between">
-                                
 
-                            </div>
-                            
 
-                        </mat-tab>
-
-                        
 
                     </mat-tab-group>
 
