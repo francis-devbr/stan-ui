@@ -1,4 +1,4 @@
-<div id="empresa" class="page-layout carded fullwidth inner-scroll">
+<div id="motorista" class="page-layout carded fullwidth inner-scroll">
 
     <!-- TOP BACKGROUND -->
     <div class="top-bg accent"></div>
@@ -13,41 +13,41 @@
             <!-- APP TITLE -->
             <div fxLayout="row" fxLayoutAlign="start center">
 
-                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/apps/e-commerce/empresas'">
+                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/apps/e-commerce/motoristas'">
                     <mat-icon>arrow_back</mat-icon>
                 </button>
 
-                <div class="empresa-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="empresa.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
-                    <img *ngIf="!empresa.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
+                <div class="motorista-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    <img *ngIf="motorista.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
+                    <img *ngIf="!motorista.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
                 </div>
 
                 <div fxLayout="column" fxLayoutAlign="start start"
                      [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{empresa.pessoa.nome}}
+                        {{motorista.pessoa.nome}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
-                        Nova Empresa
+                        Nova Motorista
                     </div>
                     <div class="subtitle secondary-text">
-                        <span>Empresa Detalhe</span>
+                        <span>Motorista Detalhe</span>
                     </div>
                 </div>
             </div>
             <!-- / APP TITLE -->
 
             <button mat-raised-button
-                    class="save-empresa-button"
-                    [disabled]="empresaForm.invalid"
-                    *ngIf="pageType ==='new'" (click)="addEmpresa()">
+                    class="save-motorista-button"
+                    [disabled]="motoristaForm.invalid"
+                    *ngIf="pageType ==='new'" (click)="addMotorista()">
                 <span>ADD</span>
             </button>
 
             <button mat-raised-button
-                    class="save-empresa-button"
-                    [disabled]="empresaForm.invalid || empresaForm.pristine"
-                    *ngIf="pageType ==='edit'" (click)="saveEmpresa()">
+                    class="save-motorista-button"
+                    [disabled]="motoristaForm.invalid || motoristaForm.pristine"
+                    *ngIf="pageType ==='edit'" (click)="saveMotorista()">
                 <span>SALVAR</span>
             </button>
         </div>
@@ -59,7 +59,7 @@
             <!-- CONTENT -->
             <div class="content">
 
-                <form name="empresaForm" [formGroup]="empresaForm" class="empresa w-100-p" fxLayout="column" fxFlex>
+                <form name="motoristaForm" [formGroup]="motoristaForm" class="motorista w-100-p" fxLayout="column" fxFlex>
 
                     <mat-tab-group>
 
@@ -71,30 +71,30 @@
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
                                         <mat-label>Cnpj</mat-label>
-                                        <input matInput placeholder="Cnpj da Empresa"
+                                        <input matInput placeholder="Cnpj da Motorista"
                                             name="cnpj"
                                             formControlName="cnpj"
                                             required>
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="40">
-                                        <mat-label>I.E</mat-label>
-                                        <input matInput placeholder="Inscrição Estadual da Empresa"
-                                            name="ie"
-                                            formControlName="ie">
+                                        <mat-label>CNH</mat-label>
+                                        <input matInput placeholder="Inscrição Estadual da Motorista"
+                                            name="cnh"
+                                            formControlName="cnh">
                                     </mat-form-field>
                                 </div>
 
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Nome da Empresa</mat-label>
-                                    <input matInput placeholder="Nome da Empresa"
+                                    <mat-label>Nome da Motorista</mat-label>
+                                    <input matInput placeholder="Nome da Motorista"
                                         name="nome"
                                         formControlName="nome"
                                         required>
                                 </mat-form-field>
 
 
-                                <div class="section pb-48" *ngFor="let contato of empresa.pessoa.contatos">
+                                <div class="section pb-48" *ngFor="let contato of motorista.pessoa.contatos">
 
                                     <div class="pb-16" fxLayout="row" fxLayoutAlign="start center">
                                         <mat-icon class="m-0 mr-16 secondary-text">access_time</mat-icon>
@@ -103,7 +103,7 @@
                                   
                                     <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                         <mat-label>Email</mat-label>
-                                        <input matInput placeholder="Email da Empresa"
+                                        <input matInput placeholder="Email da Motorista"
                                             name="email"
                                             formControlName="email"
                                             required

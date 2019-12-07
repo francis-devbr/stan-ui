@@ -12,26 +12,20 @@ export const navigation: FuseNavigation[] = [
                 id: 'empresa',
                 title: 'Empresa',
                 translate: 'NAV.EMPRESA',
-                type: 'collapsable',
                 icon: 'business',
-                children: [
-                    {
-                        id: 'info',
-                        title: 'Bio',
-                        type: 'item',
-                        url: '/empresa/empresa/1',
-                        exactMatch: true
-                    }
-                ]
+                type: 'item',
+                url: '/empresa/empresa/1',
+                exactMatch: true
             },
-
+            
             {
                 id: 'motorista',
                 title: 'Motorista',
                 translate: 'NAV.MOTORISTA',
                 type: 'item',
                 icon: 'airline_seat_recline_normal',
-                url: '/motoristas/1',
+                url: '/pessoa/motoristas',
+                exactMatch: true
             }
         ]
     },

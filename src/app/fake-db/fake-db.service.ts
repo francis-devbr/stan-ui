@@ -3,6 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { FrotaFakeDb } from 'app/fake-db/frota';
 import { AuthenticationFakeDb } from 'app/fake-db/authentication';
 import { EmpresaFakeDb } from 'app/fake-db/empresa';
+import { PessoaFakeDb } from 'app/fake-db/pessoa';
 import { ProfileFakeDb } from 'app/fake-db/profile';
 
 export class FakeDbService implements InMemoryDbService {
@@ -20,8 +21,12 @@ export class FakeDbService implements InMemoryDbService {
 
             'empresa-empresas': EmpresaFakeDb.empresas,
 
+            'pessoa-motoristas': PessoaFakeDb.motoristas,
+
             // Profile
             'profile-about': ProfileFakeDb.about,
+
+            'authentication-token': AuthenticationFakeDb.token
 
         };
     }

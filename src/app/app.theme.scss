@@ -94,6 +94,8 @@ $typography: mat-typography-config(
 
 @import "src/app/main/frota/veiculos/veiculos.theme";
 
+@import "src/app/main/pessoa/motoristas/motoristas.theme";
+
 @import "src/app/main/frota/manutencoes/manutencoes.theme";
 
 
@@ -110,15 +112,15 @@ $typography: mat-typography-config(
 
     @include frota-abastecimentos-theme($theme);
 
+    @include frota-veiculos-theme($theme);
 
-    // Pages
+    @include frota-manutencoes-theme($theme);
+
+    @include pessoa-motoristas-theme($theme);
+
     @include login-theme($theme);
-
     @include register-theme($theme);
-  
-
     @include lock-theme($theme);
-
 
     @include error-404-theme($theme);
     @include error-500-theme($theme);

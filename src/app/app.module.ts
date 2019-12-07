@@ -33,6 +33,11 @@ const appRoutes: Routes = [
     },
 
     {
+        path: 'pessoa',
+        loadChildren: './main/pessoa/pessoa.module#PessoaModule'
+    },
+
+    {
         path: 'authentications',
         loadChildren: './authentication/auth.module#AuthModule'
     },
