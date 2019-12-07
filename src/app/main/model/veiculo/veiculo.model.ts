@@ -28,7 +28,7 @@ export class Veiculo {
     {
         veiculo = veiculo || {};
         this.id = veiculo.id || FuseUtils.generateGUID();
-        this.placa = veiculo.name || '';
+        this.placa = veiculo.placa || '';
         this.handle = veiculo.handle || FuseUtils.handleize(this.placa);
         this.chassi = veiculo.chassi || '';
         this.renavam = veiculo.renavam|| '';
