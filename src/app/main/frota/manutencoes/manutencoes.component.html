@@ -58,11 +58,11 @@
                 <!-- Image Column -->
                 <ng-container matColumnDef="image">
                     <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                    <mat-cell *matCellDef="let veiculo">
-                        <img class="veiculo-image" *ngIf="veiculo.featuredImageId" [alt]="veiculo.name"
-                            [src]="veiculo.images[veiculo.featuredImageId].url" />
-                        <img *ngIf="!veiculo.featuredImageId"
-                            [src]="'assets/images/frota/veiculo-image-placeholder.png'">
+                    <mat-cell *matCellDef="let manutencao">
+                        <img class="manutencao-image" *ngIf="manutencao.featuredImageId" [alt]="manutencao.name"
+                            [src]="manutencao.images[manutencao.featuredImageId].url" />
+                        <img *ngIf="!manutencao.featuredImageId"
+                            [src]="'assets/images/frota/manutencao-image-placeholder.png'">
                     </mat-cell>
                 </ng-container>
 

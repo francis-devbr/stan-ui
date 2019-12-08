@@ -110,10 +110,10 @@
                 
                 <!-- Active Column -->
                 <ng-container matColumnDef="active">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Enable</mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Status</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-xs>
-                        <mat-icon *ngIf="veiculo.enable" class="active-icon green-600 s-16">check</mat-icon>
-                        <mat-icon *ngIf="!veiculo.enable" class="active-icon red-500 s-16">close</mat-icon>
+                        <mat-icon *ngIf="veiculo.enable" class="active-icon green-600 s-16"></mat-icon>
+                        <mat-icon *ngIf="!veiculo.enable" class="active-icon red-500 s-16"></mat-icon>
                     </mat-cell>
                 </ng-container>
 
