@@ -48,7 +48,7 @@
                     class="save-empresa-button"
                     [disabled]="empresaForm.invalid || empresaForm.pristine"
                     *ngIf="pageType ==='edit'" (click)="saveEmpresa()">
-                <span>SALVAR</span>
+                <span></span>
             </button>
         </div>
         <!-- / HEADER -->
@@ -63,7 +63,7 @@
 
                     <mat-tab-group>
 
-                        <mat-tab label="Basic Info">
+                        <mat-tab label="Informações básicas">
 
                             <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
 
@@ -130,15 +130,6 @@
                             </div>
 
                 
-
-                        </mat-tab>
-
-                        <mat-tab label="Endereço">
-                            <div fxLayout="row" fxLayoutAlign="space-between">
-                                
-
-                            </div>
-                            
 
                         </mat-tab>
 
