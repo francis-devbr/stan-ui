@@ -1,5 +1,5 @@
+import { AgmCoreModule } from '@agm/core';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
@@ -13,31 +13,31 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { AgmCoreModule } from '@agm/core';
-
-import { FuseSharedModule } from '@fuse/shared.module';
+import { RouterModule, Routes } from '@angular/router';
 import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
-
-import { FrotaVeiculosComponent } from 'app/main/frota/veiculos/veiculos.component';
-import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
-import { FrotaVeiculoComponent } from 'app/main/frota/veiculo/veiculo.component';
-import { FrotaVeiculoService } from 'app/main/frota/veiculo/veiculo.service';
-
-import { FrotaManutencoesComponent } from 'app/main/frota/manutencoes/manutencoes.component';
-import { FrotaManutencoesService } from 'app/main/frota/manutencoes/manutencoes.service';
-import { FrotaManutencaoComponent } from 'app/main/frota/manutencao/manutencao.component';
-import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
-
-import { FrotaAbastecimentosComponent } from 'app/main/frota/abastecimentos/abastecimentos.component';
-import { FrotaAbastecimentosService } from 'app/main/frota/abastecimentos/abastecimentos.service';
+import { FuseSharedModule } from '@fuse/shared.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FrotaAbastecimentoComponent } from 'app/main/frota/abastecimento/abastecimento.component';
 import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
-
-import { FrotaViagensComponent } from 'app/main/frota/viagens/viagens.component';
-import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
+import { FrotaAbastecimentosComponent } from 'app/main/frota/abastecimentos/abastecimentos.component';
+import { FrotaAbastecimentosService } from 'app/main/frota/abastecimentos/abastecimentos.service';
+import { FrotaManutencaoComponent } from 'app/main/frota/manutencao/manutencao.component';
+import { FrotaManutencaoService } from 'app/main/frota/manutencao/manutencao.service';
+import { FrotaManutencoesComponent } from 'app/main/frota/manutencoes/manutencoes.component';
+import { FrotaManutencoesService } from 'app/main/frota/manutencoes/manutencoes.service';
+import { FrotaVeiculoComponent } from 'app/main/frota/veiculo/veiculo.component';
+import { FrotaVeiculoService } from 'app/main/frota/veiculo/veiculo.service';
+import { FrotaVeiculosComponent } from 'app/main/frota/veiculos/veiculos.component';
+import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
 import { FrotaViagemComponent } from 'app/main/frota/viagem/viagem.component';
 import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
+import { FrotaViagensComponent } from 'app/main/frota/viagens/viagens.component';
+import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
+
+
+
+
+
 
 
 const routes: Routes = [
@@ -129,11 +129,6 @@ const routes: Routes = [
         }
     },
 
-
-
-
-
-
 ];
 
 @NgModule({
@@ -143,12 +138,7 @@ const routes: Routes = [
         FrotaManutencoesComponent,
         FrotaManutencaoComponent,
         FrotaAbastecimentosComponent,
-<<<<<<< HEAD
         FrotaAbastecimentoComponent,
-
-=======
-        FrotaAbastecimentoComponent,        
->>>>>>> 6f0d756758954f87a711710d7e2713f0645026ca
         FrotaViagensComponent,
         FrotaViagemComponent
     ],
