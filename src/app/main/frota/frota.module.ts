@@ -35,11 +35,6 @@ import { FrotaViagensComponent } from 'app/main/frota/viagens/viagens.component'
 import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
 
 
-
-
-
-
-
 const routes: Routes = [
     {
         path: 'veiculos',
