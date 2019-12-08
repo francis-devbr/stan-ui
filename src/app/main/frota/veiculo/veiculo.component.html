@@ -18,7 +18,7 @@
                 </button>
 
                 <div class="veiculo-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="veiculo.images[0]" [src]="veiculo.images[0].url">
+                    <img *ngIf="veiculo.images[0]" [src]="veiculo.images[0]">
                     <img *ngIf="!veiculo.images[0]" [src]="'assets/images/frota/veiculo-image-placeholder.png'">
                 </div>
 
