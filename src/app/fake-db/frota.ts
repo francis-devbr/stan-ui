@@ -89,8 +89,8 @@ export class FrotaFakeDb {
             },
             "enable": true
         }
-    ]
-    
+    ];
+
     public static abastecimentos = [
         {
             'id': '1',

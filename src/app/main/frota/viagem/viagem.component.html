@@ -64,7 +64,7 @@
 
                         <mat-tab label="Informações do Veículo">
 
-                            <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+                            <div class="tab-content p-30" fusePerfectScrollbar fxLayout="column">
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Tipo de Viagem</mat-label>
                                     <input matInput placeholder="Selecione o tipo de viagem" name="tipoViagem"
@@ -73,7 +73,7 @@
 
                                 <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Descrição da Viagem</mat-label>
                                         <textarea matInput formControlName="descricaoViagem"
                                             name="descricaoViagem"></textarea>
@@ -86,7 +86,7 @@
                                             <mat-option [value]="">Viagem em Aberto</mat-option>
                                             <mat-option [value]="">Aguardando Motorista</mat-option>
                                             <mat-option [value]="">Finalizada</mat-option>
-                                            </mat-select>
+                                        </mat-select>
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
@@ -98,53 +98,54 @@
                                         </mat-select>
                                     </mat-form-field>
                                 </div>
-                                <div>
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="47">
                                         <mat-label>KM Inicial</mat-label>
                                         <input matInput placeholder="Informe a quilometragem inicial" name="kmInicial"
                                             formControlName="kmInicial" required>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
                                         <mat-label>KM Final</mat-label>
                                         <input matInput placeholder="Informe a quilometragem Final" name="kmFinal"
                                             formControlName="kmFinal">
                                     </mat-form-field>
-
                                 </div>
 
                                 <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Saída</mat-label>
                                         <input matInput type="date" placeholder="Informe a data de Saída" name="saida"
                                             formControlName="saida" required>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Retorno</mat-label>
                                         <input matInput type="date" placeholder="Informe a data de retorno"
                                             name="retorno" formControlName="retorno" required>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Horário de Retorno</mat-label>
                                         <input matInput type="datetime" placeholder="Informe o horário de retorno"
                                             name="hrRetorno" formControlName="hrRetorno" required>
                                     </mat-form-field>
+                                </div>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="47">
                                         <mat-label>Destino Inicial</mat-label>
-                                        <input mat-input-container floatPlaceholder="Informe o destino inicial">
-                                        <textarea matInput formControlName="destinoInicial" name="destinoInicial"
-                                            required></textarea>
+                                        <input matInput floatPlaceholder="Informe o destino inicial"
+                                            formControlName="destinoInicial" name="destinoInicial">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
                                         <mat-label>Destino Final</mat-label>
-                                        <input mat-input-container floatPlaceholder="Informe o destino final">
-                                        <textarea matInput formControlName="destinoFinal" name="destinoFinal"
-                                            required></textarea>
+                                        <input matInput type="text" floatPlaceholder="Informe o destino final"
+                                            formControlName="destinoFinal" name="destinoFinal">
                                     </mat-form-field>
                                 </div>
                             </div>
