@@ -3,7 +3,6 @@ export class FrotaFakeDb {
         {
             "id": 1,
             "placa": "XPT4122",
-            "handle": "fsgafsgasfg",
             "chassi": "fsgafsgasfg",
             "renavam": "sasasasasasas",
             "marca": {
@@ -36,52 +35,59 @@ export class FrotaFakeDb {
             "kmAtual": 10.00,
             "pneuTrocadoEm": null,
             "mesIpva": 1,
-            "enable": true
-        },
-        {
-            "id": 2,
-            "placa": "DPT4123",
-            "handle": "dsgafsgasfg",
-            "chassi": "dsgafsgasfg",
-            "renavam": "dasasasasasas",
-            "marca": {
+            "empresa": {
                 "id": 1,
-                "nome": "Fiat",
-                "modelos": [
+                "nome": "RGB Locações de Automóveis",
+                "tipoPessoa": "J",
+                "cpfOuCnpj": "72907711000155",
+                "endereco": {
+                    "id": 1,
+                    "logradouro": {
+                        "id": 1,
+                        "cep": "01308040",
+                        "nome": "São Miguel",
+                        "tipoLogradouro": {
+                            "id": 1,
+                            "nome": "Rua"
+                        },
+                        "complemento": null,
+                        "local": null,
+                        "bairro": {
+                            "id": 6,
+                            "nome": "Bela Vista",
+                            "cidade": {
+                                "id": 8,
+                                "nome": "Sao Paulo",
+                                "estado": {
+                                    "id": 26,
+                                    "sigla": "SP",
+                                    "nome": "São Paulo",
+                                    "pais": {
+                                        "id": 3,
+                                        "nome": "Brasil",
+                                        "sigla": "BR"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "numero": "201",
+                    "complemento": null
+                },
+                "telefones": [
                     {
-                        "id": 2,
-                        "nome": "Palio",
+                        "id": 1,
+                        "tipo": "Fixo",
+                        "ddd": "11",
+                        "numero": "41414141",
                         "enable": true
                     }
                 ],
+                "email": "sac@rgb.com",
+                "inscricaoEstadual": "775085384078",
                 "enable": true
             },
-            "anoFabricacao": 2017,
-            "anoModelo": 2018,
-            "cor": "branco",
-            "tipoCombustivel": {
-                "id": 1,
-                "nome": "Gasolina",
-                "enable": true
-            },
-            "categoria": {
-                "id": 1,
-                "nome": "Passeio",
-                "enable": true
-            },
-            "valorPago": 30000.00,
-            "kmInicial": 0.00,
-            "kmAtual": 10.00,
-            "pneuTrocadoEm": null,
-            "mesIpva": 1,
-            "enable": true,
-            'images': [
-                {
-                    'id': 1,
-                    'url': 'assets/images/frota/carros.jpg',
-                    'type': 'image'
-                },
-            ]
+            "enable": true
         }
     ];
     
