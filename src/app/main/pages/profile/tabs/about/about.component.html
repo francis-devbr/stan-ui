@@ -5,22 +5,22 @@
         <div class="profile-box info-box general" fxLayout="column">
 
             <header class="accent">
-                <div class="title">General Information</div>
+                <div class="title">Iformações Gerais</div>
             </header>
 
             <div class="content">
                 <div class="info-line">
-                    <div class="title">Gender</div>
+                    <div class="title">Gênero</div>
                     <div class="info">{{about.general.gender}}</div>
                 </div>
 
                 <div class="info-line">
-                    <div class="title">Birthday</div>
+                    <div class="title">Data de Nascimento</div>
                     <div class="info">{{about.general.birthday}}</div>
                 </div>
 
                 <div class="info-line">
-                    <div class="title">Locations</div>
+                    <div class="title">Cidade de nascimento</div>
                     <div class="info location" fxLayout="row" fxLayoutAlign="start center"
                          *ngFor="let location of about.general.locations">
                         <span>{{location}}</span>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="info-line">
-                    <div class="title">About Me</div>
+                    <div class="title">Sobre mim</div>
                     <div class="info">{{about.general.about}}</div>
                 </div>
             </div>
@@ -41,26 +41,26 @@
         <div class="profile-box info-box contact" fxLayout="column">
 
             <header class="accent">
-                <div class="title">Contact</div>
+                <div class="title">Contato</div>
             </header>
 
             <div class="content">
-                <div class="info-line">
-                    <div class="title">Address</div>
+                <!--<div class="info-line">
+                    <div class="title">Endereço</div>
                     <div class="info">{{about.contact.address}}</div>
-                </div>
+                </div>-->
                 <div class="info-line">
                     <div class="title">Tel.</div>
                     <div class="info" *ngFor="let tel of about.contact.tel">
                         <span>{{tel}}</span>
                     </div>
                 </div>
-                <div class="info-line">
+                <!--<div class="info-line">
                     <div class="title">Website</div>
                     <div class="info" *ngFor="let website of about.contact.websites">
                         <span>{{website}}</span>
                     </div>
-                </div>
+                </div>-->
                 <div class="info-line">
                     <div class="title">Emails</div>
                     <div class="info" *ngFor="let email of about.contact.emails">
@@ -78,22 +78,22 @@
         <div class="profile-box info-box work" fxLayout="column">
 
             <header class="accent">
-                <div class="title">Work</div>
+                <div class="title">Carreira</div>
             </header>
 
             <div class="content">
                 <div class="info-line">
-                    <div class="title">Occupation</div>
+                    <div class="title">Cargo</div>
                     <div class="info">{{about.work.occupation}}</div>
                 </div>
 
                 <div class="info-line">
-                    <div class="title">Skills</div>
+                    <div class="title">Especialidades</div>
                     <div class="info">{{about.work.skills}}</div>
                 </div>
 
                 <div class="info-line">
-                    <div class="title">Jobs</div>
+                    <div class="title">Empresas</div>
                     <table class="info jobs">
                         <tr class="job" *ngFor="let job of about.work.jobs">
                             <td class="company">{{job.company}}</td>
