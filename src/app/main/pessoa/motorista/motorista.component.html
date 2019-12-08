@@ -28,7 +28,7 @@
                         {{motorista.pessoa.nome}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
-                        Nova Motorista
+                        Novo Motorista
                     </div>
                     <div class="subtitle secondary-text">
                         <span>Motorista Detalhe</span>
@@ -39,7 +39,7 @@
 
             <button mat-raised-button class="save-motorista-button" [disabled]="motoristaForm.invalid"
                 *ngIf="pageType ==='new'" (click)="addMotorista()">
-                <span>ADD</span>
+                <span>Adicionar</span>
             </button>
 
             <button mat-raised-button class="save-motorista-button"
