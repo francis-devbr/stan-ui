@@ -98,8 +98,9 @@ $typography: mat-typography-config(
 
 @import "src/app/main/frota/manutencoes/manutencoes.theme";
 
-
 @import "src/app/main/frota/abastecimentos/abastecimentos.theme";
+
+@import "src/app/main/frota/viagens/viagens.theme";
 
 
 // Define a mixin for easier access
@@ -115,6 +116,8 @@ $typography: mat-typography-config(
     @include frota-veiculos-theme($theme);
 
     @include frota-manutencoes-theme($theme);
+   
+    @include frota-viagens-theme($theme);
 
     @include pessoa-motoristas-theme($theme);
 
