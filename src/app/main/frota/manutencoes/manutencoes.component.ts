@@ -21,7 +21,7 @@ import { takeUntil } from 'rxjs/internal/operators';
 export class FrotaManutencoesComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'veiculo', 'tipoManutencao', 'dataInicial', 'dataFinal', 'active'];
+    displayedColumns = ['id', 'image', 'veiculo', 'tipoManutencao', 'dataInicial', 'dataFinal', 'active'];
 
     @ViewChild(MatPaginator, {static: true})
     paginator: MatPaginator;
