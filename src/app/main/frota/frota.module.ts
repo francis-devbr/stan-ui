@@ -92,6 +92,7 @@ const routes: Routes = [
             data: FrotaAbastecimentosService
         }
     },
+    
     {
         path: 'abastecimentos/:id',
         component: FrotaAbastecimentoComponent,
@@ -114,6 +115,7 @@ const routes: Routes = [
             data: FrotaViagensService
         }
     },
+
     {
         path: 'viagens/:id',
         component: FrotaViagemComponent,
