@@ -1,0 +1,159 @@
+<!--author: carol freitas
+    data:08/12/19
+    file: viagem.component
+    description: tela de viagem, responsável por mostrar os dados de cadastro da viagem
+-->
+
+<div id="viagem" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <!-- APP TITLE -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/frota/viagens'">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+
+                <div class="viagem-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    <img *ngIf="viagem.images[0]" [src]="viagem.images[0].url">
+                    <img *ngIf="!viagem.images[0]" [src]="'assets/images/frota/viagem-image-placeholder.png'">
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="start start"
+                    [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    <div class="h2" *ngIf="pageType ==='edit'">
+                        {{viagem.veiculo.tipoViagem}} {{viagem.veiculo.modelos[0].tipoViagem}} - {{viagem.statusViagem}}
+                    </div>
+                    <div class="h2" *ngIf="pageType ==='new'">
+                        Cadastrar Viagem
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span>Dados do Viagem</span>
+                    </div>
+                </div>
+            </div><!-- / APP TITLE -->
+
+            <button mat-raised-button class="save-viagem-button" [disabled]="viagemForm.invalid"
+                *ngIf="pageType ==='new'" (click)="addViagem()">
+                <span>Adicionar</span>
+            </button>
+
+            <button mat-raised-button class="save-viagem-button" [disabled]="viagemForm.invalid || viagemForm.pristine"
+                *ngIf="pageType ==='edit'" (click)="saveViagem()">
+                <span>Salvar</span>
+            </button>
+        </div><!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <form name="viagemForm" [formGroup]="viagemForm" class="viagem w-100-p" fxLayout="column" fxFlex>
+                    <mat-tab-group>
+
+                        <mat-tab label="Informações do Veículo">
+
+                            <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-label>Tipo de Viagem</mat-label>
+                                    <input matInput placeholder="Selecione o tipo de viagem" name="tipoViagem"
+                                        formControlName="tipoViagem" required>
+                                </mat-form-field>
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Descrição da Viagem</mat-label>
+                                        <input mat-input-container floatPlaceholder="">
+                                        <textarea matInput formControlName="descricaoViagem"
+                                            name="descricaoViagem"></textarea>
+                                        </mat-input-container>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Status da Viagem</mat-label>
+                                        <mat-select placeholder="Informe o Status da Viagem" name="statusViagem"
+                                            formControlName="statusViagem" required>
+                                            <mat-option [value]="aberta">Viagem em Aberto</mat-option>
+                                            <mat-option [value]="aguardando">Aguardando Motorista</mat-option>
+                                            <mat-option [value]="finalizada">Finalizada</mat-option>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Selecione o veículo</mat-label>
+                                        <mat-select placeholder="Informe o veículo" name="veiculo"
+                                            formControlNameVeiculo>
+                                            <mat-option [value]="v1">Fiat</mat-option>
+                                            <mat-option [value]="v2">Gol</mat-option>
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>KM Inicial</mat-label>
+                                        <input matInput placeholder="Informe a quilometragem inicial" name="kmInicial"
+                                            formControlName="kmInicial" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>KM Final</mat-label>
+                                        <input matInput placeholder="Informe a quilometragem Final" name="kmFinal"
+                                            formControlName="kmFinal">
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Saída</mat-label>
+                                        <input matInput type="date" placeholder="Informe a data de Saída" name="saida"
+                                            formControlName="saida" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Retorno</mat-label>
+                                        <input matInput type="date" placeholder="Informe a data de retorno"
+                                            name="retorno" formControlName="retorno" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Horário de Retorno</mat-label>
+                                        <input matInput type="datetime" placeholder="Informe o horário de retorno"
+                                            name="hrRetorno" formControlName="hrRetorno" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Destino Inicial</mat-label>
+                                        <input mat-input-container floatPlaceholder="Informe o destino inicial">
+                                        <textarea matInput formControlName="destinoInicial" name="destinoInicial"
+                                            required></textarea>
+                                        </mat-input-container>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
+                                        <mat-label>Destino Final</mat-label>
+                                        <input mat-input-container floatPlaceholder="Informe o destino final">
+                                        <textarea matInput formControlName="destinoFinal" name="destinoFinal"
+                                            required></textarea>
+                                        </mat-input-container>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </form>
+            </div><!-- / CONTENT -->
+        </div><!-- / CONTENT CARD -->
+    </div><!-- / CENTER -->
+</div>
