@@ -140,7 +140,7 @@ const routes: Routes = [
         FrotaAbastecimentosComponent,
         FrotaAbastecimentoComponent,
         FrotaViagensComponent,
-        FrotaViagemComponent
+        FrotaViagemComponent,
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -175,7 +175,7 @@ const routes: Routes = [
         FrotaAbastecimentosService,
         FrotaAbastecimentoService,        
         FrotaViagensService,
-        FrotaViagemService
+        FrotaViagemService,
     ]
 })
 export class FrotaModule {
