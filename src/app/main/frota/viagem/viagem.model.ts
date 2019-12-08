@@ -23,6 +23,7 @@ export class Viagem
     kmInicial: string;
     kmFinal: string;
     saida: string;
+    retorno: string;
     destinoInicial: string;
     destinoFinal: string;
     active: boolean;
@@ -48,6 +49,7 @@ export class Viagem
         this.kmInicial = viagem.kmInicial || 0;
         this.kmFinal = viagem.kmFinal || 0;
         this.saida = viagem.saida || 0;
+        this.retorno = viagem.retorno || 0;
         this.destinoInicial = viagem.destinoInicial || 0;        
         this.destinoFinal = viagem.destinoFinal || 0;
         this.active = viagem.active || true;

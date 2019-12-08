@@ -8,7 +8,7 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { viagem } from 'app/main/model/viagem/viagem.model';
+import { Viagem } from 'app/main/frota/viagem/viagem.model';
 import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
 
 @Component({
@@ -19,7 +19,7 @@ import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
     animations: fuseAnimations
 })
 export class FrotaViagemComponent implements OnInit, OnDestroy {
-    viagem: viagem;
+    viagem: Viagem;
     pageType: string;
     viagemForm: FormGroup;
 
@@ -27,13 +27,13 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
     private _unsubscribeAll: Subject<any>;
 
     constructor(
-        private _frotaviagemservice: FrotaViagemService,
+        private _FrotaViagemService: FrotaViagemService,
         private _formBuilder: FormBuilder,
         private _location: Location,
         private _matSnackBar: MatSnackBar
     ) {
         // Set the default
-        this.viagem = new viagem();
+        this.viagem = new Viagem();
 
         // Set the private defaults
         this._unsubscribeAll = new Subject();
@@ -41,7 +41,7 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         // Subscribe to update viagem on changes
-        this._frotaviagemservice.onViagemChanged
+        this._FrotaViagemService.onViagemChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(viagem => {
 
@@ -68,7 +68,6 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
     createViagemForm(): FormGroup {
         return this._formBuilder.group({
             id: [this.viagem.id],
-            placa: [this.viagem.placa],
             handle: [this.viagem.handle],
             tipoViagem: [this.viagem.tipoViagem],
             descricaoViagem: [this.viagem.descricaoViagem],
@@ -80,18 +79,18 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
             retorno: [this.viagem.retorno],
             destinoInicial: [this.viagem.destinoInicial],
             destinoFinal: [this.viagem.destinoFinal],
-            enable: [this.viagem.enable]
+            active: [this.viagem.active]
         });
     }
 
 
     saveViagem(): void {
         const data = this.viagemForm.getRawValue();
-        data.handle = FuseUtils.handleize(data.placa);
+        data.handle = FuseUtils.handleize(data.tipoViagem);
 
-        this._frotaviagemservice.saveViagem(data)
+        this._FrotaViagemService.saveViagem(data)
             .then(() => {
-                this._frotaviagemservice.onViagemChanged.next(data);
+                this._FrotaViagemService.onViagemChanged.next(data);
                 this._matSnackBar.open('Viagem salva', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
@@ -104,11 +103,11 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
         const data = this.viagemForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
-        this._frotaviagemservice.addViagem(data)
+        this._FrotaViagemService.addViagem(data)
             .then(() => {
 
                 // Trigger the subscription with new data
-                this._frotaviagemservice.onViagemChanged.next(data);
+                this._FrotaViagemService.onViagemChanged.next(data);
 
                 // Show the success message
                 this._matSnackBar.open('Viagem adicionada', 'OK', {
