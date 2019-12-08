@@ -17,17 +17,10 @@
                     <mat-icon>ev_station</mat-icon>
                 </button>
 
-                <div class="abastecimento-image mr-8 mr-sm-16"
-                    [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="abastecimento.images[0]" [src]="abastecimento.images[0].url">
-                    <img *ngIf="!abastecimento.images[0]"
-                        [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
-                </div>
-
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{abastecimento.tipoCombustivel}} {{abastecimento.numCupomFiscal}} {{abastecimento.qtdLitros}}
+                        {{abastecimento.name}}  {{abastecimento.tipoCombustivel[0]}}                    
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Abastencimento
@@ -36,8 +29,8 @@
                         <span>Dados do Abastencimento</span>
                     </div>
                 </div>
-            </div>
-            <!-- / APP TITLE -->
+                
+            </div><!-- / APP TITLE -->
 
             <button mat-raised-button class="save-abastecimento-button" [disabled]="abastecimentoForm.invalid"
                 *ngIf="pageType ==='new'" (click)="addAbastecimento()">
@@ -49,8 +42,7 @@
                 (click)="saveAbastecimento()">
                 <span>Salvar</span>
             </button>
-        </div>
-        <!-- / HEADER -->
+        </div><!-- / HEADER -->
 
         <!-- CONTENT CARD -->
         <div class="content-card">
@@ -123,9 +115,9 @@
 
                                     <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                         <mat-label>KM Final</mat-label>
-                                        <input matInput type="number" placeholder="Informe a data de final" type="number"
-                                            class="form-control" id="kmFinal" aria-describedby="id" name="kmFinal"
-                                            formControlName="kmFinal">
+                                        <input matInput type="number" placeholder="Informe a data de final"
+                                            type="number" class="form-control" id="kmFinal" aria-describedby="id"
+                                            name="kmFinal" formControlName="kmFinal">
                                     </mat-form-field>
 
                                 </div>
@@ -138,12 +130,10 @@
 
                 </form>
 
-            </div>
-            <!-- / CONTENT -->
+            </div><!-- / CONTENT -->
 
-        </div>
-        <!-- / CONTENT CARD -->
+        </div><!-- / CONTENT CARD -->
 
-    </div>
-    <!-- / CENTER -->
+    </div><!-- / CENTER -->
+
 </div>

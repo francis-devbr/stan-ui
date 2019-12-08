@@ -18,8 +18,8 @@ export class Abastecimento
     }[];
     tipoCombustivel: string;
     qtdLitros: number;
-    valorLitro: number;
-    valorTotal: number;
+    valorLitro: boolean;
+    valorTotal: boolean;
     numCupomFiscal: string;
     data: Date;
     kmInicial: string;

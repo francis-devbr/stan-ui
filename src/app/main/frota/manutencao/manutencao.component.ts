@@ -127,7 +127,7 @@ export class FrotaManutencaoComponent implements OnInit, OnDestroy {
                 this._frotaManutencaoService.onManutencaoChanged.next(data);
 
                 // Show the success message
-                this._matSnackBar.open('Manutencao saved', 'OK', {
+                this._matSnackBar.open('Manutencao salva', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
                 });

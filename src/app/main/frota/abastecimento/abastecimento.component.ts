@@ -95,11 +95,14 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
         return this._formBuilder.group({
             id: [this.abastecimento.id],
             name: [this.abastecimento.name],
-            handle: [this.abastecimento.handle],
+            handle: [this.abastecimento.handle],            
+            description: [this.abastecimento.description],
+            categories: [this.abastecimento.categories],
+            tags: [this.abastecimento.tags],            
+            images: [this.abastecimento.images],
             tipoCombustivel: [this.abastecimento.tipoCombustivel],
             qtdLitros: [this.abastecimento.qtdLitros],
             valorLitro: [this.abastecimento.valorLitro],
-            images: [this.abastecimento.images],
             valorTotal: [this.abastecimento.valorTotal],
             numCupomFiscal: [this.abastecimento.numCupomFiscal],
             data: [this.abastecimento.data],
@@ -123,7 +126,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
                 this._frotaAbastecimentoService.onAbastecimentoChanged.next(data);
 
                 // Show the success message
-                this._matSnackBar.open('Abastecimento saved', 'OK', {
+                this._matSnackBar.open('Abastecimento salva', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
                 });
