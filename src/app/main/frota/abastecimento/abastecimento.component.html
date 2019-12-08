@@ -14,7 +14,7 @@
             <div fxLayout="row" fxLayoutAlign="start center">
 
                 <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/frota/abastecimentos'">
-                    <mat-icon>arrow_back</mat-icon>
+                    <mat-icon>ev_station</mat-icon>
                 </button>
 
                 <div class="abastecimento-image mr-8 mr-sm-16"
@@ -27,7 +27,7 @@
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{abastecimento.name}}
+                        {{abastecimento.tipoCombustivel}} {{abastecimento.numCupomFiscal}} {{abastecimento.qtdLitros}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Abastencimento
@@ -91,13 +91,13 @@
 
                                     <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                         <mat-label>Valor por Litro(R$)</mat-label>
-                                        <input matInput type="number" placeholder="Quantidade em litros"
+                                        <input matInput type="number" placeholder="Informe o valor do litro"
                                             name="valorLitro" formControlName="valorLitro" min="10">
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                         <mat-label>Valor Total(R$)</mat-label>
-                                        <input matInput type="number" placeholder="Quantidade em litros"
+                                        <input matInput type="number" placeholder="Informe o valor total"
                                             name="valorTotal" formControlName="valorTotal" min="10">
                                     </mat-form-field>
 

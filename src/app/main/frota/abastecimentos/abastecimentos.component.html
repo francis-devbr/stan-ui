@@ -26,7 +26,7 @@
             <div class="search-wrapper mx-32 mx-md-0">
                 <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon>Pesquisar</mat-icon>
-                    <input #filter placeholder="Pesquisar veículo">
+                    <input #filter placeholder="Pesquisar abastecimento">
                 </div>
             </div>
             <!-- / SEARCH -->
@@ -67,33 +67,6 @@
                     </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="qtdLitros">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
-                    <mat-cell *matCellDef="let abastecimento">
-                        <p class="text-truncate">{{abastecimento.qtdLitros}}</p>
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="placa">
-                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Placa do veículo
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
-                        <p class="placa text-truncate">
-                            {{abastecimento.placa[0]}}
-                        </p>
-                    </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="valorLitro">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
-                        <p class="price text-truncate">
-                            {{abastecimento.valorLitro | currency:'USD':'symbol'}}
-                        </p>
-                    </mat-cell>
-                </ng-container>
-
                 <ng-container matColumnDef="tipoCombustivel">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Combustível
                     </mat-header-cell>
@@ -109,6 +82,37 @@
                     </mat-cell>
                 </ng-container>
 
+
+                <ng-container matColumnDef="qtdLitros">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
+                    <mat-cell *matCellDef="let abastecimento">
+                        <p class="text-truncate">{{abastecimento.qtdLitros}}</p>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="valorLitro">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
+                        <p class="price text-truncate">
+                            {{abastecimento.valorLitro | currency:'R$':'symbol'}}
+                        </p>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="numCupomFiscal">
+                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Número do Cupom Físcal
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
+                        <p class="numCupomFiscal text-truncate">
+                            {{abastecimento.numCupomFiscal[0]}}
+                        </p>
+                    </mat-cell>
+                </ng-container>
+
+                
+
+               
                 <!-- Active Column -->
                 <ng-container matColumnDef="active">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Status</mat-header-cell>

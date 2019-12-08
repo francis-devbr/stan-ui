@@ -21,7 +21,7 @@ import { takeUntil } from 'rxjs/internal/operators';
 export class FrotaAbastecimentosComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'name', 'category', 'price', 'quantity', 'active'];
+    displayedColumns = ['id', 'image', 'tipoCombustivel', 'qtdLitros', 'valorLitro', 'numCupomFiscal', 'active'];
 
     @ViewChild(MatPaginator, {static: true})
     paginator: MatPaginator;
@@ -193,17 +193,17 @@ export class FilesDataSource extends DataSource<any>
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
-                case 'name':
+                case 'tipoCombustivel':
                     [propertyA, propertyB] = [a.name, b.name];
                     break;
-                case 'categories':
-                    [propertyA, propertyB] = [a.categories[0], b.categories[0]];
+                case 'qtdLitros':
+                    [propertyA, propertyB] = [a.qtdLitros[0], b.qtdLitros[0]];
                     break;
-                case 'price':
-                    [propertyA, propertyB] = [a.priceTaxIncl, b.priceTaxIncl];
+                case 'valorLitro':
+                    [propertyA, propertyB] = [a.valorLitro, b.valorLitro];
                     break;
-                case 'quantity':
-                    [propertyA, propertyB] = [a.quantity, b.quantity];
+                case 'numCupomFiscal':
+                    [propertyA, propertyB] = [a.numCupomFiscal, b.numCupomFiscal];
                     break;
                 case 'active':
                     [propertyA, propertyB] = [a.active, b.active];
