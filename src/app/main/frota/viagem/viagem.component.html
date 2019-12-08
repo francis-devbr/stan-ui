@@ -20,7 +20,7 @@
             <div fxLayout="row" fxLayoutAlign="start center">
 
                 <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/frota/viagens'">
-                    <mat-icon>arrow_back</mat-icon>
+                    <mat-icon>import_export</mat-icon>
                 </button>
 
                 <div class="viagem-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
@@ -31,7 +31,7 @@
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{viagem.veiculo.tipoViagem}} {{viagem.veiculo.modelos[0].tipoViagem}} - {{viagem.statusViagem}}
+                        {{viagem.tipoViagem}} {{viagem.tipoViagem[0].tipoViagem}} - {{viagem.statusViagem}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Viagem

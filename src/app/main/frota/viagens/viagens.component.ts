@@ -8,20 +8,20 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { FrotaVeiculosService } from 'app/main/frota/veiculos/veiculos.service';
+import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
 import { takeUntil } from 'rxjs/internal/operators';
-import { Veiculo } from 'app/main/model/veiculo/veiculo.model';
+import { viagem } from 'app/main/model/viagem/viagem.model';
 
 @Component({
-    selector: 'frota-veiculos',
-    templateUrl: './veiculos.component.html',
-    styleUrls: ['./veiculos.component.scss'],
+    selector: 'frota-viagens',
+    templateUrl: './viagens.component.html',
+    styleUrls: ['./viagens.component.scss'],
     animations: fuseAnimations,
     encapsulation: ViewEncapsulation.None
 })
-export class FrotaVeiculosComponent implements OnInit {
+export class FrotaviagensComponent implements OnInit {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'marca', 'modelo', 'categoria', 'placa', 'active'];
+    displayedColumns = ['id', 'image', 'veiculo', 'kmInicial', 'kmFinal', 'tipoViagem', 'active'];
 
     @ViewChild(MatPaginator, { static: true })
     paginator: MatPaginator;
@@ -35,13 +35,13 @@ export class FrotaVeiculosComponent implements OnInit {
     private _unsubscribeAll: Subject<any>;
 
     constructor(
-        private _frotaVeiculosService: FrotaVeiculosService
+        private _frotaViagensService: FrotaViagensService
     ) {
         this._unsubscribeAll = new Subject();
     }
 
     ngOnInit(): void {
-        this.dataSource = new FilesDataSource(this._frotaVeiculosService, this.paginator, this.sort);
+        this.dataSource = new FilesDataSource(this._frotaViagensService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
             .pipe(
@@ -65,18 +65,18 @@ export class FilesDataSource extends DataSource<any>
     private _filteredDataChange = new BehaviorSubject('');
 
     constructor(
-        private _frotaVeiculosService: FrotaVeiculosService,
+        private _frotaViagensService: FrotaViagensService,
         private _matPaginator: MatPaginator,
         private _matSort: MatSort
     ) {
         super();
 
-        this.filteredData = this._frotaVeiculosService.veiculos;
+        this.filteredData = this._frotaViagensService.viagens;
     }
 
     connect(): Observable<any[]> {
         const displayDataChanges = [
-            this._frotaVeiculosService.onVeiculosChanged,
+            this._frotaViagensService.onViagensChanged,
             this._matPaginator.page,
             this._filterChange,
             this._matSort.sortChange
@@ -85,7 +85,7 @@ export class FilesDataSource extends DataSource<any>
         return merge(...displayDataChanges)
             .pipe(
                 map(() => {
-                    let data = this._frotaVeiculosService.veiculos.slice();
+                    let data = this._frotaViagensService.viagens.slice();
 
                     data = this.filterData(data);
 
@@ -118,7 +118,7 @@ export class FilesDataSource extends DataSource<any>
         this._filterChange.next(filter);
     }
 
-    filterData(data): Veiculo[] {
+    filterData(data): viagem[] {
         if (!this.filter) {
             return data;
         }
@@ -138,18 +138,18 @@ export class FilesDataSource extends DataSource<any>
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
-                case 'marca':
-                    [propertyA, propertyB] = [a.marca, b.marca];
+                case 'veiculo':
+                    [propertyA, propertyB] = [a.veiculo, b.veiculo];
                     break;
-                case 'modelo':
-                    [propertyA, propertyB] = [a.modelo, b.modelo];
+                case 'kmInicial':
+                    [propertyA, propertyB] = [a.kmInicial, b.kmInicial];
                     break;
 
-                case 'categoria':
-                    [propertyA, propertyB] = [a.categoria, b.categoria];
+                case 'kmFinal':
+                    [propertyA, propertyB] = [a.kmFinal, b.kmFinal];
                     break;
-                case 'placa':
-                    [propertyA, propertyB] = [a.placa, b.placa];
+                case 'tipoViagem':
+                    [propertyA, propertyB] = [a.tipoViagem, b.tipoViagem];
                     break;
                 case 'ativo':
                     [propertyA, propertyB] = [a.enable, b.enable];

@@ -34,6 +34,10 @@ import { FrotaAbastecimentosService } from 'app/main/frota/abastecimentos/abaste
 import { FrotaAbastecimentoComponent } from 'app/main/frota/abastecimento/abastecimento.component';
 import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
 
+import { FrotaViagensComponent } from 'app/main/frota/viagens/viagens.component';
+import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
+import { FrotaViagemComponent } from 'app/main/frota/viagem/viagem.component';
+import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
 
 
 const routes: Routes = [
@@ -101,7 +105,24 @@ const routes: Routes = [
         resolve: {
             data: FrotaAbastecimentoService
         }
+    },
+
+    {
+        path: 'viagens/:id',
+        component: FrotaViagemComponent,
+        resolve: {
+            data: FrotaViagensService
+        }
+    },
+    {
+        path: 'viagens/:id/:handle',
+        component: FrotaViagemComponent,
+        resolve: {
+            data: FrotaViagensService
+        }
     }
+
+
 
 
 
@@ -147,7 +168,9 @@ const routes: Routes = [
         FrotaManutencoesService,
         FrotaManutencaoService,
         FrotaAbastecimentosService,
-        FrotaAbastecimentoService
+        FrotaAbastecimentoService,        
+        FrotaViagensService,
+        FrotaViagemService
     ]
 })
 export class FrotaModule {
