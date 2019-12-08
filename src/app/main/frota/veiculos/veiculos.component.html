@@ -13,8 +13,7 @@
              fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
 
             <!-- APP TITLE -->
-            <div class="logo mb-24 mb-md-0"
-                 fxLayout="row" fxLayoutAlign="start center">
+            <div class="logo mb-24 mb-md-0" fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon class="logo-icon s-32 mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
                     directions_car
                 </mat-icon>
@@ -34,8 +33,7 @@
             <!-- / SEARCH -->
 
             <!-- ADD BUTTON -->
-            <button mat-raised-button
-                    [routerLink]="'/frota/veiculos/new'"
+            <button mat-raised-button [routerLink]="'/frota/veiculos/new'"
                     class="add-veiculo-button fuse-white mt-24 mt-md-0">
                 <span>Cadastrar Veículo</span>
             </button>
@@ -47,11 +45,8 @@
         <!-- CONTENT CARD -->
         <div class="content-card">
 
-            <mat-table class="veiculos-table"
-                       #table [dataSource]="dataSource"
-                       matSort
-                       [@animateStagger]="{value:'50'}"
-                       fusePerfectScrollbar>
+            <mat-table class="veiculos-table" #table [dataSource]="dataSource" matSort
+                       [@animateStagger]="{value:'50'}" fusePerfectScrollbar>
 
                 <!-- ID Column -->
                 <ng-container matColumnDef="id">
@@ -72,7 +67,6 @@
                              [src]="'assets/images/frota/veiculo-image-placeholder.png'">
                     </mat-cell>
                 </ng-container>
-
                 
                 <ng-container matColumnDef="marca">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Marca</mat-header-cell>
@@ -120,8 +114,7 @@
                 <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
 
                 <mat-row *matRowDef="let veiculo; columns: displayedColumns;"
-                         class="veiculo"
-                         matRipple
+                         class="veiculo" matRipple
                          [routerLink]="'/frota/veiculos/'+veiculo.id+'/'+veiculo.handle">
                 </mat-row>
 

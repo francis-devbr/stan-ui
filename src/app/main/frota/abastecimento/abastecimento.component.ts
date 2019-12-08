@@ -26,14 +26,6 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
     // Private
     private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {FrotaAbastecimentoService} _frotaAbastecimentoService
-     * @param {FormBuilder} _formBuilder
-     * @param {Location} _location
-     * @param {MatSnackBar} _matSnackBar
-     */
     constructor(
         private _frotaAbastecimentoService: FrotaAbastecimentoService,
         private _formBuilder: FormBuilder,
@@ -47,13 +39,6 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void {
         // Subscribe to update abastecimento on changes
         this._frotaAbastecimentoService.onAbastecimentoChanged
@@ -73,24 +58,12 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
             });
     }
 
-    /**
-    * On destroy
-    */
     ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-    * Create Abastecimento form
-    *
-    * @returns {FormGroup}
-    */
     createAbastecimentoForm(): FormGroup {
         return this._formBuilder.group({
             id: [this.abastecimento.id],
@@ -112,30 +85,21 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
         });
     }
 
-    
-     //Save abastecimento
-    
+        
     saveAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
         this._frotaAbastecimentoService.saveAbastecimento(data)
             .then(() => {
-
-                // Trigger the subscription with new data
                 this._frotaAbastecimentoService.onAbastecimentoChanged.next(data);
-
-                // Show the success message
-                this._matSnackBar.open('Abastecimento salva', 'OK', {
+                this._matSnackBar.open('Abastecimento salvo', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
                 });
             });
     }
 
-    /**
-    * Add abastecimento
-    */
     addAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
@@ -147,7 +111,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
                 this._frotaAbastecimentoService.onAbastecimentoChanged.next(data);
 
                 // Show the success message
-                this._matSnackBar.open('abastecimento added', 'OK', {
+                this._matSnackBar.open('Abastecimento adicionado', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
                 });

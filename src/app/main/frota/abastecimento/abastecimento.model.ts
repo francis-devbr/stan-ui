@@ -21,7 +21,7 @@ export class Abastecimento
     valorLitro: boolean;
     valorTotal: boolean;
     numCupomFiscal: string;
-    data: Date;
+    data: string;
     kmInicial: string;
     kmFinal: string;
     active: boolean;

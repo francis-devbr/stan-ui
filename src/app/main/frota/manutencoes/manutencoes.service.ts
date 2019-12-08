@@ -9,11 +9,6 @@ export class FrotaManutencoesService implements Resolve<any>
     manutencoes: any[];
     onManutencoesChanged: BehaviorSubject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
     constructor(
         private _httpClient: HttpClient
     )
@@ -22,14 +17,7 @@ export class FrotaManutencoesService implements Resolve<any>
         this.onManutencoesChanged = new BehaviorSubject({});
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @param {RouterStateSnapshot} state
-     * @returns {Observable<any> | Promise<any> | any}
-     */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
+      resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
         return new Promise((resolve, reject) => {
 
@@ -44,11 +32,6 @@ export class FrotaManutencoesService implements Resolve<any>
         });
     }
 
-    /**
-     * Get manutencoes
-     *
-     * @returns {Promise<any>}
-     */
     getManutencoes(): Promise<any>
     {
         return new Promise((resolve, reject) => {

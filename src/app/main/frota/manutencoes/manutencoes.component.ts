@@ -12,24 +12,23 @@ import { FrotaManutencoesService } from 'app/main/frota/manutencoes/manutencoes.
 import { takeUntil } from 'rxjs/internal/operators';
 
 @Component({
-    selector     : 'frota-manutencoes',
-    templateUrl  : './manutencoes.component.html',
-    styleUrls    : ['./manutencoes.component.scss'],
-    animations   : fuseAnimations,
+    selector: 'frota-manutencoes',
+    templateUrl: './manutencoes.component.html',
+    styleUrls: ['./manutencoes.component.scss'],
+    animations: fuseAnimations,
     encapsulation: ViewEncapsulation.None
 })
-export class FrotaManutencoesComponent implements OnInit
-{
+export class FrotaManutencoesComponent implements OnInit {
     dataSource: FilesDataSource | null;
     displayedColumns = ['id', 'image', 'veiculo', 'tipoManutencao', 'dataInicial', 'dataFinal', 'active'];
 
-    @ViewChild(MatPaginator, {static: true})
+    @ViewChild(MatPaginator, { static: true })
     paginator: MatPaginator;
 
-    @ViewChild(MatSort, {static: true})
+    @ViewChild(MatSort, { static: true })
     sort: MatSort;
 
-    @ViewChild('filter', {static: true})
+    @ViewChild('filter', { static: true })
     filter: ElementRef;
 
     // Private
@@ -37,21 +36,12 @@ export class FrotaManutencoesComponent implements OnInit
 
     constructor(
         private _frotaManutencoesService: FrotaManutencoesService
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.dataSource = new FilesDataSource(this._frotaManutencoesService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
@@ -61,8 +51,7 @@ export class FrotaManutencoesComponent implements OnInit
                 distinctUntilChanged()
             )
             .subscribe(() => {
-                if ( !this.dataSource )
-                {
+                if (!this.dataSource) {
                     return;
                 }
 
@@ -76,31 +65,17 @@ export class FilesDataSource extends DataSource<any>
     private _filterChange = new BehaviorSubject('');
     private _filteredDataChange = new BehaviorSubject('');
 
-    /**
-     * Constructor
-     *
-     * @param {FrotaManutencoesService} _frotaManutencoesService
-     * @param {MatPaginator} _matPaginator
-     * @param {MatSort} _matSort
-     */
     constructor(
         private _frotaManutencoesService: FrotaManutencoesService,
         private _matPaginator: MatPaginator,
         private _matSort: MatSort
-    )
-    {
+    ) {
         super();
 
         this.filteredData = this._frotaManutencoesService.manutencoes;
     }
 
-    /**
-     * Connect function called by the table to retrieve one stream containing the data to render.
-     *
-     * @returns {Observable<any[]>}
-     */
-    connect(): Observable<any[]>
-    {
+    connect(): Observable<any[]> {
         const displayDataChanges = [
             this._frotaManutencoesService.onManutencoesChanged,
             this._matPaginator.page,
@@ -111,76 +86,48 @@ export class FilesDataSource extends DataSource<any>
         return merge(...displayDataChanges)
             .pipe(
                 map(() => {
-                        let data = this._frotaManutencoesService.manutencoes.slice();
+                    let data = this._frotaManutencoesService.manutencoes.slice();
 
-                        data = this.filterData(data);
+                    data = this.filterData(data);
 
-                        this.filteredData = [...data];
+                    this.filteredData = [...data];
 
-                        data = this.sortData(data);
+                    data = this.sortData(data);
 
-                        // Grab the page's slice of data.
-                        const startIndex = this._matPaginator.pageIndex * this._matPaginator.pageSize;
-                        return data.splice(startIndex, this._matPaginator.pageSize);
-                    }
+                    // Grab the page's slice of data.
+                    const startIndex = this._matPaginator.pageIndex * this._matPaginator.pageSize;
+                    return data.splice(startIndex, this._matPaginator.pageSize);
+                }
                 ));
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Accessors
-    // -----------------------------------------------------------------------------------------------------
-
-    // Filtered data
-    get filteredData(): any
-    {
+    get filteredData(): any {
         return this._filteredDataChange.value;
     }
 
-    set filteredData(value: any)
-    {
+    set filteredData(value: any) {
         this._filteredDataChange.next(value);
     }
 
     // Filter
-    get filter(): string
-    {
+    get filter(): string {
         return this._filterChange.value;
     }
 
-    set filter(filter: string)
-    {
+    set filter(filter: string) {
         this._filterChange.next(filter);
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Filter data
-     *
-     * @param data
-     * @returns {any}
-     */
-    filterData(data): any
-    {
-        if ( !this.filter )
-        {
+    filterData(data): any {
+        if (!this.filter) {
             return data;
         }
         return FuseUtils.filterArrayByString(data, this.filter);
     }
 
-    /**
-     * Sort data
-     *
-     * @param data
-     * @returns {any[]}
-     */
-    sortData(data): any[]
-    {
-        if ( !this._matSort.active || this._matSort.direction === '' )
-        {
+
+    sortData(data): any[] {
+        if (!this._matSort.active || this._matSort.direction === '') {
             return data;
         }
 
@@ -188,8 +135,7 @@ export class FilesDataSource extends DataSource<any>
             let propertyA: number | string = '';
             let propertyB: number | string = '';
 
-            switch ( this._matSort.active )
-            {
+            switch (this._matSort.active) {
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
@@ -216,11 +162,7 @@ export class FilesDataSource extends DataSource<any>
             return (valueA < valueB ? -1 : 1) * (this._matSort.direction === 'asc' ? 1 : -1);
         });
     }
-
-    /**
-     * Disconnect
-     */
-    disconnect(): void
-    {
+    
+    disconnect(): void {
     }
 }

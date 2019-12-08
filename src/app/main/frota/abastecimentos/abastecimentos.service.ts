@@ -9,11 +9,6 @@ export class FrotaAbastecimentosService implements Resolve<any>
     abastecimentos: any[];
     onAbastecimentosChanged: BehaviorSubject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
     constructor(
         private _httpClient: HttpClient
     )
@@ -22,14 +17,7 @@ export class FrotaAbastecimentosService implements Resolve<any>
         this.onAbastecimentosChanged = new BehaviorSubject({});
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @param {RouterStateSnapshot} state
-     * @returns {Observable<any> | Promise<any> | any}
-     */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
+        resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
         return new Promise((resolve, reject) => {
 
@@ -44,11 +32,6 @@ export class FrotaAbastecimentosService implements Resolve<any>
         });
     }
 
-    /**
-     * Get abastecimentos
-     *
-     * @returns {Promise<any>}
-     */
     getAbastecimentos(): Promise<any>
     {
         return new Promise((resolve, reject) => {

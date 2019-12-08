@@ -8,8 +8,9 @@
     <div class="center">
 
         <!-- HEADER -->
-        <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
-            fxLayoutAlign.gt-sm="space-between center">
+        <div class="header accent" 
+            fxLayout="column" fxLayoutAlign="center center" 
+            fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
 
             <!-- APP TITLE -->
             <div class="logo mb-24 mb-md-0" fxLayout="row" fxLayoutAlign="start center">
@@ -68,25 +69,19 @@
                 </ng-container>
 
                 <ng-container matColumnDef="tipoCombustivel">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>TIpo de Combustível
-                    </mat-header-cell>
-                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-sm>
-
-                        <span class="tipoCombustivel-indicator text-truncate"
-                            [ngClass]="{'red-500':abastecimento.tipoCombustivel <= 5, 'amber-500':abastecimento.tipoCombustivel > 5 && abastecimento.tipoCombustivel <= 25,'green-600':abastecimento.tipoCombustivel > 25}">
-                        </span>
-                        <span>
-                            {{abastecimento.tipoCombustivel}}
-                        </span>
-
-                    </mat-cell>
-                </ng-container>
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Combustivel</mat-header-cell>
+                        <mat-cell *matCellDef="let abastecimento">
+                            <p class="text-truncate">{{abastecimento.tipoCombustivel.nome}}</p>
+                        </mat-cell>
+                    </ng-container>
 
 
                 <ng-container matColumnDef="qtdLitros">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento">
-                        <p class="text-truncate">{{abastecimento.qtdLitros}}</p>
+                        <p class="text-truncate">
+                            {{abastecimento.qtdLitros}}
+                        </p>
                     </mat-cell>
                 </ng-container>
 
@@ -124,14 +119,18 @@
 
                 <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
 
-                <mat-row *matRowDef="let abastecimento; columns: displayedColumns;" class="abastecimento" matRipple
-                    [routerLink]="'/frota/abastecimentos/'+abastecimento.id+'/'+abastecimento.handle">
+                <mat-row *matRowDef="let abastecimento; columns: displayedColumns;" 
+                        class="abastecimento" matRipple
+                        [routerLink]="'/frota/abastecimentos/'+abastecimento.id+'/'+abastecimento.handle">
                 </mat-row>
 
             </mat-table>
 
-            <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
-                [pageSizeOptions]="[5, 10, 25, 100]">
+            <mat-paginator #paginator 
+                           [length]="dataSource.filteredData.length" 
+                           [pageIndex]="0" 
+                           [pageSize]="10"
+                           [pageSizeOptions]="[5, 10, 25, 100]">
             </mat-paginator>
 
         </div>

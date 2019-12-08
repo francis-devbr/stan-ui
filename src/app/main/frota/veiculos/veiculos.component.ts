@@ -101,20 +101,24 @@ export class FilesDataSource extends DataSource<any>
     }
 
 
-    get filteredData(): any {
+    get filteredData(): any 
+    {
         return this._filteredDataChange.value;
     }
 
-    set filteredData(value: any) {
+    set filteredData(value: any) 
+    {
         this._filteredDataChange.next(value);
     }
 
     // Filter
-    get filter(): string {
+    get filter(): string 
+    {
         return this._filterChange.value;
     }
 
-    set filter(filter: string) {
+    set filter(filter: string) 
+    {
         this._filterChange.next(filter);
     }
 

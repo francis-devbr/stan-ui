@@ -74,11 +74,9 @@
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label *ngIf="tipoPessoa ==='FISICA'">CPF</mat-label>
                                     <mat-label *ngIf="tipoPessoa ==='JURIDICA'">CNPJ</mat-label>
-                                    <input matInput placeholder="Informe" name="cpfOuCnpj" formControlName="cpfOuCnpj"
-                                        required>
+                                    <input matInput placeholder="Informe o CPF ou CNPJ" name="cpfOuCnpj"
+                                        formControlName="cpfOuCnpj" required>
                                 </mat-form-field>
-
-
 
                                 <div [formGroup]="cnhForm" class="section pb-48">
 
@@ -90,28 +88,25 @@
                                     <div fxLayout="row" fxLayoutAlign="space-between">
                                         <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                             <mat-label>Número</mat-label>
-                                            <input matInput placeholder="Nome da Motorista" name="numero"
+                                            <input matInput placeholder="Número da CNH" name="numero"
                                                 formControlName="numero" required>
                                         </mat-form-field>
 
                                         <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                             <mat-label>Categoria</mat-label>
-                                            <input matInput placeholder="Nome da Motorista" name="categoria"
+                                            <input matInput placeholder="Categoria da CNH" name="categoria"
                                                 formControlName="categoria" required>
                                         </mat-form-field>
 
                                         <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                             <mat-label>Validade</mat-label>
-                                            <input matInput placeholder="Nome da Motorista" name="renovaEm"
+                                            <input type="date" matInput placeholder="NData de validade" name="renovaEm"
                                                 formControlName="renovaEm" required>
                                         </mat-form-field>
                                     </div>
                                 </div>
                             </div>
                         </mat-tab>
-
-
-
 
                     </mat-tab-group>
 
