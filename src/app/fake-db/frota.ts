@@ -36,28 +36,28 @@ export class FrotaFakeDb {
             "pneuTrocadoEm": null,
             "mesIpva": 1,
             "empresa": {
-                "id": 1,
-                "nome": "RGB Locações de Automóveis",
+                "id": 2,
+                "nome": "CLARO S.A.",
                 "tipoPessoa": "J",
-                "cpfOuCnpj": "72907711000155",
+                "cpfOuCnpj": "40432544082950",
                 "endereco": {
-                    "id": 1,
+                    "id": 2,
                     "logradouro": {
-                        "id": 1,
-                        "cep": "01308040",
-                        "nome": "São Miguel",
+                        "id": 5,
+                        "cep": "09990104",
+                        "nome": "Mãe Rainha",
                         "tipoLogradouro": {
-                            "id": 1,
-                            "nome": "Rua"
+                            "id": 4,
+                            "nome": "Passagem"
                         },
                         "complemento": null,
                         "local": null,
                         "bairro": {
-                            "id": 6,
-                            "nome": "Bela Vista",
+                            "id": 10,
+                            "nome": "Serraria",
                             "cidade": {
-                                "id": 8,
-                                "nome": "Sao Paulo",
+                                "id": 12,
+                                "nome": "Diadema",
                                 "estado": {
                                     "id": 26,
                                     "sigla": "SP",
@@ -71,50 +71,25 @@ export class FrotaFakeDb {
                             }
                         }
                     },
-                    "numero": "201",
+                    "numero": "171",
                     "complemento": null
                 },
                 "telefones": [
                     {
-                        "id": 1,
+                        "id": 2,
                         "tipo": "Fixo",
                         "ddd": "11",
-                        "numero": "41414141",
+                        "numero": "66291009",
                         "enable": true
                     }
                 ],
-                "email": "sac@rgb.com",
-                "inscricaoEstadual": "775085384078",
+                "email": "ltorres@claro.com.br",
+                "inscricaoEstadual": null,
                 "enable": true
             },
-            "anoFabricacao": 2017,
-            "anoModelo": 2018,
-            "cor": "branco",
-            "tipoCombustivel": {
-                "id": 1,
-                "nome": "Gasolina",
-                "enable": true
-            },
-            "categoria": {
-                "id": 1,
-                "nome": "Passeio",
-                "enable": true
-            },
-            "valorPago": 30000.00,
-            "kmInicial": 0.00,
-            "kmAtual": 10.00,
-            "pneuTrocadoEm": null,
-            "mesIpva": 1,
-            "enable": true,
-            'images': [
-                {
-                    'id': 1,
-                    'url': 'assets/images/frota/veiculo-image-placeholder',
-                    'type': 'image'
-                },
-            ]
+            "enable": true
         }
-    ];
+    ]
     
     public static abastecimentos = [
         {
