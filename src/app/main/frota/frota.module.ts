@@ -108,19 +108,27 @@ const routes: Routes = [
     },
 
     {
+        path: 'viagens',
+        component: FrotaViagensComponent,
+        resolve: {
+            data: FrotaViagensService
+        }
+    },
+    {
         path: 'viagens/:id',
         component: FrotaViagemComponent,
         resolve: {
-            data: FrotaViagensService
+            data: FrotaViagemService
         }
     },
     {
         path: 'viagens/:id/:handle',
         component: FrotaViagemComponent,
         resolve: {
-            data: FrotaViagensService
+            data: FrotaViagemService
         }
-    }
+    },
+
 
 
 
@@ -135,7 +143,10 @@ const routes: Routes = [
         FrotaManutencoesComponent,
         FrotaManutencaoComponent,
         FrotaAbastecimentosComponent,
-        FrotaAbastecimentoComponent
+        FrotaAbastecimentoComponent,
+
+        FrotaViagensComponent,
+        FrotaViagemComponent
     ],
     imports: [
         RouterModule.forChild(routes),

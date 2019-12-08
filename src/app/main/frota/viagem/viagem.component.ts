@@ -8,7 +8,7 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { Viagem } from 'app/main/frota/viagem/viagem.model';
+import { Viagem } from 'app/main/model/viagem/viagem.model';
 import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
 
 @Component({

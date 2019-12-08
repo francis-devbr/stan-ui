@@ -10,7 +10,7 @@ import { FuseUtils } from '@fuse/utils';
 
 import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
 import { takeUntil } from 'rxjs/internal/operators';
-import { viagem } from 'app/main/model/viagem/viagem.model';
+import { Viagem } from 'app/main/model/viagem/viagem.model';
 
 @Component({
     selector: 'frota-viagens',
@@ -19,7 +19,7 @@ import { viagem } from 'app/main/model/viagem/viagem.model';
     animations: fuseAnimations,
     encapsulation: ViewEncapsulation.None
 })
-export class FrotaviagensComponent implements OnInit {
+export class FrotaViagensComponent implements OnInit {
     dataSource: FilesDataSource | null;
     displayedColumns = ['id', 'image', 'veiculo', 'kmInicial', 'kmFinal', 'tipoViagem', 'active'];
 
@@ -118,7 +118,7 @@ export class FilesDataSource extends DataSource<any>
         this._filterChange.next(filter);
     }
 
-    filterData(data): viagem[] {
+    filterData(data): Viagem[] {
         if (!this.filter) {
             return data;
         }
