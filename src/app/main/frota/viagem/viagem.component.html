@@ -31,7 +31,7 @@
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{viagem.tipoViagem}} {{viagem.tipoViagem[0].tipoViagem}} - {{viagem.statusViagem}}
+                        {{viagem.tipoViagem}} {{viagem.tipoViagem[0]}} - {{viagem.statusViagem}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Viagem
@@ -75,27 +75,27 @@
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
                                         <mat-label>Descrição da Viagem</mat-label>
-                                        <input mat-input-container floatPlaceholder="">
                                         <textarea matInput formControlName="descricaoViagem"
                                             name="descricaoViagem"></textarea>
-                                        </mat-input-container>
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Status da Viagem</mat-label>
                                         <mat-select placeholder="Informe o Status da Viagem" name="statusViagem"
                                             formControlName="statusViagem" required>
-                                            <mat-option [value]="aberta">Viagem em Aberto</mat-option>
-                                            <mat-option [value]="aguardando">Aguardando Motorista</mat-option>
-                                            <mat-option [value]="finalizada">Finalizada</mat-option>
+                                            <mat-option [value]="">Viagem em Aberto</mat-option>
+                                            <mat-option [value]="">Aguardando Motorista</mat-option>
+                                            <mat-option [value]="">Finalizada</mat-option>
+                                            </mat-select>
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Selecione o veículo</mat-label>
                                         <mat-select placeholder="Informe o veículo" name="veiculo"
                                             formControlNameVeiculo>
-                                            <mat-option [value]="v1">Fiat</mat-option>
-                                            <mat-option [value]="v2">Gol</mat-option>
+                                            <mat-option [value]="">Fiat</mat-option>
+                                            <mat-option [value]="">Gol</mat-option>
+                                        </mat-select>
                                     </mat-form-field>
                                 </div>
                                 <div>
@@ -138,7 +138,6 @@
                                         <input mat-input-container floatPlaceholder="Informe o destino inicial">
                                         <textarea matInput formControlName="destinoInicial" name="destinoInicial"
                                             required></textarea>
-                                        </mat-input-container>
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="24">
@@ -146,7 +145,6 @@
                                         <input mat-input-container floatPlaceholder="Informe o destino final">
                                         <textarea matInput formControlName="destinoFinal" name="destinoFinal"
                                             required></textarea>
-                                        </mat-input-container>
                                     </mat-form-field>
                                 </div>
                             </div>
