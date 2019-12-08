@@ -27,7 +27,7 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
     private _unsubscribeAll: Subject<any>;
 
     constructor(
-        private _FrotaViagemService: FrotaViagemService,
+        private _frotaViagemService: FrotaViagemService,
         private _formBuilder: FormBuilder,
         private _location: Location,
         private _matSnackBar: MatSnackBar
@@ -41,7 +41,7 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         // Subscribe to update viagem on changes
-        this._FrotaViagemService.onViagemChanged
+        this._frotaViagemService.onViagemChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(viagem => {
 
@@ -88,9 +88,9 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
         const data = this.viagemForm.getRawValue();
         data.handle = FuseUtils.handleize(data.tipoViagem);
 
-        this._FrotaViagemService.saveViagem(data)
+        this._frotaViagemService.saveViagem(data)
             .then(() => {
-                this._FrotaViagemService.onViagemChanged.next(data);
+                this._frotaViagemService.onViagemChanged.next(data);
                 this._matSnackBar.open('Viagem salva', 'OK', {
                     verticalPosition: 'top',
                     duration: 2000
@@ -103,11 +103,11 @@ export class FrotaViagemComponent implements OnInit, OnDestroy {
         const data = this.viagemForm.getRawValue();
         data.handle = FuseUtils.handleize(data.name);
 
-        this._FrotaViagemService.addViagem(data)
+        this._frotaViagemService.addViagem(data)
             .then(() => {
 
                 // Trigger the subscription with new data
-                this._FrotaViagemService.onViagemChanged.next(data);
+                this._frotaViagemService.onViagemChanged.next(data);
 
                 // Show the success message
                 this._matSnackBar.open('Viagem adicionada', 'OK', {
