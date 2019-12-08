@@ -14,7 +14,7 @@ export class FrotaViagensService implements Resolve<Viagem[]>
         this.onViagensChanged = new BehaviorSubject<Viagem[]>([]);
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<viagem[]> | Promise<viagem[]> | viagem[] {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Viagem[]> | Promise<Viagem[]> | Viagem[] {
         return new Promise((resolve, reject) => {
 
             Promise.all([

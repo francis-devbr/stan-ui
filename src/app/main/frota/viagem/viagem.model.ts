@@ -22,7 +22,6 @@ export class Viagem
     veiculo: string;
     kmInicial: string;
     kmFinal: string;
-    peca: string;
     saida: string;
     destinoInicial: string;
     destinoFinal: string;
@@ -48,7 +47,6 @@ export class Viagem
         this.statusViagem = viagem.statusViagem || 0;
         this.kmInicial = viagem.kmInicial || 0;
         this.kmFinal = viagem.kmFinal || 0;
-        this.peca = viagem.peca || 0;
         this.saida = viagem.saida || 0;
         this.destinoInicial = viagem.destinoInicial || 0;        
         this.destinoFinal = viagem.destinoFinal || 0;

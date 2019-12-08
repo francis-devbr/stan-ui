@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Viagem } from 'app/main/model/viagem/viagem.model';
 
 @Injectable()
-export class Frotaviagenservice implements Resolve<any>
+export class FrotaViagemService implements Resolve<any>
 {
     routeParams: any;
-    viagem: Viagem;
+    viagem: any;
     onViagemChanged: BehaviorSubject<any>;
 
     constructor(

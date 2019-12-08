@@ -65,8 +65,9 @@ export const navigation: FuseNavigation[] = [
                 title: 'Viagem',
                 type: 'item',
                 icon: 'import_export',
-                url: '/frota/viagem'
-            }
+                url: '/frota/viagens',
+                exactMatch: true
+            },
         ]
     }
 ];
