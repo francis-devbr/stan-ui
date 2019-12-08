@@ -78,7 +78,7 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/veiculo-image-placeholder',
                     'type': 'image'
                 },
             ]
@@ -103,17 +103,17 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 2,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 }
             ],
@@ -147,12 +147,12 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/a-walk-amongst-friends.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/braies-lake.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 }
             ],
@@ -186,17 +186,17 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/a-walk-amongst-friends.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/braies-lake.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 2,
-                    'url': 'assets/images/frota/fall-glow.jpg',
+                    'url': 'assets/images/frota/abastecimento-image-placeholder',
                     'type': 'image'
                 }
             ],
@@ -233,17 +233,17 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 2,
-                    'url': 'assets/images/frota/carros.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 }
             ],
@@ -277,12 +277,12 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/a-walk-amongst-friends.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/braies-lake.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 }
             ],
@@ -316,17 +316,17 @@ export class FrotaFakeDb {
             'images': [
                 {
                     'id': 0,
-                    'url': 'assets/images/frota/a-walk-amongst-friends.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 1,
-                    'url': 'assets/images/frota/braies-lake.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 },
                 {
                     'id': 2,
-                    'url': 'assets/images/frota/fall-glow.jpg',
+                    'url': 'assets/images/frota/manutencao-image-placeholder',
                     'type': 'image'
                 }
             ],
