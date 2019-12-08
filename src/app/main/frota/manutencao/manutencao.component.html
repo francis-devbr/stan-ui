@@ -63,13 +63,40 @@
 
                         <mat-tab label="Informações do Manutenção">
                             <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                <mat-form-field appearance="outline" floatLabel="always"  class="w-100-p">
                                     <mat-label>Id</mat-label>
                                     <input matInput placeholder="" name="name" formControlName="name">
                                 </mat-form-field>
+                                
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+                                        <mat-form-field appearance="outline" floatLabel="always"  fxFlex="30"class="w-100-p">
+                                            <mat-label>Resnposável</mat-label>
+                                            <mat-select placeholder="Informe o responsável" name="responsavel"
+                                                formControlName="responsavel">
+                                                <mat-option [value]="">teste1</mat-option>
+                                                <mat-option [value]="">teste2</mat-option>
+                                                <mat-option [value]="">teste3</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+    
+                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
+                                            <mat-label>Veículo</mat-label>
+                                            <input matInput placeholder="" name="veiculo" formControlName="veiculo">
+                                        </mat-form-field>
+    
+                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
+                                            <mat-label>Motorista</mat-label>
+                                            <mat-select placeholder="Selecione o motorista" name="motorista"
+                                                formControlName="motorista">
+                                                <mat-option [value]="">teste1</mat-option>
+                                                <mat-option [value]="">teste2</mat-option>
+                                                <mat-option [value]="">teste3</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
 
                                 <div fxLayout="row" fxLayoutAlign="space-between">
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="35" class="w-100-p">
                                         <mat-label>Plano de Manutenção</mat-label>
                                         <mat-select placeholder="Selecione o plano de manutenção" name="planoManutencao"
                                             formControlName="planoManutencao">
@@ -79,7 +106,7 @@
                                         </mat-select>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20" class="w-100-p">
                                         <mat-label>Plano Periodico</mat-label>
                                         <mat-select placeholder="Selecione o plano periodico" name="planoPeriodico"
                                             formControlName="planoPeriodico">
@@ -91,41 +118,14 @@
                                 </div>
 
                                 <div fxLayout="row" fxLayoutAlign="space-between">
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                        <mat-label>Resnposável</mat-label>
-                                        <mat-select placeholder="Informe o responsável" name="responsavel"
-                                            formControlName="responsavel">
-                                            <mat-option [value]="">teste1</mat-option>
-                                            <mat-option [value]="">teste2</mat-option>
-                                            <mat-option [value]="">teste3</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                        <mat-label>Veículo</mat-label>
-                                        <input matInput placeholder="" name="veiculo" formControlName="veiculo">
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                        <mat-label>Motorista</mat-label>
-                                        <mat-select placeholder="Selecione o motorista" name="motorista"
-                                            formControlName="motorista">
-                                            <mat-option [value]="">teste1</mat-option>
-                                            <mat-option [value]="">teste2</mat-option>
-                                            <mat-option [value]="">teste3</mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-
-                                <div fxLayout="row" fxLayoutAlign="space-between">
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20" class="w-100-p">
                                         <mat-label>Data Inicial</mat-label>
                                         <input matInput placeholder="Informe a data de inicio" type="date"
                                             class="form-control" id="dataInicial" aria-describedby="id"
                                             name="dataInicial" formControlName="dataInicial">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20" class="w-100-p">
                                         <mat-label>Data Final</mat-label>
                                         <input matInput placeholder="Informe a data final" type="date"
                                             class="form-control" id="dataFinal" aria-describedby="id" name="dataFinal"
@@ -133,7 +133,7 @@
                                     </mat-form-field>
                                 </div>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                     <mat-label>Peça a ser trocada</mat-label>
                                     <mat-select placeholder="Selecione a peça a ser trocada" name="peca"
                                         formControlName="peca">
@@ -143,7 +143,7 @@
                                     </mat-select>
                                 </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                     <mat-label>Tipo de Manutenção</mat-label>
                                     <mat-select placeholder="Selecione o tipo de manutenção" name="tipoManutencao"
                                         formControlName="tipoManutencao">

@@ -17,6 +17,11 @@
                     <mat-icon>ev_station</mat-icon>
                 </button>
 
+                <div class="abastecimento-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                        <img *ngIf="abastecimento.images[0]" [src]="abastecimento.images[0]">
+                        <img *ngIf="!abastecimento.images[0]" [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
+                </div>
+
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
@@ -58,14 +63,14 @@
                         <mat-tab label="Informações do Abastencimento">
 
                             <div class="tab-content p-24" fusePerfectScrollbar>
-
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
                                     <mat-label>Abastecimento</mat-label>
                                     <input matInput placeholder="" name="name" formControlName="name">
                                 </mat-form-field>
+
                                 <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Tipo de Combustível</mat-label>
                                         <mat-select="tipoCombustivel" placeholder="Infome o tipo de combustível"
                                             name="tipoCombustivel" formControlName="tipoCombustivel">
@@ -75,45 +80,45 @@
                                             </mat-select>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Quantidade em Litros</mat-label>
                                         <input matInput type="number" placeholder="Quantidade em litros"
                                             name="qtdLitros" formControlName="qtdLitros" min="10">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Valor por Litro(R$)</mat-label>
                                         <input matInput type="number" placeholder="Informe o valor do litro"
                                             name="valorLitro" formControlName="valorLitro" min="10">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Valor Total(R$)</mat-label>
                                         <input matInput type="number" placeholder="Informe o valor total"
                                             name="valorTotal" formControlName="valorTotal" min="10">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Número do cupom físcal</mat-label>
                                         <input matInput placeholder="Informe o número do cupom fiscal"
                                             name="numCupomFiscal" formControlName="numCupomFiscal">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>Data</mat-label>
                                         <input matInput placeholder="Informe a data do abastecimento" type="date"
                                             class="form-control" id="data" aria-describedby="id" name="data"
                                             formControlName="data">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>KM Inicial</mat-label>
                                         <input matInput type="number" laceholder="Informe a data de final" type="number"
                                             class="form-control" id="kmInicial" aria-describedby="id" name="kmInicial"
                                             formControlName="kmInicial">
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30" class="w-100-p">
                                         <mat-label>KM Final</mat-label>
                                         <input matInput type="number" placeholder="Informe a data de final"
                                             type="number" class="form-control" id="kmFinal" aria-describedby="id"
