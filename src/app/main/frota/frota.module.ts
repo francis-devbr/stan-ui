@@ -143,8 +143,12 @@ const routes: Routes = [
         FrotaManutencoesComponent,
         FrotaManutencaoComponent,
         FrotaAbastecimentosComponent,
+<<<<<<< HEAD
         FrotaAbastecimentoComponent,
 
+=======
+        FrotaAbastecimentoComponent,        
+>>>>>>> 6f0d756758954f87a711710d7e2713f0645026ca
         FrotaViagensComponent,
         FrotaViagemComponent
     ],
