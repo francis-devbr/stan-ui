@@ -135,7 +135,9 @@ const routes: Routes = [
         FrotaManutencoesComponent,
         FrotaManutencaoComponent,
         FrotaAbastecimentosComponent,
-        FrotaAbastecimentoComponent
+        FrotaAbastecimentoComponent,        
+        FrotaViagensComponent,
+        FrotaViagemComponent
     ],
     imports: [
         RouterModule.forChild(routes),
