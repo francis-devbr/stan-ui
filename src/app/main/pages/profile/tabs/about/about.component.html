@@ -5,32 +5,13 @@
         <div class="profile-box info-box general" fxLayout="column">
 
             <header class="accent">
-                <div class="title">Iformações Gerais</div>
+                <div class="title">Informações Gerais</div>
             </header>
 
             <div class="content">
                 <div class="info-line">
                     <div class="title">Gênero</div>
-                    <div class="info">{{about.general.gender}}</div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title">Data de Nascimento</div>
-                    <div class="info">{{about.general.birthday}}</div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title">Cidade de nascimento</div>
-                    <div class="info location" fxLayout="row" fxLayoutAlign="start center"
-                         *ngFor="let location of about.general.locations">
-                        <span>{{location}}</span>
-                        <mat-icon class="s-16 ml-4">location_on</mat-icon>
-                    </div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title">Sobre mim</div>
-                    <div class="info">{{about.general.about}}</div>
+                    <div class="info">{{funcionario.sexo}}</div>
                 </div>
             </div>
 
@@ -45,26 +26,21 @@
             </header>
 
             <div class="content">
-                <!--<div class="info-line">
+                <div class="info-line">
                     <div class="title">Endereço</div>
-                    <div class="info">{{about.contact.address}}</div>
-                </div>-->
+                    <div class="info">{{funcionario.endereco.cep}}</div>
+                </div>
                 <div class="info-line">
                     <div class="title">Tel.</div>
-                    <div class="info" *ngFor="let tel of about.contact.tel">
-                        <span>{{tel}}</span>
+                    <div class="info" *ngFor="let tel of funcionario.telefones">
+                        <span>{{tel.numero}}</span>
                     </div>
                 </div>
-                <!--<div class="info-line">
-                    <div class="title">Website</div>
-                    <div class="info" *ngFor="let website of about.contact.websites">
-                        <span>{{website}}</span>
-                    </div>
-                </div>-->
+           
                 <div class="info-line">
-                    <div class="title">Emails</div>
-                    <div class="info" *ngFor="let email of about.contact.emails">
-                        <span>{{email}}</span>
+                    <div class="title">Email</div>
+                    <div class="info">
+                        <span>{{funcionario.email}}</span>
                     </div>
                 </div>
             </div>
@@ -84,20 +60,15 @@
             <div class="content">
                 <div class="info-line">
                     <div class="title">Cargo</div>
-                    <div class="info">{{about.work.occupation}}</div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title">Especialidades</div>
-                    <div class="info">{{about.work.skills}}</div>
+                    <div class="info">{{funcionario.cargo.nome}}</div>
                 </div>
 
                 <div class="info-line">
                     <div class="title">Empresas</div>
                     <table class="info jobs">
-                        <tr class="job" *ngFor="let job of about.work.jobs">
-                            <td class="company">{{job.company}}</td>
-                            <td class="date">{{job.date}}</td>
+                        <tr class="job">
+                            <td class="company">{{funcionario.empresa.nome}}</td>
+                            <td class="date">{{funcionario.empresa.email}}</td>
                         </tr>
                     </table>
                 </div>

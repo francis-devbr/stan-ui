@@ -97,7 +97,7 @@ export class PessoaFakeDb {
             "enable": true
         }
     ];
-
+    
     public static motoristas = [
         {
             "id": 1,

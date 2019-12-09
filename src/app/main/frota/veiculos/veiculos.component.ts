@@ -21,7 +21,7 @@ import { Veiculo } from 'app/main/model/veiculo/veiculo.model';
 })
 export class FrotaVeiculosComponent implements OnInit {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'marca', 'modelo', 'categoria', 'placa', 'active'];
+    displayedColumns = ['id', 'image', 'marca', 'nome', 'categoria', 'placa', 'active'];
 
     @ViewChild(MatPaginator, { static: true })
     paginator: MatPaginator;
@@ -145,8 +145,8 @@ export class FilesDataSource extends DataSource<any>
                 case 'marca':
                     [propertyA, propertyB] = [a.marca, b.marca];
                     break;
-                case 'modelo':
-                    [propertyA, propertyB] = [a.modelo, b.modelo];
+                case 'nome':
+                    [propertyA, propertyB] = [a.nome, b.nome];
                     break;
 
                 case 'categoria':

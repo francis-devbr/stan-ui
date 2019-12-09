@@ -23,11 +23,6 @@ import { LayoutModule } from 'app/layout/layout.module';
 import { AuthModule } from 'app/authentication/auth.module';
 const appRoutes: Routes = [
     {
-        path: 'empresa',
-        loadChildren: './main/empresa/empresa.module#EmpresaModule'
-    },
-
-    {
         path: 'frota',
         loadChildren: './main/frota/frota.module#FrotaModule'
     },
@@ -57,7 +52,7 @@ const appRoutes: Routes = [
 
     {
         path: '**',
-        redirectTo: 'empresa/empresa/1'
+        redirectTo: 'pages/errors/error-404'
     }
 ];
 

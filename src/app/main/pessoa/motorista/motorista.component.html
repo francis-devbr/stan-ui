@@ -18,14 +18,16 @@
                 </button>
 
                 <div class="motorista-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="motorista.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
-                    <img *ngIf="!motorista.pessoa.foto" [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
+                    <img *ngIf="motorista.funcionario.foto"
+                        [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
+                    <img *ngIf="!motorista.funcionario.foto"
+                        [src]="'assets/images/pessoa/motorista-image-placeholder.png'">
                 </div>
 
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{motorista.pessoa.nome}}
+                        {{motorista.funcionario.nome}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Novo Motorista
@@ -62,50 +64,103 @@
                     <mat-tab-group>
 
                         <mat-tab label="Informações básicas">
-                            <div [formGroup]="pessoaForm" class="tab-content p-24" fusePerfectScrollbar
-                                fxLayout="column">
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Nome da Motorista</mat-label>
-                                    <input matInput placeholder="Nome da Motorista" name="nome" formControlName="nome"
-                                        required>
-                                </mat-form-field>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label *ngIf="tipoPessoa ==='FISICA'">CPF</mat-label>
-                                    <mat-label *ngIf="tipoPessoa ==='JURIDICA'">CNPJ</mat-label>
-                                    <input matInput placeholder="Informe o CPF ou CNPJ" name="cpfOuCnpj"
-                                        formControlName="cpfOuCnpj" required>
-                                </mat-form-field>
+                            <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
 
-                                <div [formGroup]="cnhForm" class="section pb-48">
+                                <div [formGroup]="pessoaForm" fxLayout="row" fxLayoutAlign="space-between">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="45">
+                                        <mat-label>Nome da Motorista</mat-label>
+                                        <input matInput placeholder="Nome da Motorista" name="nome"
+                                            formControlName="nome" required>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                        <mat-label *ngIf="tipoPessoa ==='F'">CPF</mat-label>
+                                        <mat-label *ngIf="tipoPessoa ==='J'">CNPJ</mat-label>
+                                        <input matInput placeholder="Informe o CPF ou CNPJ" name="cpfOuCnpj"
+                                            formControlName="cpfOuCnpj" required>
+                                    </mat-form-field>
 
-                                    <div class="pb-16" fxLayout="row" fxLayoutAlign="start center">
-                                        <mat-icon class="m-0 mr-16 secondary-text">access_time</mat-icon>
-                                        <div class="h2 secondary-text">Carteira Nacional de Habilitação</div>
-                                    </div>
-
-                                    <div fxLayout="row" fxLayoutAlign="space-between">
-                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                            <mat-label>Número</mat-label>
-                                            <input matInput placeholder="Número da CNH" name="numero"
-                                                formControlName="numero" required>
-                                        </mat-form-field>
-
-                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                            <mat-label>Categoria</mat-label>
-                                            <input matInput placeholder="Categoria da CNH" name="categoria"
-                                                formControlName="categoria" required>
-                                        </mat-form-field>
-
-                                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                            <mat-label>Validade</mat-label>
-                                            <input type="date" matInput placeholder="NData de validade" name="renovaEm"
-                                                formControlName="renovaEm" required>
-                                        </mat-form-field>
-                                    </div>
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                        <mat-label>Telefone </mat-label>
+                                        <input matInput placeholder="Telefone" name="telefone"
+                                            formControlName="telefone">
+                                    </mat-form-field>
                                 </div>
+
+                                <div [formGroup]="enderecoForm" fxLayout="row" fxLayoutAlign="space-between">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="10">
+                                        <mat-label>cep</mat-label>
+                                        <input matInput placeholder="Nome da Motorista" name="cep" formControlName="cep"
+                                            required>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="88">
+                                        <mat-label>logradouro</mat-label>
+                                        <input matInput placeholder="Informe o CPF ou CNPJ" name="logradouro"
+                                            formControlName="logradouro" required>
+                                    </mat-form-field>
+
+
+                                </div>
+                                <div [formGroup]="enderecoForm" fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="15">
+                                        <mat-label>numero </mat-label>
+                                        <input matInput placeholder="numero" name="numero" formControlName="numero">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                        <mat-label>complemento </mat-label>
+                                        <input matInput placeholder="complemento" name="complemento"
+                                            formControlName="complemento">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                        <mat-label>bairro </mat-label>
+                                        <input matInput placeholder="bairro" name="bairro" formControlName="bairro">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                        <mat-label>cidade </mat-label>
+                                        <input matInput placeholder="cidade" name="cidade" formControlName="cidade">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="05">
+                                        <mat-label>estado </mat-label>
+                                        <input matInput placeholder="estado" name="estado" formControlName="estado">
+                                    </mat-form-field>
+                                </div>
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>CNH</mat-label>
+                                        <input matInput placeholder="Número da CNH" name="numero"
+                                            formControlName="numero" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Categoria</mat-label>
+                                        <input matInput placeholder="Categoria da CNH" name="categoria"
+                                            formControlName="categoria" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                        <mat-label>Validade</mat-label>
+                                        <input type="date" matInput placeholder="Data de validade" name="renovaEm"
+                                            formControlName="renovaEm" required>
+                                    </mat-form-field>
+                                </div>
+
+
+
+
+
+
                             </div>
+
+
                         </mat-tab>
 
                     </mat-tab-group>

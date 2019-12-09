@@ -20,13 +20,15 @@ export class FakeDbService implements InMemoryDbService {
             'frota-abastecimentos': FrotaFakeDb.abastecimentos,
 
             // Viagens
-            'frota-viagens': FrotaFakeDb.viagens,
+           // 'frota-viagens': FrotaFakeDb.viagens,
 
             // Empresa
             'empresa-empresas': EmpresaFakeDb.empresas,
 
             // Pessoa Motorista
             'pessoa-motoristas': PessoaFakeDb.motoristas,
+
+            'pessoa-usuarios': PessoaFakeDb.usuarios,
 
             // Profile
             'profile-about': ProfileFakeDb.about,

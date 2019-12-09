@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit
 
     onSubmit() {
 
-        this.authenticationService.fakeLogin(this.f.email.value, this.f.password.value)
+        this.authenticationService.login(this.f.email.value, this.f.password.value)
             .pipe(first())
             .subscribe(
                 data => {
@@ -69,10 +69,11 @@ export class LoginComponent implements OnInit
                 error => {
                     this.error = error;
                 });
+        console.log("depois do submit")
+
     }
 
     private navigateAfterSuccess() {
-        console.log("passou aqui");
         console.log(this.redirectUrl);
         if (this.redirectUrl) {
             console.log("passou aqui 2");
@@ -81,5 +82,6 @@ export class LoginComponent implements OnInit
             console.log("passou aqui 3");
             this.router.navigate(['**']);
         }
+    
     }
 }

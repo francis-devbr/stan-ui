@@ -33,6 +33,7 @@ import { FrotaViagemComponent } from 'app/main/frota/viagem/viagem.component';
 import { FrotaViagemService } from 'app/main/frota/viagem/viagem.service';
 import { FrotaViagensComponent } from 'app/main/frota/viagens/viagens.component';
 import { FrotaViagensService } from 'app/main/frota/viagens/viagens.service';
+import { EmpresaService } from '../empresa/empresa.service';
 
 
 const routes: Routes = [
@@ -173,6 +174,7 @@ const routes: Routes = [
         FrotaAbastecimentoService,        
         FrotaViagensService,
         FrotaViagemService,
+        EmpresaService
     ]
 })
 export class FrotaModule {

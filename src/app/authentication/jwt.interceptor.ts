@@ -12,6 +12,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+        console.log("aqui interceptor")
         if (localStorage.getItem(TOKEN_NAME)) {
             request = this.addToken(request, localStorage.getItem(TOKEN_NAME));
         }

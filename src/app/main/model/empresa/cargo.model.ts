@@ -1,4 +1,4 @@
-export class Marca {
+export class Cargo {
     id: number;
     nome: string;
     enable: boolean;

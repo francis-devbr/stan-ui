@@ -70,7 +70,7 @@
                 <ng-container matColumnDef="nome">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
                     <mat-cell *matCellDef="let motorista">
-                        <p class="text-truncate">{{motorista.pessoa.nome}}</p>
+                        <p class="text-truncate">{{motorista.funcionario.nome}}</p>
                     </mat-cell>
                 </ng-container>
 
@@ -79,7 +79,7 @@
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>CNH</mat-header-cell>
                     <mat-cell *matCellDef="let motorista" fxHide fxShow.gt-md>
                         <p class="text-truncate">
-                            {{motorista.cnh.numero}}
+                            {{motorista.numero}}
                         </p>
                     </mat-cell>
                 </ng-container>
@@ -88,7 +88,7 @@
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Validade</mat-header-cell>
                     <mat-cell *matCellDef="let motorista" fxHide fxShow.gt-md>
                         <p class="text-truncate">
-                            {{motorista.cnh.renovaEm}}
+                            {{motorista.renovaEm}}
                         </p>
                     </mat-cell>
                 </ng-container>
@@ -97,7 +97,7 @@
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Categoria</mat-header-cell>
                     <mat-cell *matCellDef="let motorista" fxHide fxShow.gt-md>
                         <p class="text-truncate">
-                            {{motorista.cnh.categoria}}
+                            {{motorista.categoria}}
                         </p>
                     </mat-cell>
                 </ng-container>

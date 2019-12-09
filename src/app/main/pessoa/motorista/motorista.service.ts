@@ -3,10 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Motorista } from 'app/main/model/motorista/motorista.model';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class PessoaMotoristaService implements Resolve<any>
 {
+    static CONTEXT = environment.apiUrlRest+"/api/motoristas/"+JSON.parse(localStorage.getItem("FUNCIONARIO")).empresa.cpfOuCnpj;
+
     routeParams: any;
     motorista: Motorista;
     onMotoristaChanged: BehaviorSubject<any>;
@@ -47,7 +50,7 @@ export class PessoaMotoristaService implements Resolve<any>
             }
             else
             {
-                this._httpClient.get('api/pessoa-motoristas/' + this.routeParams.id)
+                this._httpClient.get(PessoaMotoristaService.CONTEXT +'/' + this.routeParams.id)
                     .subscribe((response: any) => {
                         this.motorista = response;
                         this.onMotoristaChanged.next(this.motorista);

@@ -1,17 +1,20 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { map, retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { environment } from 'environments/environment';
+import { Observable, throwError } from 'rxjs';
 import { TOKEN_AUTH_PASSWORD, TOKEN_AUTH_USERNAME, TOKEN_NAME } from './auth.constant';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-    //static AUTH_TOKEN = environment.apiUrlAuth + '/oauth/token';
+    static AUTH_TOKEN = environment.apiUrlAuth + '/oauth/token';
 
-    static AUTH_TOKEN = 'api/authentication-token';
+    static CONTEXT = environment.apiUrlRest;
+
+    //static AUTH_TOKEN = 'api/authentication-token';
 
     constructor(private http: HttpClient, private _router: Router) { }
 
@@ -77,5 +80,56 @@ export class AuthService {
     getUserName(): string {
         return this.decode().user_name;
     }
+
+    getUsuarioDetalhe(username) {
+        this.getUserDetail(username)
+            .subscribe(
+                usuario => {
+
+                    console.log("teste usuario:" + usuario.id);
+                    localStorage.setItem('USUARIO', JSON.stringify(usuario));
+
+                    this.getFuncionarioDetail(usuario.id)
+                        .subscribe(
+                            funcionario => {
+                                console.log("teste func:" + funcionario.id);
+                                localStorage.setItem('FUNCIONARIO', JSON.stringify(funcionario));
+                                localStorage.setItem('CNPJCLIENTE', JSON.stringify(funcionario.empresa.cpfOuCnpj));
+
+                            });
+
+                });
+    }
+
+    getUserDetail(username): Observable<any> {
+        return this.http.get<any>(AuthService.CONTEXT + "/api/usuarios/" + username)
+            .pipe(
+                retry(2),
+                catchError(this.handleError)
+            )
+    }
+
+    getFuncionarioDetail(id): Observable<any> {
+        return this.http.get<any>(AuthService.CONTEXT + "/api/funcionarios/" + id)
+            .pipe(
+                retry(2),
+                catchError(this.handleError)
+            )
+    }
+
+    // Manipulação de erros
+    handleError(error: HttpErrorResponse) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            // Erro ocorreu no lado do client
+            errorMessage = error.error.message;
+        } else {
+            // Erro ocorreu no lado do servidor
+            errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+        }
+        console.log(errorMessage);
+        return throwError(errorMessage);
+    };
+
 
 }

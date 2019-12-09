@@ -24,7 +24,8 @@ export class PessoaMotoristaComponent implements OnInit, OnDestroy {
     tipoPessoa: string;
     motoristaForm: FormGroup;
     pessoaForm: FormGroup;
-    cnhForm: FormGroup;
+    enderecoForm: FormGroup;
+    
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -56,11 +57,11 @@ export class PessoaMotoristaComponent implements OnInit, OnDestroy {
                     this.pageType = 'new';
                     this.motorista = new Motorista();
                 }
-                this.tipoPessoa = this.motorista.pessoa.tipoPessoa;
+                this.tipoPessoa = this.motorista.funcionario.tipoPessoa;
 
                 this.motoristaForm = this.createMotoristaForm();
                 this.pessoaForm = this.createPessoaForm();
-                this.cnhForm = this.createCnhForm();
+                this.enderecoForm = this.createEnderecoForm();
             });
     }
 
@@ -73,28 +74,35 @@ export class PessoaMotoristaComponent implements OnInit, OnDestroy {
     createMotoristaForm(): FormGroup {
         return this._formBuilder.group({
             id: [this.motorista.id],
-            enable: [this.motorista.enable]
+            enable: [this.motorista.enable],
+            numero: [this.motorista.numero],
+            categoria: [this.motorista.categoria],
+            renovaEm: [this.motorista.renovaEm]
         });
     }
 
     createPessoaForm(): FormGroup {
         return this._formBuilder.group({
-            id: [this.motorista.pessoa.id],
-            nome: [this.motorista.pessoa.nome],
-            cpfOuCnpj: [this.motorista.pessoa.cpfOuCnpj],
-            foto: [this.motorista.pessoa.foto]
+            id: [this.motorista.funcionario.id],
+            nome: [this.motorista.funcionario.nome],
+            cpfOuCnpj: [this.motorista.funcionario.cpfOuCnpj],
+            foto: [this.motorista.funcionario.foto],
+            telefone:[this.motorista.funcionario.telefone]
         });
     }
 
-    createCnhForm(): FormGroup {
+    createEnderecoForm(): FormGroup {
         return this._formBuilder.group({
-            id: [this.motorista.cnh.id],
-            numero: [this.motorista.cnh.numero],
-            categoria: [this.motorista.cnh.categoria],
-            renovaEm: [this.motorista.cnh.renovaEm]
+            id: [this.motorista.funcionario.id],
+            cep: [this.motorista.funcionario.endereco.cep],
+            logradouro: [this.motorista.funcionario.endereco.logradouro],
+            numero: [this.motorista.funcionario.endereco.numero],
+            complemento: [this.motorista.funcionario.endereco.complemento],
+            bairro: [this.motorista.funcionario.endereco.bairro],
+            cidade: [this.motorista.funcionario.endereco.cidade],
+            estado: [this.motorista.funcionario.endereco.estado],
         });
     }
-
 
     saveMotorista(): void {
         const data = this.motoristaForm.getRawValue();

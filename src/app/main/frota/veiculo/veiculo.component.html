@@ -17,15 +17,10 @@
                     <mat-icon>arrow_back</mat-icon>
                 </button>
 
-                <div class="veiculo-image mr-8 mr-sm-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
-                    <img *ngIf="veiculo.images[0]" [src]="veiculo.images[0]">
-                    <img *ngIf="!veiculo.images[0]" [src]="'assets/images/frota/veiculo-image-placeholder.png'">
-                </div>
-
                 <div fxLayout="column" fxLayoutAlign="start start"
                     [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
                     <div class="h2" *ngIf="pageType ==='edit'">
-                        {{veiculo.marca.nome}} {{veiculo.marca.modelos[0].nome}} - {{veiculo.anoFabricacao}}
+                        {{veiculo.marca.nome}} {{veiculo.nome}} - {{veiculo.anoFabricacao}}
                     </div>
                     <div class="h2" *ngIf="pageType ==='new'">
                         Cadastrar Veículo
@@ -62,13 +57,51 @@
                         <mat-tab label="Informações do Veículo">
 
                             <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+
                                 <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Número da placa</mat-label>
-                                    <input matInput placeholder="Informe a placa do veículo" name="placa"
-                                        formControlName="placa" required>
+                                    <mat-label>Nome</mat-label>
+                                    <input matInput placeholder="Informe o nome do veículo" name="nome"
+                                        formControlName="nome" required>
                                 </mat-form-field>
 
+
                                 <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" class="mr-16" fxFlex="30">
+                                        <mat-label>Marca</mat-label>
+                                        <mat-select formControlName="marca" required>
+                                            <mat-option *ngFor="let marca of marcas" [value]="marca.id">
+                                                {{marca.nome}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20">
+                                        <mat-label>Cor</mat-label>
+                                        <input matInput placeholder="Informe a cor do veículo" name="cor"
+                                            formControlName="cor" required>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20">
+                                        <mat-label>Ano de Fabricação</mat-label>
+                                        <input matInput placeholder="Informe o ano de fabricação do veículo"
+                                            name="anoFabricacao" formControlName="anoFabricacao" required>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="20">
+                                        <mat-label>Ano do Modelo</mat-label>
+                                        <input matInput placeholder="Informe o ano do modelo do veículo"
+                                            name="anoModelo" formControlName="anoModelo" required>
+                                    </mat-form-field>
+                                </div>
+
+                                <div fxLayout="row" fxLayoutAlign="space-between">
+
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="15">
+                                        <mat-label>Número da placa</mat-label>
+                                        <input matInput placeholder="Informe a placa do veículo" name="placa"
+                                            formControlName="placa" required>
+                                    </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
                                         <mat-label>Número do Chassi</mat-label>
@@ -82,51 +115,35 @@
                                             formControlName="renavam" required>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
+                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="15">
                                         <mat-label>Mes IPVA</mat-label>
                                         <input matInput placeholder="Informe o mes de vencimento do IPVA" name="mesIpva"
                                             formControlName="mesIpva" required>
                                     </mat-form-field>
                                 </div>
 
-                                <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
-                                    <mat-label>Marca</mat-label>
-                                    <input matInput placeholder="Informe a marca" name="marca" formControlName="marca"
-                                        required>
-                                </mat-form-field>
-
                                 <div fxLayout="row" fxLayoutAlign="space-between">
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Cor</mat-label>
-                                        <input matInput placeholder="Informe a cor do veículo" name="cor"
-                                            formControlName="cor" required>
-                                    </mat-form-field>
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Ano de Fabricação</mat-label>
-                                        <input matInput placeholder="Informe o ano de fabricação do veículo"
-                                            name="anoFabricacao" formControlName="anoFabricacao" required>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="30">
-                                        <mat-label>Ano do Modelo</mat-label>
-                                        <input matInput placeholder="Informe o ano do modelo do veículo"
-                                            name="anoModelo" formControlName="anoModelo" required>
-                                    </mat-form-field>
-                                </div>
-
-                                <div fxLayout="row" fxLayoutAlign="space-between">
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="45">
+                                    <mat-form-field appearance="outline" class="mr-16" fxFlex>
                                         <mat-label>Tipo do Combustivel</mat-label>
-                                        <input matInput placeholder="Informe o tipo de combustivel"
-                                            name="tipoCombustivel" formControlName="tipoCombustivel" required>
+                                        <mat-select formControlName="tipoCombustivel" required>
+                                            <mat-option *ngFor="let combustivel of combustiveis"
+                                                [value]="combustivel.id">
+                                                {{combustivel.nome}}
+                                            </mat-option>
+                                        </mat-select>
                                     </mat-form-field>
 
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="45">
+                                    <mat-form-field appearance="outline" class="mr-16" fxFlex>
                                         <mat-label>Categoria</mat-label>
-                                        <input matInput placeholder="Informe a categoria do veículo" name="categoria"
-                                            formControlName="categoria" required>
+                                        <mat-select formControlName="categoria" required>
+                                            <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                                                {{categoria.nome}}
+                                            </mat-option>
+                                        </mat-select>
                                     </mat-form-field>
+
+
 
                                 </div>
 

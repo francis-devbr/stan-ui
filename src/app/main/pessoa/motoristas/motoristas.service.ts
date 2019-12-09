@@ -3,10 +3,12 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Motorista } from 'app/main/model/motorista/motorista.model';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class PessoaMotoristasService implements Resolve<Motorista[]>
 {
+    static CONTEXT = environment.apiUrlRest+"/api/motoristas/"+JSON.parse(localStorage.getItem("FUNCIONARIO")).empresa.cpfOuCnpj;
     motoristas: Motorista[];
     onMotoristasChanged: BehaviorSubject<Motorista[]>;
 
@@ -30,7 +32,8 @@ export class PessoaMotoristasService implements Resolve<Motorista[]>
 
     getMotoristas(): Promise<Motorista[]> {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/pessoa-motoristas')
+            console.log(PessoaMotoristasService.CONTEXT);
+            this._httpClient.get(PessoaMotoristasService.CONTEXT)
                 .subscribe((response: Motorista[]) => {
                     this.motoristas = response;
                     this.onMotoristasChanged.next(this.motoristas);

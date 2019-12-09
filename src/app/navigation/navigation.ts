@@ -9,16 +9,6 @@ export const navigation: FuseNavigation[] = [
         icon: 'apps',
         children: [
             {
-                id: 'empresa',
-                title: 'Empresa',
-                translate: 'NAV.EMPRESA',
-                icon: 'business',
-                type: 'item',
-                url: '/empresa/empresa/1',
-                exactMatch: true
-            },
-            
-            {
                 id: 'motorista',
                 title: 'Motorista',
                 translate: 'NAV.MOTORISTA',

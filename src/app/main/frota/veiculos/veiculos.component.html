@@ -76,11 +76,11 @@
                 </ng-container>
 
                 
-                <ng-container matColumnDef="modelo">
+                <ng-container matColumnDef="nome">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Modelo</mat-header-cell>
                     <mat-cell *matCellDef="let veiculo" fxHide fxShow.gt-md>
                         <p class="text-truncate">
-                            {{veiculo.marca.modelos[0].nome}}
+                            {{veiculo.nome}}
                         </p>
                     </mat-cell>
                 </ng-container>

@@ -1,19 +1,22 @@
 import { FuseUtils } from '@fuse/utils';
-import { Pessoa } from '../pessoa.model';
-import { Cnh } from './cnh.model';
+import { Funcionario } from '../empresa/funcionario.model';
 
 export class Motorista {
+
     id: number;
     handle: string;
-    pessoa: Pessoa;
-    cnh: Cnh;
-
+    funcionario: Funcionario;
+    numero: string;
+    renovaEm: Date;
+    categoria: string;
     enable: boolean;
 
     constructor(motorista?) {
         motorista = motorista || {};
-        this.pessoa = motorista.pessoa || new Pessoa();
-        this.cnh = motorista.cnh || new Cnh();
+        this.funcionario = motorista.funcionario || {};
+        this.numero = motorista.numero || '';
+        this.renovaEm = motorista.renovaEm || '';
+        this.categoria = motorista.categoria || '';
         this.handle = motorista.handle || FuseUtils.handleize("teste");
         this.id = motorista.id;
         this.enable = motorista.enable || true;
