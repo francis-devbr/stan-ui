@@ -10,11 +10,12 @@ error-404 {
             max-width: 512px !important;
 
             .error-code {
-                font-size: 112px;
+                font-size: 80px;
                 text-align: center;
                 line-height: 1;
                 margin-bottom: 16px;
-                font-weight: 600;
+                font-weight: 300;
+                color: #039be5;
             }
 
             .message {
