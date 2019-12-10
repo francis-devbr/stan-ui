@@ -74,7 +74,7 @@
                                         <input matInput placeholder="Nome da Motorista" name="nome"
                                             formControlName="nome" required>
                                     </mat-form-field>
-                                    <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
+                                    <mat-form-field placeholder="Informe o CPF ou CNPJ" appearance="outline" floatLabel="always" fxFlex="25">
                                         <mat-label *ngIf="tipoPessoa ==='F'">CPF</mat-label>
                                         <mat-label *ngIf="tipoPessoa ==='J'">CNPJ</mat-label>
                                         <input matInput placeholder="Informe o CPF ou CNPJ" name="cpfOuCnpj"
@@ -90,44 +90,44 @@
 
                                 <div [formGroup]="enderecoForm" fxLayout="row" fxLayoutAlign="space-between">
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="10">
-                                        <mat-label>cep</mat-label>
-                                        <input matInput placeholder="Nome da Motorista" name="cep" formControlName="cep"
+                                        <mat-label>CEP</mat-label>
+                                        <input matInput placeholder="Informe o CEP" name="cep" formControlName="cep"
                                             required>
                                     </mat-form-field>
+
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="88">
-                                        <mat-label>logradouro</mat-label>
-                                        <input matInput placeholder="Informe o CPF ou CNPJ" name="logradouro"
+                                        <mat-label>Lougradoro</mat-label>
+                                        <input matInput placeholder="Informe o logradouro" name="logradouro"
                                             formControlName="logradouro" required>
                                     </mat-form-field>
-
-
                                 </div>
+
                                 <div [formGroup]="enderecoForm" fxLayout="row" fxLayoutAlign="space-between">
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="15">
-                                        <mat-label>numero </mat-label>
-                                        <input matInput placeholder="numero" name="numero" formControlName="numero">
+                                        <mat-label>Número </mat-label>
+                                        <input matInput placeholder="Número" name="numero" formControlName="numero">
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
-                                        <mat-label>complemento </mat-label>
-                                        <input matInput placeholder="complemento" name="complemento"
+                                        <mat-label>Complemento </mat-label>
+                                        <input matInput placeholder="Informe oComplemento" name="complemento"
                                             formControlName="complemento">
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
-                                        <mat-label>bairro </mat-label>
-                                        <input matInput placeholder="bairro" name="bairro" formControlName="bairro">
+                                        <mat-label>Bairro </mat-label>
+                                        <input matInput placeholder="Informe o Bairro" name="bairro" formControlName="bairro">
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="25">
-                                        <mat-label>cidade </mat-label>
-                                        <input matInput placeholder="cidade" name="cidade" formControlName="cidade">
+                                        <mat-label>Cidade </mat-label>
+                                        <input matInput placeholder="Informe a cidade" name="cidade" formControlName="cidade">
                                     </mat-form-field>
 
                                     <mat-form-field appearance="outline" floatLabel="always" fxFlex="05">
-                                        <mat-label>estado </mat-label>
-                                        <input matInput placeholder="estado" name="estado" formControlName="estado">
+                                        <mat-label>Estado </mat-label>
+                                        <input matInput placeholder="Estado" name="estado" formControlName="estado">
                                     </mat-form-field>
                                 </div>
 

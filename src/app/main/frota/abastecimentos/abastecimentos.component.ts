@@ -20,7 +20,7 @@ import { takeUntil } from 'rxjs/internal/operators';
 })
 export class FrotaAbastecimentosComponent implements OnInit {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'nome','litro', 'valor', 'cupom', 'data'];
+    displayedColumns = ['id', 'image', 'nome', 'litro', 'valor', 'cupom', 'data'];
 
     @ViewChild(MatPaginator, { static: true })
     paginator: MatPaginator;
@@ -135,6 +135,9 @@ export class FilesDataSource extends DataSource<any>
 
             switch (this._matSort.active) {
                 case 'id':
+                    [propertyA, propertyB] = [a.image, b.image];
+                    break;
+                case 'image':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
                 case 'nome':

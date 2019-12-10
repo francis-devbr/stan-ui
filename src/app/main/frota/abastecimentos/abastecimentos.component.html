@@ -55,6 +55,18 @@
                     </mat-cell>
                 </ng-container>
 
+                   <!-- Image Column -->
+                   <ng-container matColumnDef="image">
+                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                    <mat-cell *matCellDef="let abastecimento">
+                        <img class="abastecimento-image"
+                             *ngIf="abastecimento.featuredImageId" [alt]="abastecimento.name"
+                             [src]="abastecimento.images[abastecimento.featuredImageId].url"/>
+                        <img *ngIf="!abastecimento.featuredImageId"
+                             [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
+                    </mat-cell>
+                </ng-container>
+
 
                 <ng-container matColumnDef="nome">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Veiculo</mat-header-cell>
