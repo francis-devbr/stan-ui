@@ -8,8 +8,9 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { Abastecimento } from 'app/main/frota/abastecimento/abastecimento.model';
+
 import { FrotaAbastecimentoService } from 'app/main/frota/abastecimento/abastecimento.service';
+import { Abastecimento } from 'app/main/model/veiculo/abastecimento.model';
 
 @Component({
     selector: 'frota-abastecimento',
@@ -67,28 +68,20 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
     createAbastecimentoForm(): FormGroup {
         return this._formBuilder.group({
             id: [this.abastecimento.id],
-            name: [this.abastecimento.name],
             handle: [this.abastecimento.handle],            
-            description: [this.abastecimento.description],
-            categories: [this.abastecimento.categories],
-            tags: [this.abastecimento.tags],            
-            images: [this.abastecimento.images],
-            tipoCombustivel: [this.abastecimento.tipoCombustivel],
-            qtdLitros: [this.abastecimento.qtdLitros],
-            valorLitro: [this.abastecimento.valorLitro],
-            valorTotal: [this.abastecimento.valorTotal],
-            numCupomFiscal: [this.abastecimento.numCupomFiscal],
-            data: [this.abastecimento.data],
-            kmInicial: [this.abastecimento.kmInicial],
-            kmFinal: [this.abastecimento.kmFinal],
-            active: [this.abastecimento.active]
+            qtdLitros: [this.abastecimento.litro],
+            valorLitro: [this.abastecimento.valor],
+            valorTotal: [this.abastecimento.litro * this.abastecimento.valor],
+            numCupomFiscal: [this.abastecimento.cupom],
+            data: [this.abastecimento.abastecidoEm],
+            kmInicial: [this.abastecimento.km]
         });
     }
 
         
     saveAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
-        data.handle = FuseUtils.handleize(data.name);
+        data.handle = FuseUtils.handleize(data.veiculo.name);
 
         this._frotaAbastecimentoService.saveAbastecimento(data)
             .then(() => {
@@ -102,7 +95,7 @@ export class FrotaAbastecimentoComponent implements OnInit, OnDestroy {
 
     addAbastecimento(): void {
         const data = this.abastecimentoForm.getRawValue();
-        data.handle = FuseUtils.handleize(data.name);
+        data.handle = FuseUtils.handleize(data.veiculo.name);
 
         this._frotaAbastecimentoService.addAbastecimento(data)
             .then(() => {

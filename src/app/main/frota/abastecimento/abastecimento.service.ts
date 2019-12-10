@@ -2,36 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class FrotaAbastecimentoService implements Resolve<any>
 {
+    static CONTEXT = environment.apiUrlRest + "/api/abastecimentos/" + JSON.parse(localStorage.getItem("FUNCIONARIO")).empresa.cpfOuCnpj;
+    
     routeParams: any;
     abastecimento: any;
     onAbastecimentoChanged: BehaviorSubject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {HttpClient} _httpClient
-     */
-    constructor(
-        private _httpClient: HttpClient
-    )
-    {
+    constructor(private _httpClient: HttpClient) {
         // Set the defaults
         this.onAbastecimentoChanged = new BehaviorSubject({});
     }
 
-    /**
-     * Resolver
-     *
-     * @param {ActivatedRouteSnapshot} route
-     * @param {RouterStateSnapshot} state
-     * @returns {Observable<any> | Promise<any> | any}
-     */
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
-    {
+
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
@@ -47,22 +35,15 @@ export class FrotaAbastecimentoService implements Resolve<any>
         });
     }
 
-    /**
-     * Get abastecimento
-     *
-     * @returns {Promise<any>}
-     */
-    getAbastecimento(): Promise<any>
-    {
+
+    getAbastecimento(): Promise<any> {
         return new Promise((resolve, reject) => {
-            if ( this.routeParams.id === 'new' )
-            {
+            if (this.routeParams.id === 'new') {
                 this.onAbastecimentoChanged.next(false);
                 resolve(false);
             }
-            else
-            {
-                this._httpClient.get('api/frota-abastecimentos/' + this.routeParams.id)
+            else {
+                this._httpClient.get(FrotaAbastecimentoService.CONTEXT + '/' + this.routeParams.id)
                     .subscribe((response: any) => {
                         this.abastecimento = response;
                         this.onAbastecimentoChanged.next(this.abastecimento);
@@ -72,14 +53,7 @@ export class FrotaAbastecimentoService implements Resolve<any>
         });
     }
 
-    /**
-     * Save abastecimento
-     *
-     * @param abastecimento
-     * @returns {Promise<any>}
-     */
-    saveAbastecimento(abastecimento): Promise<any>
-    {
+    saveAbastecimento(abastecimento): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.post('api/frota-abastecimentos/' + abastecimento.id, abastecimento)
                 .subscribe((response: any) => {
@@ -94,8 +68,7 @@ export class FrotaAbastecimentoService implements Resolve<any>
      * @param abastecimento
      * @returns {Promise<any>}
      */
-    addAbastecimento(abastecimento): Promise<any>
-    {
+    addAbastecimento(abastecimento): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.post('api/frota-abastecimentos/', abastecimento)
                 .subscribe((response: any) => {

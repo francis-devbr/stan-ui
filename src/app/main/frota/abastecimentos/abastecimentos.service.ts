@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'environments/environment';
+import { Abastecimento } from 'app/main/model/veiculo/abastecimento.model';
 
 @Injectable()
 export class FrotaAbastecimentosService implements Resolve<any>
 {
-    abastecimentos: any[];
+    static CONTEXT = environment.apiUrlRest+"/api/abastecimentos/"+JSON.parse(localStorage.getItem("FUNCIONARIO")).empresa.cpfOuCnpj;
+    
+    abastecimentos: Abastecimento[];
     onAbastecimentosChanged: BehaviorSubject<any>;
 
     constructor(
@@ -32,11 +36,11 @@ export class FrotaAbastecimentosService implements Resolve<any>
         });
     }
 
-    getAbastecimentos(): Promise<any>
+    getAbastecimentos(): Promise<Abastecimento[]>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/frota-abastecimentos')
-                .subscribe((response: any) => {
+            this._httpClient.get(FrotaAbastecimentosService.CONTEXT)
+                .subscribe((response: Abastecimento[]) => {
                     this.abastecimentos = response;
                     this.onAbastecimentosChanged.next(this.abastecimentos);
                     resolve(response);

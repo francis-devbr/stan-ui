@@ -8,9 +8,8 @@
     <div class="center">
 
         <!-- HEADER -->
-        <div class="header accent" 
-            fxLayout="column" fxLayoutAlign="center center" 
-            fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+        <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="space-between center">
 
             <!-- APP TITLE -->
             <div class="logo mb-24 mb-md-0" fxLayout="row" fxLayoutAlign="start center">
@@ -56,81 +55,64 @@
                     </mat-cell>
                 </ng-container>
 
-                <!-- Image Column -->
-                <ng-container matColumnDef="image">
-                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+                <ng-container matColumnDef="nome">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Veiculo</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento">
-                        <img class="abastecimento-image" *ngIf="abastecimento.featuredImageId"
-                            [alt]="abastecimento.name"
-                            [src]="abastecimento.images[abastecimento.featuredImageId].url" />
-                        <img *ngIf="!abastecimento.featuredImageId"
-                            [src]="'assets/images/frota/abastecimento-image-placeholder.png'">
+                        <p class="text-truncate">{{abastecimento.veiculo.nome}}</p>
                     </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="tipoCombustivel">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Combustivel</mat-header-cell>
-                        <mat-cell *matCellDef="let abastecimento">
-                            <p class="text-truncate">{{abastecimento.tipoCombustivel.nome}}</p>
-                        </mat-cell>
-                    </ng-container>
 
-
-                <ng-container matColumnDef="qtdLitros">
+                <ng-container matColumnDef="litro">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em litros</mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento">
                         <p class="text-truncate">
-                            {{abastecimento.qtdLitros}}
+                            {{abastecimento.litro}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="valorLitro">
+                <ng-container matColumnDef="valor">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Valor por litro(R$)
                     </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
                         <p class="price text-truncate">
-                            {{abastecimento.valorLitro | currency:'R$':'symbol'}}
+                            {{abastecimento.valor | currency:'R$':'symbol'}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="numCupomFiscal">
+                <ng-container matColumnDef="cupom">
                     <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Número do Cupom Físcal
                     </mat-header-cell>
                     <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
                         <p class="numCupomFiscal text-truncate">
-                            {{abastecimento.numCupomFiscal[0]}}
+                            {{abastecimento.cupom}}
                         </p>
                     </mat-cell>
                 </ng-container>
 
-                
-
-               
-                <!-- Active Column -->
-                <ng-container matColumnDef="active">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Status</mat-header-cell>
-                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-xs>
-                        <mat-icon *ngIf="abastecimento.active" class="active-icon green-600 s-16">Resolvido</mat-icon>
-                        <mat-icon *ngIf="!abastecimento.active" class="active-icon red-500 s-16">Aberto</mat-icon>
+                <ng-container matColumnDef="data">
+                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Data
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let abastecimento" fxHide fxShow.gt-md>
+                        <p class="numCupomFiscal text-truncate">
+                            {{abastecimento.abastecidoEm}}
+                        </p>
                     </mat-cell>
                 </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
 
-                <mat-row *matRowDef="let abastecimento; columns: displayedColumns;" 
-                        class="abastecimento" matRipple
-                        [routerLink]="'/frota/abastecimentos/'+abastecimento.id+'/'+abastecimento.handle">
+                <mat-row *matRowDef="let abastecimento; columns: displayedColumns;" class="abastecimento" matRipple
+                    [routerLink]="'/frota/abastecimentos/'+abastecimento.id+'/'+abastecimento.handle">
                 </mat-row>
 
             </mat-table>
 
-            <mat-paginator #paginator 
-                           [length]="dataSource.filteredData.length" 
-                           [pageIndex]="0" 
-                           [pageSize]="10"
-                           [pageSizeOptions]="[5, 10, 25, 100]">
+            <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
             </mat-paginator>
 
         </div>
